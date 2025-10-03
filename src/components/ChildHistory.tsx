@@ -73,7 +73,7 @@ export default function ChildHistory() {
                     )
                   }
                   className={`px-4 py-2 rounded-lg border transition-colors ${
-                    //@ts-ignore
+                    //@ts-ignore-error
                     selectedDiagnoses.includes(diagnosis)
                       ? "bg-blue-50 border-blue-600 text-blue-600"
                       : "bg-white border-gray-300 text-gray-700 hover:border-gray-400"
@@ -102,7 +102,7 @@ export default function ChildHistory() {
                     )
                   }
                   className={`px-4 py-2 rounded-lg border transition-colors ${
-                    //@ts-ignore
+                    //@ts-ignore-error
                     selectedServices.includes(service)
                       ? "bg-blue-50 border-blue-600 text-blue-600"
                       : "bg-white border-gray-300 text-gray-700 hover:border-gray-400"
