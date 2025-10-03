@@ -15,7 +15,7 @@ import CreateChildProfile from "@/components/CreateChildProfile";
 import StartQuestionnaire from "@/components/StartQuestionaire";
 import ChildHistory from "@/components/ChildHistory";
 import CurrentStruggles from "@/components/CurrentStruggle";
-import GenerateChildID from "@/components/GenerateChildId";
+import GenerateChildID from "@/components/GenerateChildID";
 
 export default function KidzVoiceDashboard() {
   const [activeMenu, setActiveMenu] = useState("dashboard");
