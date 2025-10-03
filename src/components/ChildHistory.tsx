@@ -22,7 +22,7 @@ export default function ChildHistory() {
     "Other",
   ];
 
-  const toggleSelection = (item, list, setList) => {
+  const toggleSelection = (item: any, list: any[], setList: any) => {
     if (list.includes(item)) {
       setList(list.filter((i) => i !== item));
     } else {
@@ -62,7 +62,7 @@ export default function ChildHistory() {
               1 Has Max received any previous diagnoses?
             </h3>
             <div className="flex flex-wrap gap-3">
-              {diagnoses.map((diagnosis) => (
+              {diagnoses.map((diagnosis: any) => (
                 <button
                   key={diagnosis}
                   onClick={() =>
@@ -90,9 +90,9 @@ export default function ChildHistory() {
               2 Has Max ever received support services?
             </h3>
             <div className="flex flex-wrap gap-3">
-              {services.map((service) => (
+              {services.map((service: any, idx: number) => (
                 <button
-                  key={service}
+                  key={idx}
                   onClick={() =>
                     toggleSelection(
                       service,
