@@ -16,6 +16,7 @@ export default function ProfileInfoPage() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    router.push("/api/auth/parrent/");
 
     console.log("Form submitted:", formData);
   };
