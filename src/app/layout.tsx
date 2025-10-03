@@ -8,7 +8,7 @@ import "./globals.css";
 const jost = Jost({
   variable: "--font-jost",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"], // you can customize weights
+  // weight: ["400", "500", "600", "700"], // you can customize weights
 });
 
 export const metadata: Metadata = {
