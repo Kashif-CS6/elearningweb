@@ -16,6 +16,7 @@ import StartQuestionnaire from "@/components/StartQuestionaire";
 import ChildHistory from "@/components/ChildHistory";
 import CurrentStruggles from "@/components/CurrentStruggle";
 import GenerateChildID from "@/components/GenerateChildID";
+import Image from "next/image";
 
 export default function KidzVoiceDashboard() {
   const [activeMenu, setActiveMenu] = useState("dashboard");
@@ -24,31 +25,23 @@ export default function KidzVoiceDashboard() {
   return (
     <div className="flex min-h-screen bg-gray-50">
       {/* Sidebar */}
-      <aside className="w-64 bg-white border-r border-gray-200 flex flex-col">
+      <aside className="w-72 bg-white border-r border-gray-200 flex flex-col">
         {/* Logo */}
-        <div className="p-6 flex items-center gap-3">
-          <div className="relative w-10 h-10">
-            <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center">
-              <svg
-                className="w-6 h-6 text-white"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z" />
-              </svg>
+        <div className="px-6 py-5 flex items-center gap-3">
+          <Image src={"/elogo.svg"} width={45.54} height={47.72} alt="e logo" />
+          <div className="flex items-center justify-between w-full">
+            <span className="text-[25.48px] tracking-normal leading-[100%] font-[600] text-[#1B84F8]">
+              KidzVoice
+            </span>
+            <div className="flex items-center justify-center py-2">
+              <Circle className="w-4 h-4 text-gray-400" />
             </div>
-            <div className="absolute -top-1 -right-1 w-5 h-5 bg-yellow-400 rounded-sm transform rotate-45"></div>
           </div>
-          <span className="text-xl font-bold text-gray-800">KidzVoice</span>
-        </div>
-
-        <div className="flex items-center justify-center py-2">
-          <Circle className="w-4 h-4 text-gray-400" />
         </div>
 
         {/* Navigation */}
-        <nav className="flex-1 px-4 py-6">
-          <div className="space-y-2">
+        <nav className="flex-1 px-4 py-3">
+          <div className="space-y-1">
             <button
               onClick={() => setActiveMenu("dashboard")}
               className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all ${
@@ -112,7 +105,7 @@ export default function KidzVoiceDashboard() {
       {/* Main Content */}
       <main className="flex-1 p-8">
         {/* Hero Banner */}
-        <div className="relative bg-gradient-to-r from-blue-600 to-blue-500 rounded-2xl p-8 mb-8 overflow-hidden">
+        <div className="relative h-[181px] rounded-[20px] bg-gradient-to-r from-blue-600 to-blue-500  overflow-hidden">
           {/* Decorative Stars */}
           <div className="absolute top-8 right-32 w-16 h-16 opacity-20">
             <div className="absolute inset-0 bg-white transform rotate-45 rounded-lg"></div>
@@ -127,14 +120,14 @@ export default function KidzVoiceDashboard() {
             <div className="absolute inset-2 bg-blue-600 transform rotate-45 rounded-lg"></div>
           </div>
 
-          <div className="relative z-10">
-            <p className="text-white text-sm font-medium mb-3 uppercase tracking-wide">
+          <div className="relative z-10 flex flex-col gap-1 p-6">
+            <p className="text-white text-[12px] font-[400]  uppercase tracking-wide">
               Online Course
             </p>
-            <h1 className="text-white text-3xl font-bold mb-6 max-w-md">
+            <h1 className="text-white text-[24px] font-[600]   max-w-sm">
               Sharpen Your Skills With Professional Online Courses
             </h1>
-            <button className="flex items-center gap-2 bg-gray-900 text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-800 transition-all">
+            <button className="flex items-center justify-center w-[110px] h-[36px] rounded-[40px] gap-2 bg-gray-900 text-white  font-medium text-[12px] hover:bg-gray-800 transition-all">
               Join Now
               <ArrowRight className="w-5 h-5" />
             </button>
@@ -142,17 +135,19 @@ export default function KidzVoiceDashboard() {
         </div>
 
         {/* Statistics Section */}
-        <div className="flex items-center justify-between mb-6">
-          <h2 className="text-xl font-semibold text-gray-800">Statistics</h2>
-          <div className="flex-1 mx-8 bg-red-50 border border-red-200 rounded-lg px-6 py-3">
-            <p className="text-red-600 font-medium text-center">
-              Please Complete Child profile Profile
+        <div className="flex items-center justify-between my-4">
+          <h2 className="text-[18px] font-semibold text-[#4B465C]">
+            Statistics
+          </h2>
+          <div className=" w-[450px] h-[43.84px] flex items-center justify-center  bg-[linear-gradient(90deg,rgba(255,62,62,0)_0%,#FF4B4B_200%,rgba(255,75,75,0)_100.97%)] rounded-md   ">
+            <p className="text-[#FF4B4B] text-[18px] font-[400] text-center">
+              Please Complete Child Profile
             </p>
           </div>
           <div className="flex items-center gap-3">
             <span className="text-gray-600 font-medium">Profile</span>
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+            <div className="flex items-center gap-2 w-[274.61px] ">
+              <div className="flex-1 h-2 bg-green-500 rounded-full"></div>
               <span className="text-gray-800 font-semibold">5%</span>
             </div>
           </div>
