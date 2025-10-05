@@ -171,7 +171,14 @@ export default function KidzVoiceDashboard() {
         {option === "start-question" && (
           <StartQuestionnaire setOption={setOption} />
         )}
-        {option === "start" && <ChildHistory />}
+        {option === "begin" && (
+          //@ts-ignore
+          <ChildHistory setOption={setOption} />
+        )}
+        {option === "createChildHistory" && (
+          <CurrentStruggles setOption={setOption} />
+        )}
+        {option === "start" && <GenerateChildID />}
       </main>
     </div>
   );

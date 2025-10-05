@@ -22,7 +22,12 @@ export default function ChildHistory() {
     "Other",
   ];
 
-  const toggleSelection = (item: any, list: any[], setList: any) => {
+  const toggleSelection = (
+    setOption: any,
+    item: any,
+    list: any[],
+    setList: any
+  ) => {
     if (list.includes(item)) {
       setList(list.filter((i) => i !== item));
     } else {
@@ -145,7 +150,11 @@ export default function ChildHistory() {
           </button>
 
           {/* Next Button */}
-          <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium h-[54px] px-6 rounded-[6px] cursor-pointer transition-colors">
+          <button
+            //@ts-ignore
+            onClick={() => setOption("createChildHistory")}
+            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium h-[54px] px-6 rounded-[6px] cursor-pointer transition-colors"
+          >
             Next
           </button>
         </div>

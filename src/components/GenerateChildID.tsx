@@ -16,8 +16,8 @@ export default function GenerateChildID() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
-      <div className="w-full max-w-lg bg-white rounded-2xl shadow-sm p-8">
+    <div className="py-10 bg-gray-50 flex items-center justify-center p-4">
+      <div className="w-[747.47px] bg-white rounded-[6px] shadow-sm p-8">
         <div className="flex justify-center mb-6">
           <div className="relative">
             <svg width="180" height="180" viewBox="0 0 180 180">
@@ -103,7 +103,7 @@ export default function GenerateChildID() {
         </div>
 
         <div className="space-y-4">
-          <button className="w-full py-3 px-4 bg-white border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors flex items-center justify-between">
+          <button className="w-full h-[54px] px-4 bg-white border border-gray-300 rounded-[6px] text-gray-700 hover:bg-gray-50 transition-colors flex items-center justify-between">
             <div className="flex items-center gap-2">
               <svg
                 width="20"
@@ -133,7 +133,7 @@ export default function GenerateChildID() {
                 value={childID}
                 readOnly
                 placeholder="Generate child ID"
-                className="w-full py-3 pl-10 pr-12 bg-white border border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full h-[54px] pl-10 pr-12 bg-white border border-gray-300 rounded-[6px] text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
               <svg
                 className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400"
@@ -172,7 +172,7 @@ export default function GenerateChildID() {
 
           <button
             onClick={generateID}
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-4 px-6 rounded-xl transition-colors"
+            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium h-[54px] px-6 rounded-[6px] cursor-pointer transition-colors"
           >
             Generate Child ID
           </button>
