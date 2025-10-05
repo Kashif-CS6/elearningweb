@@ -71,6 +71,7 @@ export default function ChildHistory() {
                 <button
                   key={diagnosis}
                   onClick={() =>
+                    //@ts-ignore
                     toggleSelection(
                       diagnosis,
                       selectedDiagnoses,
@@ -100,6 +101,7 @@ export default function ChildHistory() {
                 <button
                   key={idx}
                   onClick={() =>
+                    //@ts-ignore
                     toggleSelection(
                       service,
                       selectedServices,
