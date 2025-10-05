@@ -16,7 +16,7 @@ export default function ProfileInfoPage() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    router.push("/api/auth/parent/dashboard");
+    router.push("/parent/dashboard");
 
     console.log("Form submitted:", formData);
   };

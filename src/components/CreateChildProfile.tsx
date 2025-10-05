@@ -1,9 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useState, FC } from "react";
 import { ChevronRight } from "lucide-react";
 
-export default function CreateChildProfile() {
+//@ts-ignore
+export default function CreateChildProfile({ setOption }) {
   const [formData, setFormData] = useState({
     name: "",
     dateOfBirth: "",
@@ -50,7 +51,8 @@ export default function CreateChildProfile() {
       return;
     }
     console.log("Form submitted:", formData);
-    alert("Child profile created successfully!");
+    setOption("start-question");
+    // alert("Child profile created successfully!");
   };
 
   const handleCancel = () => {
@@ -63,16 +65,16 @@ export default function CreateChildProfile() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center p-2 ">
-      <div className="w-full max-w-2xl bg-white rounded-2xl shadow-sm p-8">
-        <h1 className="text-2xl font-semibold text-gray-900 mb-8">
+    <div className="py-10 bg-gray-50 flex items-center justify-center p-2 ">
+      <div className="w-[747.18px] bg-white rounded-[6px] shadow-sm p-8">
+        <h1 className="text-[18px] leading-[24px] font-[600] text-[#4B465C] mb-8">
           Create Child Profile
         </h1>
 
         <div className="space-y-6">
           {/* Name Input */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-[13px] font-[400] text-gray-700 mb-2">
               Name
             </label>
             <input
@@ -82,7 +84,7 @@ export default function CreateChildProfile() {
                 setFormData({ ...formData, name: e.target.value })
               }
               placeholder="Enter name here"
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 placeholder-gray-400"
+              className="w-full px-4 h-[54px] border-[1px] rounded-[6px] border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 placeholder-gray-400"
             />
           </div>
 
@@ -90,7 +92,7 @@ export default function CreateChildProfile() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {/* Date of Birth */}
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-[13px] font-[400] text-gray-700 mb-2">
                 Date of Birth
               </label>
               <input
@@ -100,13 +102,13 @@ export default function CreateChildProfile() {
                   setFormData({ ...formData, dateOfBirth: e.target.value })
                 }
                 placeholder="DD/MM/YY"
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 placeholder-gray-400"
+                className="w-full px-4 h-[54px] border-[1px] rounded-[6px] border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 placeholder-gray-400"
               />
             </div>
 
             {/* Grade Dropdown */}
             <div className="relative">
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-[13px] font-[400] text-gray-700 mb-2">
                 Grade
               </label>
               <button
@@ -115,7 +117,7 @@ export default function CreateChildProfile() {
                   setShowGradeDropdown(!showGradeDropdown);
                   setShowSchoolDropdown(false);
                 }}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-left flex items-center justify-between bg-white"
+                className="w-full px-4 h-[54px] border-[1px] rounded-[6px] border-gray-300  focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-left flex items-center justify-between bg-white"
               >
                 <span
                   className={formData.grade ? "text-gray-900" : "text-gray-400"}
@@ -135,7 +137,7 @@ export default function CreateChildProfile() {
                         setFormData({ ...formData, grade });
                         setShowGradeDropdown(false);
                       }}
-                      className="w-full px-4 py-3 text-left hover:bg-gray-50 text-gray-900 transition-colors"
+                      className="w-full px-4 h-[54px]  rounded-[6px] text-left hover:bg-gray-50 text-gray-900 transition-colors"
                     >
                       {grade}
                     </button>
@@ -156,7 +158,7 @@ export default function CreateChildProfile() {
                 setShowSchoolDropdown(!showSchoolDropdown);
                 setShowGradeDropdown(false);
               }}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-left flex items-center justify-between bg-white"
+              className="w-full px-4 h-[54px] border border-gray-300 rounded-[6px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-left flex items-center justify-between bg-white"
             >
               <span
                 className={formData.school ? "text-gray-900" : "text-gray-400"}
@@ -188,7 +190,7 @@ export default function CreateChildProfile() {
           {/* Submit Button */}
           <button
             onClick={handleSubmit}
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-4 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-[500] text-[16px] cursor-pointer h-[54px] px-4 rounded-[6px] transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
           >
             Post
           </button>
@@ -196,7 +198,7 @@ export default function CreateChildProfile() {
           {/* Cancel Button */}
           <button
             onClick={handleCancel}
-            className="w-full bg-indigo-50 hover:bg-indigo-100 text-gray-900 font-medium py-3 px-4 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+            className="w-full bg-indigo-50 hover:bg-indigo-100 text-gray-900 font-[500] cursor-pointer text-[16px] h-[54px] px-4 rounded-[6px] transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
           >
             Cancel
           </button>

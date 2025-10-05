@@ -4,10 +4,11 @@ import { useState } from "react";
 import { ChevronRight, Copy, Check } from "lucide-react";
 
 // Component 1: Start Questionnaire
-export default function StartQuestionnaire() {
+//@ts-ignore
+export default function StartQuestionnaire({ setOption }) {
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
-      <div className="w-full max-w-2xl bg-white rounded-2xl shadow-sm p-12 text-center">
+    <div className="my-10 bg-gray-50 flex items-center justify-center p-4">
+      <div className="w-[747.18px] bg-white rounded-[6px] shadow-sm p-12 text-center">
         <div className="flex justify-center mb-8">
           <div className="relative">
             <svg width="200" height="120" viewBox="0 0 200 120">
@@ -62,15 +63,20 @@ export default function StartQuestionnaire() {
           </div>
         </div>
 
-        <h1 className="text-3xl font-semibold text-gray-900 mb-4">
+        <h1 className="text-[24px] font-[500] text-[#282727] leading-[100%] tracking-[1.65px] mb-2">
           Start Questionnaire
         </h1>
-        <p className="text-gray-600 mb-2">
+        <p className="text-[16px] font-[400] text-gray-600 mb-1">
           his helps us understand Max's needs. It only takes about 5 minutes.
         </p>
-        <p className="text-gray-600 mb-12">You can pause and return anytime.</p>
+        <p className="text-[16px] font-[400] text-gray-600  mb-8">
+          You can pause and return anytime.
+        </p>
 
-        <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-4 px-6 rounded-xl transition-colors">
+        <button
+          onClick={() => setOption("begin")}
+          className="w-full cursor-pointer bg-blue-600 hover:bg-blue-700 text-white font-medium text-[19px] h-[54px] px-6 rounded-[6px] transition-colors"
+        >
           Begin
         </button>
       </div>

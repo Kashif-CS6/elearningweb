@@ -154,20 +154,24 @@ export default function KidzVoiceDashboard() {
         </div>
 
         {/* Add Child Card */}
-        {option === "start" && (
-          <div className="bg-white rounded-2xl shadow-sm p-12 max-w-2xl mx-auto mt-12">
-            <h3 className="text-center text-gray-800 text-lg font-medium mb-8">
+        {option === "startb" && (
+          <div className="bg-white rounded-[6px] shadow-sm  w-[747.41px] h-[171px] mx-auto my-10 flex flex-col justify-between p-8  ">
+            <h3 className="text-gray-800 text-[18px] leading-[24px] font-medium ">
               Add your child details
             </h3>
             <button
               onClick={() => setOption("form")}
-              className="w-full cursor-pointer bg-blue-600 text-white py-4 rounded-xl font-semibold hover:bg-blue-700 transition-all shadow-md text-lg"
+              className="w-[695px]  cursor-pointer bg-blue-600 text-white h-[54px] rounded-[6px]  hover:bg-blue-700 transition-all shadow-md text-[19px] font-[500]"
             >
               Add Child
             </button>
           </div>
         )}
-        {option === "form" && <GenerateChildID />}
+        {option === "form" && <CreateChildProfile setOption={setOption} />}
+        {option === "start-question" && (
+          <StartQuestionnaire setOption={setOption} />
+        )}
+        {option === "start" && <ChildHistory />}
       </main>
     </div>
   );

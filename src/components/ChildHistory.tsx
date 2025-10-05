@@ -32,25 +32,25 @@ export default function ChildHistory() {
 
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
-      <div className="w-full max-w-4xl bg-white rounded-2xl shadow-sm p-8">
+      <div className="w-[747.47px] bg-white rounded-[6px] shadow-sm p-8">
         {/* Progress Bar */}
-        <div className="flex items-center mb-12">
-          <div className="flex items-center">
+        <div className="flex items-center  mb-12">
+          <div className="flex items-center flex-1">
             <div className="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center">
               <Check className="w-5 h-5 text-white" />
             </div>
-            <div className="w-64 h-0.5 bg-gray-300"></div>
+            <div className="w-[300px] h-0.5 bg-gray-300"></div>
           </div>
           <div className="w-8 h-8 rounded-full bg-gray-300"></div>
-          <div className="w-64 h-0.5 bg-gray-300"></div>
+          <div className="w-[300px] h-0.5 bg-gray-300"></div>
           <div className="w-8 h-8 rounded-full bg-gray-300"></div>
         </div>
 
         <div className="mb-8">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-2">
+          <h2 className="text-[16px] font-[500] text-[#282727] mb-2">
             Child History
           </h2>
-          <p className="text-gray-500 text-sm">
+          <p className="text-[#7C7979] tracking-[1px] text-[10px] font-[400]">
             Purpose: Quick background about Max
           </p>
         </div>
@@ -58,7 +58,7 @@ export default function ChildHistory() {
         <div className="space-y-8">
           {/* Question 1 */}
           <div>
-            <h3 className="text-gray-900 font-medium mb-4">
+            <h3 className="text-gray-900 leading-[100%] tracking-[1px] text-[14px] font-[400] mb-4">
               1 Has Max received any previous diagnoses?
             </h3>
             <div className="flex flex-wrap gap-3">
@@ -87,7 +87,7 @@ export default function ChildHistory() {
 
           {/* Question 2 */}
           <div>
-            <h3 className="text-gray-900 font-medium mb-4">
+            <h3 className="text-gray-900 leading-[100%] tracking-[1px] text-[14px] font-[400] mb-4">
               2 Has Max ever received support services?
             </h3>
             <div className="flex flex-wrap gap-3">
@@ -116,7 +116,7 @@ export default function ChildHistory() {
 
           {/* Question 3 */}
           <div>
-            <h3 className="text-gray-900 font-medium mb-4">
+            <h3 className="text-gray-900 leading-[100%] tracking-[1px] text-[14px] font-[400] mb-4">
               3 Briefly describe any important medical/educational history
             </h3>
             <textarea
@@ -128,7 +128,7 @@ export default function ChildHistory() {
           </div>
 
           {/* Submit Reports Button */}
-          <button className="w-full py-4 px-6 bg-blue-50 border-2 border-dashed border-blue-300 rounded-xl text-blue-600 font-medium hover:bg-blue-100 transition-colors flex items-center justify-center gap-2">
+          <button className="w-full h-[54px] px-6 bg-blue-50 border-2 border-dashed border-blue-300 rounded-[16px] text-blue-600 font-medium hover:bg-blue-100 transition-colors flex items-center justify-center gap-2">
             <svg
               width="24"
               height="24"
@@ -145,7 +145,7 @@ export default function ChildHistory() {
           </button>
 
           {/* Next Button */}
-          <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-4 px-6 rounded-xl transition-colors">
+          <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium h-[54px] px-6 rounded-[6px] cursor-pointer transition-colors">
             Next
           </button>
         </div>
