@@ -113,6 +113,7 @@ export default function ChildNext() {
                         />
                       </svg>
                     </div>
+                    {/* @ts-ignore */}
                     {formData.image ? formData.image.name : "Upload Image"}
                   </div>
                 </label>
