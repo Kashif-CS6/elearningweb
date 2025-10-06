@@ -12,12 +12,12 @@ export default function ChildNext() {
     image: null, // Changed from phone to image
   });
 
-  const handleImageChange = (e) => {
+  const handleImageChange = (e: any) => {
     const file = e.target.files[0];
     setFormData({ ...formData, image: file });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: any) => {
     e.preventDefault();
     router.push("/parent/dashboard");
     console.log("Form submitted:", formData);
