@@ -11,11 +11,12 @@ import {
   X,
   ArrowRight,
 } from "lucide-react";
+import Image from "next/image";
 export default function Home() {
   return (
     <div className="flex flex-col gap-4">
       {/* top header */}
-      <div className="w-full mx-auto flex items-center justify-between">
+      <div className="w-full mx-auto shadow-sm p-3 flex items-center justify-between">
         <div className="flex items-center gap-4 flex-1 max-w-xl">
           <Search className="w-5 h-5 text-gray-400" />
           <input
@@ -77,29 +78,32 @@ export default function Home() {
 
       {/* end section  */}
 
-      <div className="bg-white h-screen shadow-sm border border-gray-200 rounded-[6px]">
+      <div className="h-screen relative shadow-sm border border-gray-200 rounded-[6px]">
         <div className="bg-white  p-6   ">
           <div className="flex items-center gap-3">
-            <div className="bg-blue-100 p-3 rounded-xl">
-              <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center text-white text-xs font-bold">
-                ?
-              </div>
+            <div>
+              <Image
+                src="/ai-icon.svg"
+                width={30}
+                height={39.55}
+                alt="ai-icon"
+              />
             </div>
             <span className="text-gray-800 font-medium">Who Are You?</span>
           </div>
         </div>
 
         {/* Floating Action Buttons */}
-        <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2 flex items-center gap-4">
-          <div className="bg-gradient-to-r from-blue-500 to-green-400 rounded-full p-1 shadow-2xl">
-            <div className="bg-white rounded-full p-0.5">
-              <button className="bg-blue-600 hover:bg-blue-700 text-white p-5 rounded-full transition-all transform hover:scale-110 shadow-lg">
-                <Mic className="w-6 h-6" />
+        <div className="absolute bottom-10  left-1/2 transform -translate-x-1/2 flex items-center  gap-10">
+          <div className="bg-gradient-to-r w-[117px] h-[117px] from-blue-500 to-green-400 rounded-full p-1 shadow-2xl">
+            <div className="bg-white w-full h-full rounded-full p-1 ">
+              <button className="bg-blue-600 w-full h-full hover:bg-blue-700 text-white p-1 flex items-center justify-center rounded-full transition-all transform hover:scale-110 shadow-lg">
+                <Mic className="w-10 h-10" />
               </button>
             </div>
           </div>
 
-          <button className="bg-white hover:bg-gray-50 p-4 rounded-2xl shadow-lg border border-gray-200 transition-all transform hover:scale-105">
+          <button className=" hover:bg-gray-50 p-4   rounded-2xl shadow-lg border border-gray-200 transition-all transform hover:scale-105">
             <FileText className="w-5 h-5 text-gray-700" />
           </button>
 
