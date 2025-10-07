@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 
 const LiveSession = () => {
+  const [changeLine, setChangeLine] = useState<boolean>(false);
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center p-6">
       <div className="bg-white shadow-xl  w-[1113px] h-[702px] rounded-[6px] flex flex-col justify-between text-center">
@@ -30,8 +31,9 @@ const LiveSession = () => {
             />
           </div>
           <p className="text-gray-700 w-[610px] mx-auto text-[22.64px] font-[600] leading-[33px]  mb-8 px-12 py-6">
-            Max, what did you notice in Sami’s story? Why was the magic ball
-            helpful?
+            {changeLine
+              ? " Max, what did you notice in Samis story? Why was the magic ball helpful?"
+              : "Because it helped him focus."}
           </p>
         </div>
         <div
@@ -44,7 +46,10 @@ const LiveSession = () => {
         >
           <div className="bg-gradient-to-r w-[117px] h-[117px] from-blue-500 to-green-400 rounded-full p-1 shadow-2xl absolute top-4">
             <div className="bg-white w-full h-full rounded-full p-1 ">
-              <button className="bg-blue-600 w-full h-full hover:bg-blue-700 text-white p-1 flex items-center justify-center rounded-full transition-all transform hover:scale-110 shadow-lg">
+              <button
+                onClick={() => setChangeLine(!changeLine)}
+                className="bg-blue-600 cursor-pointer w-full h-full hover:bg-blue-700 text-white p-1 flex items-center justify-center rounded-full transition-all transform hover:scale-110 shadow-lg"
+              >
                 <Mic className="w-10 h-10" />
               </button>
             </div>
