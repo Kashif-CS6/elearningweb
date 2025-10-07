@@ -1,16 +1,18 @@
 "use client";
 
 import React, { useState } from "react";
-import { User, Users, ChevronRight, BookOpen } from "lucide-react";
+import { User, Users, ChevronRight } from "lucide-react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 export default function ChildNext() {
   const router = useRouter();
   const [formData, setFormData] = useState({
     name: "",
     relationship: "",
-    image: null, // Changed from phone to image
+    image: null,
   });
+  const [isModalOpen, setIsModalOpen] = useState(false); // State for modal visibility
 
   const handleImageChange = (e: any) => {
     const file = e.target.files[0];
@@ -19,8 +21,22 @@ export default function ChildNext() {
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    router.push("/parent/dashboard");
+    // Instead of redirecting immediately, open the modal
+    setIsModalOpen(true);
     console.log("Form submitted:", formData);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    // Redirect after closing modal if needed
+    router.push("/parent/dashboard");
+  };
+
+  const handleOverlayClick = (e: React.MouseEvent) => {
+    // Close modal only if the click is on the overlay (not the modal content)
+    if (e.target === e.currentTarget) {
+      closeModal();
+    }
   };
 
   return (
@@ -95,7 +111,7 @@ export default function ChildNext() {
               <div className="relative">
                 <label
                   htmlFor="image-upload"
-                  className="w-[452px] bg-[#0961F51A] h-[60px] flex items-center justify-center  pr-4 py-3 border-2 border-dashed border-[#0961F5] rounded-lg text-black hover:border-blue-500 hover:text-blue-500 transition-colors cursor-pointer"
+                  className="w-[452px] bg-[#0961F51A] h-[60px] flex items-center justify-center pr-4 py-3 border-2 border-dashed border-[#0961F5] rounded-lg text-black hover:border-blue-500 hover:text-blue-500 transition-colors cursor-pointer"
                 >
                   <div className="flex items-center justify-center gap-5">
                     <div className="">
@@ -137,6 +153,34 @@ export default function ChildNext() {
           </div>
         </div>
       </div>
+
+      {/* Modal */}
+      {isModalOpen && (
+        <div
+          className="fixed inset-0 bg-black/50 flex items-center justify-center z-50"
+          onClick={handleOverlayClick}
+        >
+          <div
+            className="bg-white rounded-[23.25px] w-[649px] h-[379px] text-center relative flex items-center justify-center"
+            onClick={(e) => e.stopPropagation()} // Prevent click from propagating to overlay
+          >
+            <div className="w-[460px] h-[252.1px] flex flex-col justify-center items-center gap-4">
+              <Image
+                src={"/icon-b.svg"}
+                width={120.11}
+                height={120.11}
+                alt="Icon-b"
+              />
+              <h2 className="text-[34.87px] font-[500] leading-[46.5px] text-gray-800">
+                Connected
+              </h2>
+              <p className="text-[31px] leading-[38.75px] font-[400] text-[#7D848D]">
+                You're now linked with your parent!
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
