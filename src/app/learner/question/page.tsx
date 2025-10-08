@@ -1,8 +1,10 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function QuestionnaireScreen() {
+  const router = useRouter();
   const [formData, setFormData] = useState({
     who: "",
     wish: "",
@@ -18,6 +20,7 @@ export default function QuestionnaireScreen() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    router.push("/learner/dashboard");
     console.log("Form submitted:", formData);
     // Add your submission logic here (e.g., API call)
   };

@@ -12,9 +12,11 @@ import {
   X,
 } from "lucide-react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export default function OnboardingApp() {
   const [currentScreen, setCurrentScreen] = useState("welcome");
+  const router = useRouter();
 
   return (
     <div className="h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center p-6">
@@ -40,7 +42,7 @@ export default function OnboardingApp() {
         </div>
 
         <button
-          onClick={() => setCurrentScreen("dashboard")}
+          onClick={() => router.push("/learner/question")}
           className=" bg-blue-600 hover:bg-blue-700 text-white  w-[638px] h-[60px] rounded-[6px] transition-colors duration-200 text-[19px] font-[500]"
         >
           Let's Started

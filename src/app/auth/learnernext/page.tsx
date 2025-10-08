@@ -21,6 +21,7 @@ export default function ChildNext() {
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
+    router.push("/learner/start");
     // Instead of redirecting immediately, open the modal
     setIsModalOpen(true);
     console.log("Form submitted:", formData);
@@ -29,7 +30,6 @@ export default function ChildNext() {
   const closeModal = () => {
     setIsModalOpen(false);
     // Redirect after closing modal if needed
-    router.push("/parent/dashboard");
   };
 
   const handleOverlayClick = (e: React.MouseEvent) => {

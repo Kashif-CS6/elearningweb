@@ -7,6 +7,12 @@ export default function SignUpPage() {
   const [selectedRole, setSelectedRole] = useState("parent");
   const router = useRouter();
 
+  const handleLogin = () => {
+    if (selectedRole === "learner") {
+      router.push("/auth/learnernext");
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 flex items-center justify-center p-4">
       <div className="w-full max-w-6xl  flex items-center justify-between gap-20">
@@ -145,12 +151,18 @@ export default function SignUpPage() {
             </div>
 
             {/* Sign In Button */}
-            <button onClick={() => router.push("/auth/parent/nextlogin")} className="w-[452px] h-[60px] cursor-pointer bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition-all shadow-md mb-3">
+            <button
+              onClick={handleLogin}
+              className="w-[452px] h-[60px] cursor-pointer bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition-all shadow-md mb-3"
+            >
               Sign In
             </button>
 
             {/* Guest Button */}
-            <button onClick={() => router.push("/auth/parent/nextlogin")} className="w-[452px] my-4 h-[60px] cursor-pointer border-2 border-gray-200 text-gray-700 py-3 rounded-lg font-medium hover:bg-gray-50 transition-all">
+            <button
+              onClick={handleLogin}
+              className="w-[452px] my-4 h-[60px] cursor-pointer border-2 border-gray-200 text-gray-700 py-3 rounded-lg font-medium hover:bg-gray-50 transition-all"
+            >
               Continue as Guest
             </button>
           </div>
