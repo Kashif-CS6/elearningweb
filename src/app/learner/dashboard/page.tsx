@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import {
   Search,
   Globe,
@@ -13,6 +14,7 @@ import {
   CopyIcon,
   ShareIcon,
   Link,
+  Router,
 } from "lucide-react";
 import Image from "next/image";
 import MessageInput from "@/components/learner/dashboard/MessageInput";
@@ -20,6 +22,7 @@ import Hero from "@/components/learner/dashboard/Hero";
 export default function Home() {
   const [openModal, setOpenModal] = useState<boolean>(false);
   const [replay, setReplay] = useState<boolean>(false);
+  const router = useRouter();
 
   const onClose = () => {
     setOpenModal(false);
@@ -111,7 +114,10 @@ export default function Home() {
               <div className="bg-gradient-to-r w-[117px] h-[117px] from-blue-500 to-green-400 rounded-full p-1 shadow-2xl">
                 <div className="bg-white w-full h-full rounded-full p-1 ">
                   <button
-                    onClick={() => setReplay(true)}
+                    onClick={() => {
+                      setReplay(true);
+                      router.push("/learner/dashboard/menu");
+                    }}
                     className="bg-blue-600 w-full h-full hover:bg-blue-700 text-white p-1 flex items-center justify-center rounded-full transition-all transform hover:scale-110 shadow-lg"
                   >
                     <Mic className="w-10 h-10" />
@@ -140,6 +146,7 @@ export default function Home() {
               height={129.24}
               alt="loading"
               src={"/loader.svg"}
+              onClick={() => router.push("/learner/dashboard/menu")}
             />
             <h1 className="text-center font-[400] tracking-[0.2px] text-[21.54px] leading-[160%] px-16">
               Please hold on while we summarize your profile.

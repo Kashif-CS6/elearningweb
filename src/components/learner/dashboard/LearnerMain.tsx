@@ -8,8 +8,10 @@ import {
   Star,
   Award,
 } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 const LearnerMain = () => {
+  const router = useRouter();
   return (
     <main className=" py-6 ">
       <div className=" mx-auto">
@@ -52,7 +54,10 @@ const LearnerMain = () => {
                 </div>
               </div>
 
-              <button className="bg-blue-600 min-w-[397px] flex-1 h-[86px] text-[24px] text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition-all shadow-lg">
+              <button
+                onClick={() => router.push("/learner/modcheck")}
+                className="bg-blue-600 min-w-[397px] flex-1 h-[86px] text-[24px] text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition-all shadow-lg"
+              >
                 AI Live Session
               </button>
             </div>
