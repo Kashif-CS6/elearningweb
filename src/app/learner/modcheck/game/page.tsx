@@ -36,7 +36,7 @@ const Game = () => {
             <Image
               onClick={() => setOpenReward(true)}
               src={"/football.svg"}
-              className="absolute left-3"
+              className="absolute left-3 cursor-pointer"
               width={110}
               height={118}
               alt="Football"
@@ -45,7 +45,11 @@ const Game = () => {
         </div>
       </div>
       {openReward && (
-        <RewardScreen openReward={openReward} setOpenReward={setOpenReward} />
+        <RewardScreen
+          openReward={openReward}
+          setOpenReward={setOpenReward}
+          route="/learner/modcheck/game/play"
+        />
       )}
     </div>
   );

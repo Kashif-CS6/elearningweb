@@ -3,14 +3,13 @@ import { useState } from "react";
 import BotSession from "@/components/learner/BotSession";
 
 const LiveSession = () => {
-  const [changeLine, setChangeLine] = useState<boolean>(false);
   const [message, setMessage] = useState<string>("message 0");
 
   return (
     <div>
       {message === "message 0" && (
         <BotSession
-          Heading="Max, what did you notice in Samis story? Why was the magic ball helpful?"
+          Heading="Amazing work, MAx! You’re one step closer to becoming a Focus Hero. Keep collecting stars to unlock your next adventure."
           route="/learner/mathchallenge"
           setValue="message 1"
           setMessage={setMessage}

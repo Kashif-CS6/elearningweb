@@ -1,11 +1,22 @@
 import { FC } from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 interface RewardScreenProps {
   setOpenReward: (a: boolean) => {};
   openReward: boolean;
+  route: string;
 }
-const RewardScreen: FC<RewardScreenProps> = ({ setOpenReward, openReward }) => {
+const RewardScreen: FC<RewardScreenProps> = ({
+  setOpenReward,
+  openReward,
+  route,
+}) => {
+  const router = useRouter();
+  const GoToPlay = () => {
+    setOpenReward(false);
+    router.push(route);
+  };
   return (
     <div className="min-h-screen w-full bg-black/50 flex items-center justify-center p-6 fixed">
       <div className="bg-white rounded-2xl shadow-xl p-12 w-[610px] h-[411px] text-center flex flex-col items-center gap-1">
@@ -22,7 +33,7 @@ const RewardScreen: FC<RewardScreenProps> = ({ setOpenReward, openReward }) => {
         </p>
 
         <button
-          onClick={() => setOpenReward(false)}
+          onClick={GoToPlay}
           className="w-[340px] cursor-pointer h-[52px] bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-[14.2px] transition-colors"
         >
           Next

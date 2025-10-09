@@ -1,6 +1,9 @@
+"use client";
 import React from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 const PlayVideo = () => {
+  const router = useRouter();
   return (
     <div className="h-screen flex items-center justify-center">
       <div className="w-[1113px] h-[593px] rounded-[6px] flex flex-col items-center justify-center gap-10 shadow-md border border-gray-100 mx-auto">
@@ -12,6 +15,7 @@ const PlayVideo = () => {
           width={501}
           height={351}
           alt="child play"
+          onClick={() => router.push("/learner/modcheck/livesession")}
         />
         <Image src="/percentage.png" width={384} height={16} alt="percentage" />
       </div>
