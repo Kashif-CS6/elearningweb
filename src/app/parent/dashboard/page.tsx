@@ -154,7 +154,7 @@ export default function KidzVoiceDashboard() {
         </div>
 
         {/* Add Child Card */}
-        {option === "startb" && (
+        {option === "start" && (
           <div className="bg-white rounded-[6px] shadow-sm  w-[747.41px] h-[171px] mx-auto my-10 flex flex-col justify-between p-8  ">
             <h3 className="text-gray-800 text-[18px] leading-[24px] font-medium ">
               Add your child details
@@ -178,7 +178,7 @@ export default function KidzVoiceDashboard() {
         {option === "createChildHistory" && (
           <CurrentStruggles setOption={setOption} />
         )}
-        {option === "start" && <GenerateChildID />}
+        {option === "final" && <GenerateChildID />}
       </main>
     </div>
   );

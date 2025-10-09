@@ -5,7 +5,7 @@ import { User, Users, ChevronRight, BookOpen } from "lucide-react";
 import { routerServerGlobal } from "next/dist/server/lib/router-utils/router-server-context";
 import { useRouter } from "next/navigation";
 
-export default function ProfileInfoPage() {
+export default function ParentLogin() {
   const router = useRouter();
   const [formData, setFormData] = useState({
     name: "",

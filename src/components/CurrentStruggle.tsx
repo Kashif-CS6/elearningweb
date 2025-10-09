@@ -1,9 +1,13 @@
 import { useState } from "react";
 import { Check } from "lucide-react";
-// Component 3: Current Struggles
-export default function CurrentStruggles(setOption: any) {
+
+export default function CurrentStruggles({
+  setOption,
+}: {
+  setOption: (option: string) => void;
+}) {
   const [selectedStruggles, setSelectedStruggles] = useState<string[]>([]);
-  const [frequency, setFrequency] = useState<string>("");
+  const [selectedFrequencies, setSelectedFrequencies] = useState<string[]>([]);
 
   const struggles = [
     "Concentration/attention",
@@ -16,11 +20,15 @@ export default function CurrentStruggles(setOption: any) {
 
   const frequencies = ["Rarely", "Sometimes", "Often", "Almost always"];
 
-  const toggleStruggle = (struggle: string) => {
-    if (selectedStruggles.includes(struggle)) {
-      setSelectedStruggles(selectedStruggles.filter((s) => s !== struggle));
+  const toggleSelection = (
+    value: string,
+    selectedList: string[],
+    setSelectedList: (list: string[]) => void
+  ) => {
+    if (selectedList.includes(value)) {
+      setSelectedList(selectedList.filter((v) => v !== value));
     } else {
-      setSelectedStruggles([...selectedStruggles, struggle]);
+      setSelectedList([...selectedList, value]);
     }
   };
 
@@ -55,21 +63,28 @@ export default function CurrentStruggles(setOption: any) {
           {/* Question 1 */}
           <div>
             <h3 className="text-gray-900 leading-[100%] tracking-[1px] text-[14px] font-[400] mb-4">
-              1 Which areas is Max currently struggling with?
+              1. Which areas is Max currently struggling with?
             </h3>
-            <div className="flex flex-wrap gap-3">
+            <div className=" flex flex-wrap space-x-10 gap-2 w-[557px] items-center">
               {struggles.map((struggle) => (
-                <button
+                <label
                   key={struggle}
-                  onClick={() => toggleStruggle(struggle)}
-                  className={`px-4 py-2 rounded-lg border transition-colors ${
-                    selectedStruggles.includes(struggle)
-                      ? "bg-blue-50 border-blue-600 text-blue-600"
-                      : "bg-white border-gray-300 text-gray-700 hover:border-gray-400"
-                  }`}
+                  className="flex items-center gap-3 text-gray-700 cursor-pointer"
                 >
-                  {struggle}
-                </button>
+                  <input
+                    type="checkbox"
+                    checked={selectedStruggles.includes(struggle)}
+                    onChange={() =>
+                      toggleSelection(
+                        struggle,
+                        selectedStruggles,
+                        setSelectedStruggles
+                      )
+                    }
+                    className="w-4 h-4 accent-blue-600"
+                  />
+                  <span>{struggle}</span>
+                </label>
               ))}
             </div>
           </div>
@@ -77,21 +92,28 @@ export default function CurrentStruggles(setOption: any) {
           {/* Question 2 */}
           <div>
             <h3 className="text-gray-900 leading-[100%] tracking-[1px] text-[14px] font-[400] mb-4">
-              2 How often do these struggles affect Max's daily life?
+              2. How often do these struggles affect Max's daily life?
             </h3>
-            <div className="grid grid-cols-2 gap-3">
+            <div className=" flex flex-wrap space-x-10 gap-2 w-[557px] items-center">
               {frequencies.map((freq) => (
-                <button
+                <label
                   key={freq}
-                  onClick={() => setFrequency(freq)}
-                  className={`px-4 py-3 rounded-lg border transition-colors ${
-                    frequency === freq
-                      ? "bg-blue-50 border-blue-600 text-blue-600"
-                      : "bg-white border-gray-300 text-gray-700 hover:border-gray-400"
-                  }`}
+                  className="flex items-center gap-3 text-gray-700 cursor-pointer"
                 >
-                  {freq}
-                </button>
+                  <input
+                    type="checkbox"
+                    checked={selectedFrequencies.includes(freq)}
+                    onChange={() =>
+                      toggleSelection(
+                        freq,
+                        selectedFrequencies,
+                        setSelectedFrequencies
+                      )
+                    }
+                    className="w-4 h-4 accent-blue-600"
+                  />
+                  <span>{freq}</span>
+                </label>
               ))}
             </div>
           </div>
@@ -99,7 +121,7 @@ export default function CurrentStruggles(setOption: any) {
           {/* Next Button */}
           <button
             onClick={() => setOption("final")}
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium h-[54px] px-6 rounded-[6px] transition-colors"
+            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium h-[54px] px-6 rounded-[6px] transition-colors mt-6"
           >
             Next
           </button>

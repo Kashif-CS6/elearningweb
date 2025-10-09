@@ -1,8 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { FC, useState } from "react";
 import { ChevronRight, Copy, Check } from "lucide-react";
-export default function ChildHistory() {
+
+interface ChildHistoryProps {
+  setOption: (option: string) => void;
+}
+const ChildHistory: FC<ChildHistoryProps> = ({ setOption }) => {
   const [selectedDiagnoses, setSelectedDiagnoses] = useState([]);
   const [selectedServices, setSelectedServices] = useState([]);
   const [medicalHistory, setMedicalHistory] = useState("");
@@ -21,9 +25,20 @@ export default function ChildHistory() {
     "None",
     "Other",
   ];
+  const handleCheckboxChange = (
+    value: string,
+    selectedList: string[],
+    setSelectedList: React.Dispatch<React.SetStateAction<string[]>>
+  ) => {
+    if (selectedList.includes(value)) {
+      setSelectedList(selectedList.filter((item) => item !== value));
+    } else {
+      setSelectedList([...selectedList, value]);
+    }
+  };
 
   const toggleSelection = (
-    setOption: any,
+    setOption: string,
     item: any,
     list: any[],
     setList: any
@@ -35,6 +50,9 @@ export default function ChildHistory() {
     }
   };
 
+  const changeOption = () => {
+    setOption("createChildHistory");
+  };
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
       <div className="w-[747.47px] bg-white rounded-[6px] shadow-sm p-8">
@@ -66,27 +84,27 @@ export default function ChildHistory() {
             <h3 className="text-gray-900 leading-[100%] tracking-[1px] text-[14px] font-[400] mb-4">
               1 Has Max received any previous diagnoses?
             </h3>
-            <div className="flex flex-wrap gap-3">
-              {diagnoses.map((diagnosis: any) => (
-                <button
+            <div className=" flex flex-wrap space-x-10 gap-2 w-[360px] items-center">
+              {diagnoses.map((diagnosis) => (
+                <label
                   key={diagnosis}
-                  onClick={() =>
-                    //@ts-ignore
-                    toggleSelection(
-                      diagnosis,
-                      selectedDiagnoses,
-                      setSelectedDiagnoses
-                    )
-                  }
-                  className={`px-4 py-2 rounded-lg border transition-colors ${
-                    //@ts-ignore-error
-                    selectedDiagnoses.includes(diagnosis)
-                      ? "bg-blue-50 border-blue-600 text-blue-600"
-                      : "bg-white border-gray-300 text-gray-700 hover:border-gray-400"
-                  }`}
+                  className="flex items-center gap-2 cursor-pointer"
                 >
-                  {diagnosis}
-                </button>
+                  <input
+                    type="checkbox"
+                    value={diagnosis}
+                    checked={selectedDiagnoses.includes(diagnosis)}
+                    onChange={() =>
+                      handleCheckboxChange(
+                        diagnosis,
+                        selectedDiagnoses,
+                        setSelectedDiagnoses
+                      )
+                    }
+                    className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                  />
+                  <span className="text-gray-700 text-[13px]">{diagnosis}</span>
+                </label>
               ))}
             </div>
           </div>
@@ -96,27 +114,27 @@ export default function ChildHistory() {
             <h3 className="text-gray-900 leading-[100%] tracking-[1px] text-[14px] font-[400] mb-4">
               2 Has Max ever received support services?
             </h3>
-            <div className="flex flex-wrap gap-3">
-              {services.map((service: any, idx: number) => (
-                <button
-                  key={idx}
-                  onClick={() =>
-                    //@ts-ignore
-                    toggleSelection(
-                      service,
-                      selectedServices,
-                      setSelectedServices
-                    )
-                  }
-                  className={`px-4 py-2 rounded-lg border transition-colors ${
-                    //@ts-ignore-error
-                    selectedServices.includes(service)
-                      ? "bg-blue-50 border-blue-600 text-blue-600"
-                      : "bg-white border-gray-300 text-gray-700 hover:border-gray-400"
-                  }`}
+            <div className=" flex flex-wrap space-x-10 gap-2 w-[360px] items-center">
+              {services.map((service) => (
+                <label
+                  key={service}
+                  className="flex items-center gap-3 cursor-pointer"
                 >
-                  {service}
-                </button>
+                  <input
+                    type="checkbox"
+                    value={service}
+                    checked={selectedServices.includes(service)}
+                    onChange={() =>
+                      handleCheckboxChange(
+                        service,
+                        selectedServices,
+                        setSelectedServices
+                      )
+                    }
+                    className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                  />
+                  <span className="text-gray-700 text-[13px]">{service}</span>
+                </label>
               ))}
             </div>
           </div>
@@ -154,7 +172,7 @@ export default function ChildHistory() {
           {/* Next Button */}
           <button
             //@ts-ignore
-            onClick={() => setOption("createChildHistory")}
+            onClick={changeOption}
             className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium h-[54px] px-6 rounded-[6px] cursor-pointer transition-colors"
           >
             Next
@@ -163,4 +181,6 @@ export default function ChildHistory() {
       </div>
     </div>
   );
-}
+};
+
+export default ChildHistory;

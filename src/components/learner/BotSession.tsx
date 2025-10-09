@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import {
@@ -12,12 +12,16 @@ import {
   X,
   ArrowRight,
 } from "lucide-react";
+import RewardScreen from "./Greatjob";
 
 interface BotSessionProps {
   Heading: string;
   route: string;
   setValue: string;
   setMessage: () => {};
+  onSelect: () => {};
+  setOpenModal: () => {};
+  widthX: string;
 }
 
 const BotSession: FC<BotSessionProps> = ({
@@ -25,8 +29,19 @@ const BotSession: FC<BotSessionProps> = ({
   route,
   setValue,
   setMessage,
+  onSelect,
+  setOpenModal,
+  widthX = "w-[610px]",
 }) => {
   const router = useRouter();
+  const [openRewardModal, setOpenRewardModal] = useState<boolean>(false);
+
+  const HandleOption = (e: string) => {
+    onSelect(e);
+    setOpenRewardModal(!openRewardModal);
+    // setOpenModal(true);
+    setMessage(setValue);
+  };
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center p-6">
       <div className="bg-white shadow-xl  w-[1113px] h-[702px] rounded-[6px] flex flex-col justify-between text-center">
@@ -42,9 +57,30 @@ const BotSession: FC<BotSessionProps> = ({
               alt="Bot"
             />
           </div>
-          <p className="text-gray-700 w-[610px] mx-auto text-[22.64px] font-[600] leading-[33px]  mb-8 px-12 py-6">
-            {Heading}
+          <p
+            className={`text-gray-700 ${widthX} mx-auto text-[22.64px] font-[600] leading-[33px]  mb-8 px-12 py-6`}
+          >
+            {Heading && Heading != "MCQ" && Heading}
           </p>
+
+          {Heading === "MCQ" && (
+            <div className=" flex items-center justify-center gap-8">
+              <button
+                onClick={() => HandleOption("magic-ball")}
+                className="w-[336px] h-[80px] border-2 border-gray-200 focus:border-purple-300 hover:bg-purple-50 rounded-xl py-4 px-6 flex items-center justify-center gap-3 transition-colors"
+              >
+                <span className="text-purple-600">🔮</span>
+                <span className="font-medium">Magic Ball</span>
+              </button>
+              <button
+                onClick={() => HandleOption("breathing")}
+                className="w-[336px] h-[80px] border-2 border-gray-200 focus:border-purple-300 hover:bg-purple-50 rounded-xl py-4 px-6 flex items-center justify-center gap-3 transition-colors opacity-50"
+              >
+                <span>🌬️</span>
+                <span className="font-medium">Breathing Game</span>
+              </button>
+            </div>
+          )}
         </div>
         <div
           className="h-[230px] w-full relative  px-0  flex flex-col items-center  justify-end "
@@ -76,6 +112,14 @@ const BotSession: FC<BotSessionProps> = ({
           </button>
         </div>
       </div>
+
+      {Heading === "MCQ" && openRewardModal && (
+        <RewardScreen
+          setOpenReward={setOpenRewardModal}
+          openReward={openRewardModal}
+          route="/learner/modcheck/message/ai"
+        />
+      )}
     </div>
   );
 };

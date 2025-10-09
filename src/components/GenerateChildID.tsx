@@ -1,10 +1,16 @@
 import { useState } from "react";
 import { ChevronRight, Copy, Check } from "lucide-react";
+import { useRouter } from "next/navigation";
 export default function GenerateChildID() {
   const [childID, setChildID] = useState("");
   const [copied, setCopied] = useState(false);
+  const router = useRouter();
 
   const generateID = () => {
+    if (childID) {
+      router.push("/");
+      return;
+    }
     const id = "CH-" + Math.random().toString(36).substr(2, 9).toUpperCase();
     setChildID(id);
   };

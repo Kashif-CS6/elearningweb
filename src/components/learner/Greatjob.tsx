@@ -18,7 +18,7 @@ const RewardScreen: FC<RewardScreenProps> = ({
     router.push(route);
   };
   return (
-    <div className="min-h-screen w-full bg-black/50 flex items-center justify-center p-6 fixed">
+    <div className="min-h-screen w-full bg-black/10 flex items-center justify-center p-6 fixed">
       <div className="bg-white rounded-2xl shadow-xl p-12 w-[610px] h-[411px] text-center flex flex-col items-center gap-1">
         <div className="mb-6 flex items-center justify-center">
           <Image src="/reward-icon.png" width={154} height={134} alt="Reward" />

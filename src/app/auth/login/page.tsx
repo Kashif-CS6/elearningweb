@@ -11,6 +11,9 @@ export default function SignUpPage() {
     if (selectedRole === "learner") {
       router.push("/auth/learnernext");
     }
+    if (selectedRole === "parent") {
+      router.push("/auth/parentlogin");
+    }
   };
 
   return (

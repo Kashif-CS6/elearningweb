@@ -13,6 +13,7 @@ const LiveSession = () => {
           Heading="Max, what did you notice in Samis story? Why was the magic ball helpful?"
           route="/learner/mathchallenge"
           setValue="message 1"
+          widthX="w-[610px]"
           setMessage={setMessage}
         />
       )}

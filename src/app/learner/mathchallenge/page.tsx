@@ -63,7 +63,7 @@ const MathChallengeScreen = () => {
         <RewardScreen
           setOpenReward={setOpenReward}
           openReward={openReward}
-          route="/learner/modcheck/game/play"
+          route="/learner/modcheck/message"
         />
       )}
     </div>

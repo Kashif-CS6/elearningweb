@@ -22,7 +22,7 @@ const MoodCheckScreenNext = () => {
             alt="Bot"
           />
         </div>
-        <p className="text-gray-700 w-[489px] mx-auto text-[22.64px] font-[600] leading-[33px]  mb-14">
+        <p className="text-gray-700 w-[571px] mx-auto text-[22px] font-[600] leading-[33px]  mb-14">
           Got it, you’re feeling just okay today. Don’t worry, I’ve got
           something fun planned that might cheer you up.
         </p>
