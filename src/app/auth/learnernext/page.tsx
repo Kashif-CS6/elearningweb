@@ -174,6 +174,7 @@ export default function ChildNext() {
                 width={120.11}
                 height={120.11}
                 alt="Icon-b"
+                onClick={closeModal}
               />
               <h2 className="text-[34.87px] font-[500] leading-[46.5px] text-gray-800">
                 Connected
@@ -181,12 +182,6 @@ export default function ChildNext() {
               <p className="text-[31px] leading-[38.75px] font-[400] text-[#7D848D]">
                 Youre now linked with your parent!
               </p>
-              <button
-                onClick={closeModal}
-                className="mt-4 bg-blue-600 text-white py-2 px-4 rounded-lg"
-              >
-                Continue
-              </button>
             </div>
           </div>
         </div>

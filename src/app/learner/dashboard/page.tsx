@@ -92,10 +92,10 @@ export default function Home() {
                   </div>
                 </div>
                 <Image
-                  src="j-1.jpg"
-                  alt=""
+                  src="/j-1.jpg"
                   width={40}
                   height={100}
+                  alt="J-1"
                   className="rounded-md h-12 w-12 object-cover"
                 />
               </div>
