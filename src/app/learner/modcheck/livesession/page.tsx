@@ -3,7 +3,6 @@ import { useState } from "react";
 import BotSession from "@/components/learner/BotSession";
 
 const LiveSession = () => {
-  const [changeLine, setChangeLine] = useState<boolean>(false);
   const [message, setMessage] = useState<string>("message 0");
 
   return (
@@ -15,14 +14,19 @@ const LiveSession = () => {
           setValue="message 1"
           widthX="w-[610px]"
           setMessage={setMessage}
+          onSelect={() => {}}
+          setOpenModal={() => {}}
         />
       )}
       {message === "message 1" && (
         <BotSession
           Heading="Because it helped him focus."
           route="/learner/mathchallenge"
+          widthX=""
           setValue="message 1"
           setMessage={setMessage}
+          onSelect={() => {}}
+          setOpenModal={() => {}}
         />
       )}
     </div>

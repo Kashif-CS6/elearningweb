@@ -1,26 +1,16 @@
-import React, { FC, useState } from "react";
+import React, { FC, useState, Dispatch, SetStateAction } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import {
-  Search,
-  Globe,
-  Moon,
-  Grid3x3,
-  Bell,
-  Mic,
-  FileText,
-  X,
-  ArrowRight,
-} from "lucide-react";
+import { Mic, FileText, X } from "lucide-react";
 import RewardScreen from "./Greatjob";
 
 interface BotSessionProps {
   Heading: string;
   route: string;
   setValue: string;
-  setMessage: () => {};
-  onSelect: () => {};
-  setOpenModal: () => {};
+  setMessage: Dispatch<SetStateAction<string>>;
+  onSelect: Dispatch<SetStateAction<string>>;
+  setOpenModal: Dispatch<SetStateAction<boolean>>;
   widthX: string;
 }
 
@@ -41,6 +31,7 @@ const BotSession: FC<BotSessionProps> = ({
     setOpenRewardModal(!openRewardModal);
     // setOpenModal(true);
     setMessage(setValue);
+    setOpenModal(false);
   };
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center p-6">

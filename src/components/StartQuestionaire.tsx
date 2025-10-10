@@ -1,11 +1,12 @@
 "use client";
 
-import { useState } from "react";
-import { ChevronRight, Copy, Check } from "lucide-react";
+import { Dispatch, FC, SetStateAction } from "react";
 
-// Component 1: Start Questionnaire
-//@ts-ignore
-export default function StartQuestionnaire({ setOption }) {
+interface StartQuestionnaireProps {
+  setOption: Dispatch<SetStateAction<string>>;
+}
+
+const StartQuestionnaire: FC<StartQuestionnaireProps> = ({ setOption }) => {
   return (
     <div className="my-10 bg-gray-50 flex items-center justify-center p-4">
       <div className="w-[747.18px] bg-white rounded-[6px] shadow-sm p-12 text-center">
@@ -67,7 +68,8 @@ export default function StartQuestionnaire({ setOption }) {
           Start Questionnaire
         </h1>
         <p className="text-[16px] font-[400] text-gray-600 mb-1">
-          his helps us understand Max's needs. It only takes about 5 minutes.
+          his helps us understand Max{"'"}s needs. It only takes about 5
+          minutes.
         </p>
         <p className="text-[16px] font-[400] text-gray-600  mb-8">
           You can pause and return anytime.
@@ -82,4 +84,6 @@ export default function StartQuestionnaire({ setOption }) {
       </div>
     </div>
   );
-}
+};
+
+export default StartQuestionnaire;

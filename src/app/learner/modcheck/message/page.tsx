@@ -16,6 +16,8 @@ const Message = () => {
           widthX="w-[866px]"
           setValue="message 1"
           setMessage={setMessage}
+          onSelect={() => {}}
+          setOpenModal={() => {}}
         />
       )}
       {message === "message 1" && (
@@ -23,6 +25,7 @@ const Message = () => {
           Heading="MCQ"
           route="/learner/mathchallenge"
           setValue="message 1"
+          widthX=""
           setMessage={setMessage}
           onSelect={onSelect}
           setOpenModal={setOpenRewardModal}

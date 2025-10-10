@@ -92,7 +92,7 @@ export default function CurrentStruggles({
           {/* Question 2 */}
           <div>
             <h3 className="text-gray-900 leading-[100%] tracking-[1px] text-[14px] font-[400] mb-4">
-              2. How often do these struggles affect Max's daily life?
+              2. How often do these struggles affect Max{"'"}s daily life?
             </h3>
             <div className=" flex flex-wrap space-x-10 gap-2 w-[557px] items-center">
               {frequencies.map((freq) => (

@@ -1,21 +1,9 @@
 "use client";
 
-import { useState } from "react";
-import {
-  Search,
-  Globe,
-  Moon,
-  Grid3x3,
-  Bell,
-  Mic,
-  FileText,
-  X,
-} from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 export default function OnboardingApp() {
-  const [currentScreen, setCurrentScreen] = useState("welcome");
   const router = useRouter();
 
   return (
@@ -26,7 +14,7 @@ export default function OnboardingApp() {
             This is your magic backpack.
           </h1>
           <p className="text-[30px] leading-[40px]  text-gray-700 font-[500] mb-2">
-            Let's pack it with your dreams and secrets so I can know you better!
+            Let{"'"}s pack it with your dreams and secrets so I can know you better!
           </p>
         </div>
 
@@ -45,7 +33,7 @@ export default function OnboardingApp() {
           onClick={() => router.push("/learner/question")}
           className=" bg-blue-600 hover:bg-blue-700 text-white  w-[638px] h-[60px] rounded-[6px] transition-colors duration-200 text-[19px] font-[500]"
         >
-          Let's Started
+          Let{"'"}s Started
         </button>
       </div>
     </div>

@@ -3,8 +3,10 @@
 import { useState, FC } from "react";
 import { ChevronRight } from "lucide-react";
 
-//@ts-ignore
-export default function CreateChildProfile({ setOption }) {
+interface ChildHistoryProps {
+  setOption: (option: string) => void;
+}
+const CreateChildProfile: FC<ChildHistoryProps> = ({ setOption }) => {
   const [formData, setFormData] = useState({
     name: "",
     dateOfBirth: "",
@@ -206,4 +208,6 @@ export default function CreateChildProfile({ setOption }) {
       </div>
     </div>
   );
-}
+};
+
+export default CreateChildProfile;

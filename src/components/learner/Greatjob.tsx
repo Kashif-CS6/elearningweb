@@ -1,9 +1,9 @@
-import { FC } from "react";
+import { FC, Dispatch, SetStateAction } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 interface RewardScreenProps {
-  setOpenReward: (a: boolean) => {};
+  setOpenReward: Dispatch<SetStateAction<boolean>>;
   openReward: boolean;
   route: string;
 }
@@ -14,7 +14,7 @@ const RewardScreen: FC<RewardScreenProps> = ({
 }) => {
   const router = useRouter();
   const GoToPlay = () => {
-    setOpenReward(false);
+    setOpenReward(!openReward);
     router.push(route);
   };
   return (

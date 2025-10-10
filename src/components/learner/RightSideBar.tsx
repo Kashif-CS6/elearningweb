@@ -1,5 +1,5 @@
 import React from "react";
-import { MoreVertical, Star, Award } from "lucide-react";
+import { MoreVertical, Star } from "lucide-react";
 import Image from "next/image";
 
 const RightSideBar = () => {

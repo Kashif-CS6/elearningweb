@@ -10,11 +10,8 @@ import {
   Mic,
   FileText,
   X,
-  ArrowRight,
   CopyIcon,
-  ShareIcon,
   Link,
-  Router,
 } from "lucide-react";
 import Image from "next/image";
 import MessageInput from "@/components/learner/dashboard/MessageInput";
@@ -24,9 +21,6 @@ export default function Home() {
   const [replay, setReplay] = useState<boolean>(false);
   const router = useRouter();
 
-  const onClose = () => {
-    setOpenModal(false);
-  };
   return (
     <div className={`flex flex-col gap-4 relative ${openModal ? "" : "p-6"} `}>
       {/* top header */}
@@ -97,8 +91,8 @@ export default function Home() {
                     </button>
                   </div>
                 </div>
-                <img
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuNhTZJTtkR6b-ADMhmzPvVwaLuLdz273wvQ&s"
+                <Image
+                  src="j-1.jpg"
                   alt=""
                   width={40}
                   height={100}
@@ -135,7 +129,6 @@ export default function Home() {
             </div>
           )}
         </div>
-        {/* @ts-ignore */}
         {replay && <MessageInput openModal={setOpenModal} />}
       </div>
       {openModal && (

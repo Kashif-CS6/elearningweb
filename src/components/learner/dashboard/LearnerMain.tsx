@@ -1,13 +1,6 @@
 import React from "react";
-import { ChevronRight } from "lucide-react";
-import {
-  BookOpen,
-  Lightbulb,
-  Globe,
-  MoreVertical,
-  Star,
-  Award,
-} from "lucide-react";
+
+import { BookOpen, Lightbulb, Globe } from "lucide-react";
 import { useRouter } from "next/navigation";
 
 const LearnerMain = () => {

@@ -1,10 +1,10 @@
 "use client";
 
-import { useState, KeyboardEvent, FC } from "react";
+import { useState, KeyboardEvent, FC, Dispatch, SetStateAction } from "react";
 import { Send, Mic } from "lucide-react";
 
 interface MessageInputProps {
-  openModal: () => void;
+  openModal: Dispatch<SetStateAction<boolean>>;
 }
 
 const MessageInput: FC<MessageInputProps> = ({ openModal }) => {
@@ -52,7 +52,6 @@ const MessageInput: FC<MessageInputProps> = ({ openModal }) => {
           aria-label="Voice message"
         >
           <Mic
-            //@ts-ignore
             onClick={() => openModal(true)}
             className="w-5 h-5 text-gray-600"
           />

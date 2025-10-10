@@ -1,30 +1,32 @@
 "use client";
 
 import { FC, useState } from "react";
-import { ChevronRight, Copy, Check } from "lucide-react";
+import { Check } from "lucide-react";
 
 interface ChildHistoryProps {
   setOption: (option: string) => void;
 }
-const ChildHistory: FC<ChildHistoryProps> = ({ setOption }) => {
-  const [selectedDiagnoses, setSelectedDiagnoses] = useState([]);
-  const [selectedServices, setSelectedServices] = useState([]);
-  const [medicalHistory, setMedicalHistory] = useState("");
 
-  const diagnoses = [
+const ChildHistory: FC<ChildHistoryProps> = ({ setOption }) => {
+  const [selectedDiagnoses, setSelectedDiagnoses] = useState<string[]>([]);
+  const [selectedServices, setSelectedServices] = useState<string[]>([]);
+  const [medicalHistory, setMedicalHistory] = useState<string>("");
+
+  const diagnoses: string[] = [
     "ADHD",
     "Autism Spectrum Disorder",
     "Learning Disability",
     "None",
     "Other",
   ];
-  const services = [
+  const services: string[] = [
     "Speech therapy",
     "Occupational therapy",
     "Counseling/psychology",
     "None",
     "Other",
   ];
+
   const handleCheckboxChange = (
     value: string,
     selectedList: string[],
@@ -37,27 +39,15 @@ const ChildHistory: FC<ChildHistoryProps> = ({ setOption }) => {
     }
   };
 
-  const toggleSelection = (
-    setOption: string,
-    item: any,
-    list: any[],
-    setList: any
-  ) => {
-    if (list.includes(item)) {
-      setList(list.filter((i) => i !== item));
-    } else {
-      setList([...list, item]);
-    }
-  };
-
   const changeOption = () => {
     setOption("createChildHistory");
   };
+
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
       <div className="w-[747.47px] bg-white rounded-[6px] shadow-sm p-8">
         {/* Progress Bar */}
-        <div className="flex items-center  mb-12">
+        <div className="flex items-center mb-12">
           <div className="flex items-center flex-1">
             <div className="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center">
               <Check className="w-5 h-5 text-white" />
@@ -84,7 +74,7 @@ const ChildHistory: FC<ChildHistoryProps> = ({ setOption }) => {
             <h3 className="text-gray-900 leading-[100%] tracking-[1px] text-[14px] font-[400] mb-4">
               1 Has Max received any previous diagnoses?
             </h3>
-            <div className=" flex flex-wrap space-x-10 gap-2 w-[360px] items-center">
+            <div className="flex flex-wrap space-x-10 gap-2 w-[360px] items-center">
               {diagnoses.map((diagnosis) => (
                 <label
                   key={diagnosis}
@@ -114,7 +104,7 @@ const ChildHistory: FC<ChildHistoryProps> = ({ setOption }) => {
             <h3 className="text-gray-900 leading-[100%] tracking-[1px] text-[14px] font-[400] mb-4">
               2 Has Max ever received support services?
             </h3>
-            <div className=" flex flex-wrap space-x-10 gap-2 w-[360px] items-center">
+            <div className="flex flex-wrap space-x-10 gap-2 w-[360px] items-center">
               {services.map((service) => (
                 <label
                   key={service}
@@ -146,7 +136,9 @@ const ChildHistory: FC<ChildHistoryProps> = ({ setOption }) => {
             </h3>
             <textarea
               value={medicalHistory}
-              onChange={(e) => setMedicalHistory(e.target.value)}
+              onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
+                setMedicalHistory(e.target.value)
+              }
               className="w-full h-40 px-4 py-3 border border-gray-300 rounded-xl resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               placeholder=""
             />
@@ -171,7 +163,6 @@ const ChildHistory: FC<ChildHistoryProps> = ({ setOption }) => {
 
           {/* Next Button */}
           <button
-            //@ts-ignore
             onClick={changeOption}
             className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium h-[54px] px-6 rounded-[6px] cursor-pointer transition-colors"
           >

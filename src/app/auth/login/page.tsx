@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
@@ -21,7 +22,7 @@ export default function SignUpPage() {
       <div className="w-full max-w-6xl  flex items-center justify-between gap-20">
         {/* Left Side - Illustration */}
         <div className="flex-1 flex items-center justify-center w-[671px] h-[671px]">
-          <img
+          <Image
             src="/parentlogin.svg"
             alt=""
             className="w-full h-full"

@@ -1,9 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { User, Users, ChevronRight, BookOpen } from "lucide-react";
-import { routerServerGlobal } from "next/dist/server/lib/router-utils/router-server-context";
+import { User, Users, ChevronRight } from "lucide-react";
+
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 export default function ParentLogin() {
   const router = useRouter();
@@ -12,10 +13,8 @@ export default function ParentLogin() {
     relationship: "",
     phone: "",
   });
-  //@ts-ignore:kashif nabeel
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = () => {
     router.push("/parent/dashboard");
 
     console.log("Form submitted:", formData);
@@ -26,7 +25,7 @@ export default function ParentLogin() {
       <div className="w-full max-w-6xl flex items-center justify-between gap-16 p-2 ">
         {/* Left Side - Illustration */}
         <div className="flex-1 flex items-center justify-center w-[671px] p-8 h-[671px]">
-          <img
+          <Image
             src="/parentlogin.svg"
             alt=""
             className="w-full h-full"

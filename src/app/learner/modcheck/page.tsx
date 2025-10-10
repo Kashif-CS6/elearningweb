@@ -21,7 +21,7 @@ const MoodCheckScreen = () => {
           <Image src={"/ai-icon.svg"} width={100} height={131.82} alt="Bot" />
         </div>
         <p className="text-gray-700 w-[489px] mx-auto text-[22.64px] font-[600] leading-[33px]  mb-14">
-          Hi Max! I'm happy to see you again. Before we start, tell me, how do
+          Hi Max! I{"'"}m happy to see you again. Before we start, tell me, how do
           you feel today?
         </p>
         <div className="flex items-center flex-wrap gap-8 justify-center ">

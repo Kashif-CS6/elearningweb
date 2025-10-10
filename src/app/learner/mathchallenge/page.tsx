@@ -1,7 +1,7 @@
 "use client";
 import RewardScreen from "@/components/learner/Greatjob";
 import Image from "next/image";
-import { FC, useState } from "react";
+import { useState } from "react";
 
 const MathChallengeScreen = () => {
   const [onAnswer, setOnAnswer] = useState<string>("");
@@ -24,7 +24,7 @@ const MathChallengeScreen = () => {
           <Image width={100} height={131} alt="img" src={"/ai-icon.svg"} />
         </div>
         <p className="text-gray-700 w-[937px] text-[22px] font-[700] mb-4">
-          Ali, let's try this together. Look at this math problem. Imagine your
+          Ali, let{"'"}s try this together. Look at this math problem. Imagine your
           own magic ball is holding all the distractions. Focus only on the
           numbers. Can you solve it?
         </p>

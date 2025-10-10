@@ -11,6 +11,8 @@ const LastMessage = () => {
         widthX="w-[866px]"
         setValue="message 2"
         setMessage={setMessage}
+        onSelect={() => {}}
+        setOpenModal={() => {}}
       />
     </div>
   );

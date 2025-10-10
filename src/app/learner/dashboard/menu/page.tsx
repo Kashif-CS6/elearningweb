@@ -1,20 +1,7 @@
 "use client";
-import { useState } from "react";
-import {
-  Search,
-  Globe,
-  Moon,
-  Grid3x3,
-  Bell,
-  Mic,
-  FileText,
-  X,
-  ArrowRight,
-  CopyIcon,
-  ShareIcon,
-  Link,
-} from "lucide-react";
-import Image from "next/image";
+
+import { Search, Globe, Moon, Grid3x3, Bell } from "lucide-react";
+
 import RightSideBar from "@/components/learner/RightSideBar";
 import Hero from "@/components/learner/dashboard/Hero";
 import LearnerMain from "@/components/learner/dashboard/LearnerMain";
@@ -54,7 +41,7 @@ const Menu = () => {
       </div>
 
       <div className="flex gap-6">
-        <div >
+        <div>
           <Hero />
           <LearnerMain />
         </div>
