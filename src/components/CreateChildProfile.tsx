@@ -68,7 +68,7 @@ const CreateChildProfile: FC<ChildHistoryProps> = ({ setOption }) => {
 
   return (
     <div className="py-10 bg-gray-50 flex items-center justify-center p-2 ">
-      <div className="w-[747.18px] bg-white rounded-[6px] shadow-sm p-8">
+      <div className="w-full lg:w-[747.18px] bg-white rounded-[6px] shadow-sm p-8">
         <h1 className="text-[18px] leading-[24px] font-[600] text-[#4B465C] mb-8">
           Create Child Profile
         </h1>

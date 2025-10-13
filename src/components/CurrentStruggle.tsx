@@ -33,20 +33,20 @@ export default function CurrentStruggles({
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
-      <div className="w-[747.47px] bg-white rounded-[12px] shadow-sm p-8">
+    <div className="min-h-screen bg-gray-50 flex items-center justify-center lg:p-4">
+      <div className="lg:w-[747.47px] bg-white rounded-[12px] shadow-sm p-8">
         {/* Progress Bar */}
         <div className="flex items-center mb-12">
           <div className="flex items-center">
             <div className="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center">
               <Check className="w-5 h-5 text-white" />
             </div>
-            <div className="w-[300px] h-0.5 bg-blue-600"></div>
+            <div className="w-[100px] md:w-[300px]  h-0.5 bg-blue-600"></div>
           </div>
           <div className="w-8 h-8 rounded-full border-2 border-blue-600 bg-white flex items-center justify-center">
             <div className="w-3 h-3 rounded-full bg-blue-600"></div>
           </div>
-          <div className="w-[300px] h-0.5 bg-gray-300"></div>
+          <div className="w-[100px] md:w-[300px]  h-0.5 bg-gray-300"></div>
           <div className="w-8 h-8 rounded-full bg-gray-300"></div>
         </div>
 
@@ -65,7 +65,7 @@ export default function CurrentStruggles({
             <h3 className="text-gray-900 leading-[100%] tracking-[1px] text-[14px] font-[400] mb-4">
               1. Which areas is Max currently struggling with?
             </h3>
-            <div className=" flex flex-wrap space-x-10 gap-2 w-[557px] items-center">
+            <div className=" flex flex-wrap space-x-10 gap-2 md:w-[557px] items-center">
               {struggles.map((struggle) => (
                 <label
                   key={struggle}
@@ -94,7 +94,7 @@ export default function CurrentStruggles({
             <h3 className="text-gray-900 leading-[100%] tracking-[1px] text-[14px] font-[400] mb-4">
               2. How often do these struggles affect Max{"'"}s daily life?
             </h3>
-            <div className=" flex flex-wrap space-x-10 gap-2 w-[557px] items-center">
+            <div className=" flex flex-wrap space-x-10 gap-2 md:w-[557px] items-center">
               {frequencies.map((freq) => (
                 <label
                   key={freq}

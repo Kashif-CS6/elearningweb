@@ -25,7 +25,7 @@ export default function KidzVoiceDashboard() {
   return (
     <div className="flex min-h-screen bg-gray-50">
       {/* Sidebar */}
-      <aside className="w-72 bg-white border-r border-gray-200 flex flex-col">
+      <aside className="hidden w-72 bg-white border-r border-gray-200 xl:flex flex-col">
         {/* Logo */}
         <div className="px-6 py-5 flex items-center gap-3">
           <Image src={"/elogo.svg"} width={45.54} height={47.72} alt="e logo" />
@@ -103,9 +103,9 @@ export default function KidzVoiceDashboard() {
       </aside>
 
       {/* Main Content */}
-      <main className="flex-1 p-8">
+      <main className="flex-1 p-2 md:p-8">
         {/* Hero Banner */}
-        <div className="relative h-[181px] rounded-[20px] bg-gradient-to-r from-blue-600 to-blue-500  overflow-hidden">
+        <div className="relative md:h-[181px] rounded-[20px] bg-gradient-to-r from-blue-600 to-blue-500  overflow-hidden">
           {/* Decorative Stars */}
           <div className="absolute top-8 right-32 w-16 h-16 opacity-20">
             <div className="absolute inset-0 bg-white transform rotate-45 rounded-lg"></div>
@@ -135,11 +135,11 @@ export default function KidzVoiceDashboard() {
         </div>
 
         {/* Statistics Section */}
-        <div className="flex items-center justify-between my-4">
+        <div className="flex items-center flex-wrap lg:flex-nowrap gap-4 justify-between my-4">
           <h2 className="text-[18px] font-semibold text-[#4B465C]">
             Statistics
           </h2>
-          <div className=" w-[450px] h-[43.84px] flex items-center justify-center  bg-[linear-gradient(90deg,rgba(255,62,62,0)_0%,#FF4B4B_200%,rgba(255,75,75,0)_100.97%)] rounded-md   ">
+          <div className="w-80 md:w-[450px] h-[43.84px] flex items-center justify-center  bg-[linear-gradient(90deg,rgba(255,62,62,0)_0%,#FF4B4B_200%,rgba(255,75,75,0)_100.97%)] rounded-md   ">
             <p className="text-[#FF4B4B] text-[18px] font-[400] text-center">
               Please Complete Child Profile
             </p>
@@ -155,13 +155,13 @@ export default function KidzVoiceDashboard() {
 
         {/* Add Child Card */}
         {option === "start" && (
-          <div className="bg-white rounded-[6px] shadow-sm  w-[747.41px] h-[171px] mx-auto my-10 flex flex-col justify-between p-8  ">
+          <div className="bg-white rounded-[6px] shadow-sm  md:w-[747.41px] h-[171px] mx-auto my-10 flex flex-col justify-between p-8  ">
             <h3 className="text-gray-800 text-[18px] leading-[24px] font-medium ">
               Add your child details
             </h3>
             <button
               onClick={() => setOption("form")}
-              className="w-[695px]  cursor-pointer bg-blue-600 text-white h-[54px] rounded-[6px]  hover:bg-blue-700 transition-all shadow-md text-[19px] font-[500]"
+              className="md:w-[695px]  cursor-pointer bg-blue-600 text-white h-[54px] rounded-[6px]  hover:bg-blue-700 transition-all shadow-md text-[19px] font-[500]"
             >
               Add Child
             </button>
@@ -171,7 +171,7 @@ export default function KidzVoiceDashboard() {
         {option === "start-question" && (
           <StartQuestionnaire setOption={setOption} />
         )}
-        {option === "begin" && <ChildHistory setOption={setOption} />}
+        {option === "start" && <ChildHistory setOption={setOption} />}
         {option === "createChildHistory" && (
           <CurrentStruggles setOption={setOption} />
         )}

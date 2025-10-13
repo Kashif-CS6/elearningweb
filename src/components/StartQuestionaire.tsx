@@ -9,7 +9,7 @@ interface StartQuestionnaireProps {
 const StartQuestionnaire: FC<StartQuestionnaireProps> = ({ setOption }) => {
   return (
     <div className="my-10 bg-gray-50 flex items-center justify-center p-4">
-      <div className="w-[747.18px] bg-white rounded-[6px] shadow-sm p-12 text-center">
+      <div className="w-full lg:w-[747.18px] bg-white rounded-[6px] shadow-sm p-12 text-center">
         <div className="flex justify-center mb-8">
           <div className="relative">
             <svg width="200" height="120" viewBox="0 0 200 120">

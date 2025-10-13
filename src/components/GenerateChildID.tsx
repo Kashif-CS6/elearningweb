@@ -22,8 +22,8 @@ export default function GenerateChildID() {
   };
 
   return (
-    <div className="py-10 bg-gray-50 flex items-center justify-center p-4">
-      <div className="w-[747.47px] bg-white rounded-[6px] shadow-sm p-8">
+    <div className="py-10 bg-gray-50 flex items-center justify-center lg:p-4">
+      <div className=" md:w-[747.47px] bg-white rounded-[6px] shadow-sm p-8">
         <div className="flex justify-center mb-6">
           <div className="relative">
             <svg width="180" height="180" viewBox="0 0 180 180">

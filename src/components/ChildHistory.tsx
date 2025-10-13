@@ -44,18 +44,18 @@ const ChildHistory: FC<ChildHistoryProps> = ({ setOption }) => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
-      <div className="w-[747.47px] bg-white rounded-[6px] shadow-sm p-8">
+    <div className="min-h-screen bg-gray-50 flex items-center justify-center md:p-4">
+      <div className="w-full lg:w-[747.47px] bg-white rounded-[6px] shadow-sm p-8">
         {/* Progress Bar */}
         <div className="flex items-center mb-12">
-          <div className="flex items-center flex-1">
+          <div className="flex items-center">
             <div className="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center">
               <Check className="w-5 h-5 text-white" />
             </div>
-            <div className="w-[300px] h-0.5 bg-gray-300"></div>
+            <div className="w-[100px] md:w-[300px] h-0.5 bg-gray-300"></div>
           </div>
           <div className="w-8 h-8 rounded-full bg-gray-300"></div>
-          <div className="w-[300px] h-0.5 bg-gray-300"></div>
+          <div className="w-[100px]  md:w-[50%] h-0.5 bg-gray-300"></div>
           <div className="w-8 h-8 rounded-full bg-gray-300"></div>
         </div>
 
@@ -74,7 +74,7 @@ const ChildHistory: FC<ChildHistoryProps> = ({ setOption }) => {
             <h3 className="text-gray-900 leading-[100%] tracking-[1px] text-[14px] font-[400] mb-4">
               1 Has Max received any previous diagnoses?
             </h3>
-            <div className="flex flex-wrap space-x-10 gap-2 w-[360px] items-center">
+            <div className="flex flex-wrap space-x-10 gap-2 md:w-[360px] items-center">
               {diagnoses.map((diagnosis) => (
                 <label
                   key={diagnosis}
@@ -104,7 +104,7 @@ const ChildHistory: FC<ChildHistoryProps> = ({ setOption }) => {
             <h3 className="text-gray-900 leading-[100%] tracking-[1px] text-[14px] font-[400] mb-4">
               2 Has Max ever received support services?
             </h3>
-            <div className="flex flex-wrap space-x-10 gap-2 w-[360px] items-center">
+            <div className="flex flex-wrap space-x-10 gap-2 md:w-[360px] items-center">
               {services.map((service) => (
                 <label
                   key={service}
