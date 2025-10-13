@@ -19,9 +19,9 @@ export default function SignUpPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 flex items-center justify-center p-4">
-      <div className="w-full max-w-6xl  flex items-center justify-between gap-20">
+      <div className=" xl:w-[1152px]  flex items-center justify-between md:gap-20">
         {/* Left Side - Illustration */}
-        <div className="flex-1 flex items-center justify-center w-[671px] h-[671px]">
+        <div className="flex-1 hidden xl:flex items-center justify-center w-[671px] h-[671px]">
           <Image
             src="/parentlogin.svg"
             alt=""
@@ -32,7 +32,7 @@ export default function SignUpPage() {
         </div>
 
         {/* Right Side - Sign Up Form */}
-        <div className="flex-1 w-[692px] p-2 border border-[#DBDBDB] rounded-[30px]">
+        <div className="w-full xl:w-[692px] flex-1   p-2 border border-[#DBDBDB] rounded-[30px]">
           <div className="bg-white rounded-2xl  p-8 py-16">
             {/* Header */}
             <div className="text-center mb-6 flex flex-col gap-4">
@@ -44,7 +44,7 @@ export default function SignUpPage() {
               <div className="flex gap-3 justify-center mb-6">
                 <button
                   onClick={() => setSelectedRole("parent")}
-                  className={`w-[132px] h-[60px] rounded-[16px] font-[400] text-[16px] transition-all ${
+                  className={`px-6 md:px-0 md:w-[132px] h-[60px] rounded-[16px] font-[400] text-[16px] transition-all ${
                     selectedRole === "parent"
                       ? "bg-blue-600 text-white shadow-md"
                       : " border border-blue-600"
@@ -54,7 +54,7 @@ export default function SignUpPage() {
                 </button>
                 <button
                   onClick={() => setSelectedRole("coach")}
-                  className={`w-[132px] h-[60px] rounded-[16px] font-[400] text-[16px] transition-all ${
+                  className={`px-6 md:px-0 md:w-[132px] h-[60px] rounded-[16px] font-[400] text-[16px] transition-all ${
                     selectedRole === "coach"
                       ? "bg-blue-600 text-white shadow-md"
                       : " border border-blue-600"
@@ -64,7 +64,7 @@ export default function SignUpPage() {
                 </button>
                 <button
                   onClick={() => setSelectedRole("learner")}
-                  className={`w-[132px] h-[60px] rounded-[16px] font-[400] text-[16px] transition-all ${
+                  className={`px-6 md:px-0 md:w-[132px] h-[60px] rounded-[16px] font-[400] text-[16px] transition-all ${
                     selectedRole === "learner"
                       ? "bg-blue-600 text-white shadow-md"
                       : "border border-blue-600"
@@ -76,8 +76,8 @@ export default function SignUpPage() {
             </div>
 
             {/* Social Sign In Buttons */}
-            <div className="space-y-3 mb-6 flex flex-col gap-4">
-              <button className="w-[452px] h-[60px] cursor-pointer flex items-center justify-between px-4 py-3 border-2 border-gray-200 rounded-lg hover:border-gray-300 hover:bg-gray-50 transition-all group">
+            <div className="space-y-3 mb-6 flex flex-col md:items-center xl:items-center gap-4">
+              <button className="w-full md:w-[452px] h-[60px] cursor-pointer flex items-center justify-between px-4 py-3 border-2 border-gray-200 rounded-lg hover:border-gray-300 hover:bg-gray-50 transition-all group">
                 <span className="flex-1 text-center text-gray-700 font-medium">
                   Continue with Google
                 </span>
@@ -103,7 +103,7 @@ export default function SignUpPage() {
                 </div>
               </button>
 
-              <button className="w-[452px] h-[60px] cursor-pointer flex items-center justify-between px-4 py-3 border-2 border-gray-200 rounded-lg hover:border-gray-300 hover:bg-gray-50 transition-all">
+              <button className="w-full md:w-[452px] h-[60px] cursor-pointer flex items-center justify-between px-4 py-3 border-2 border-gray-200 rounded-lg hover:border-gray-300 hover:bg-gray-50 transition-all">
                 <span className="flex-1 text-center text-gray-700 font-medium">
                   Continue with Facebook
                 </span>
@@ -118,7 +118,7 @@ export default function SignUpPage() {
                 </div>
               </button>
 
-              <button className="w-[452px] h-[60px] cursor-pointer flex items-center justify-between px-4 py-3 border-2 border-gray-200 rounded-lg hover:border-gray-300 hover:bg-gray-50 transition-all">
+              <button className="w-full md:w-[452px] h-[60px] cursor-pointer flex items-center justify-between px-4 py-3 border-2 border-gray-200 rounded-lg hover:border-gray-300 hover:bg-gray-50 transition-all">
                 <span className="flex-1 text-center text-gray-700 font-medium">
                   Continue with Apple
                 </span>
@@ -133,7 +133,7 @@ export default function SignUpPage() {
                 </div>
               </button>
 
-              <button className="w-[452px] h-[60px] cursor-pointer flex items-center justify-between px-4 py-3 border-2 border-gray-200 rounded-lg hover:border-gray-300 hover:bg-gray-50 transition-all">
+              <button className=" w-full md:w-[452px] h-[60px] cursor-pointer flex items-center justify-between px-4 py-3 border-2 border-gray-200 rounded-lg hover:border-gray-300 hover:bg-gray-50 transition-all">
                 <span className="flex-1 text-center text-gray-700 font-medium">
                   Continue with X
                 </span>
@@ -155,20 +155,22 @@ export default function SignUpPage() {
             </div>
 
             {/* Sign In Button */}
-            <button
-              onClick={handleLogin}
-              className="w-[452px] h-[60px] cursor-pointer bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition-all shadow-md mb-3"
-            >
-              Sign In
-            </button>
+            <div className="flex flex-col items-center">
+              <button
+                onClick={handleLogin}
+                className="w-full md:w-[452px] h-[60px] cursor-pointer bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition-all shadow-md mb-3"
+              >
+                Sign In
+              </button>
 
-            {/* Guest Button */}
-            <button
-              onClick={handleLogin}
-              className="w-[452px] my-4 h-[60px] cursor-pointer border-2 border-gray-200 text-gray-700 py-3 rounded-lg font-medium hover:bg-gray-50 transition-all"
-            >
-              Continue as Guest
-            </button>
+              {/* Guest Button */}
+              <button
+                onClick={handleLogin}
+                className="w-full md:w-[452px] my-4 h-[60px] cursor-pointer border-2 border-gray-200 text-gray-700 py-3 rounded-lg font-medium hover:bg-gray-50 transition-all"
+              >
+                Continue as Guest
+              </button>
+            </div>
           </div>
         </div>
       </div>

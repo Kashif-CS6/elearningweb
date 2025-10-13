@@ -44,9 +44,9 @@ export default function ChildNext() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 flex items-center justify-center p-4">
-      <div className="w-full max-w-6xl flex items-center justify-between gap-16 p-2">
+      <div className=" xl:w-[1152px] flex items-center justify-between gap-16 p-2">
         {/* Left Side - Illustration */}
-        <div className="flex-1 flex items-center justify-center w-[671px] p-8 h-[671px]">
+        <div className="flex-1 hidden xl:flex items-center justify-center w-[671px] p-8 h-[671px]">
           <Image
             src="/parentlogin.svg"
             alt=""
@@ -57,7 +57,7 @@ export default function ChildNext() {
         </div>
 
         {/* Right Side - Form */}
-        <div className="flex-1 max-w-[692px] border border-[#DBDBDB] rounded-[30px]">
+        <div className="flex-1 xl:w-[692px] border border-[#DBDBDB] rounded-[30px]">
           <div className="bg-white rounded-2xl p-8 py-16 m-1">
             {/* Header */}
             <div className="mb-8">
@@ -84,7 +84,7 @@ export default function ChildNext() {
                     onChange={(e) =>
                       setFormData({ ...formData, name: e.target.value })
                     }
-                    className="w-[452px] h-[60px] pl-12 pr-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:outline-none transition-colors text-gray-800 placeholder-gray-400"
+                    className="w-full md:w-[452px] h-[60px] pl-12 pr-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:outline-none transition-colors text-gray-800 placeholder-gray-400"
                   />
                 </div>
 
@@ -98,7 +98,7 @@ export default function ChildNext() {
                     onChange={(e) =>
                       setFormData({ ...formData, relationship: e.target.value })
                     }
-                    className="w-[452px] h-[60px] pl-12 pr-12 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:outline-none transition-colors text-gray-400 appearance-none cursor-pointer"
+                    className="w-full md:w-[452px] h-[60px] pl-12 pr-12 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:outline-none transition-colors text-gray-400 appearance-none cursor-pointer"
                   >
                     <option value="">Enter Your Name here</option>
                     <option value="parent">Parent</option>
@@ -115,7 +115,7 @@ export default function ChildNext() {
                 <div className="relative">
                   <label
                     htmlFor="image-upload"
-                    className="w-[452px] bg-[#0961F51A] h-[60px] flex items-center justify-center pr-4 py-3 border-2 border-dashed border-[#0961F5] rounded-lg text-black hover:border-blue-500 hover:text-blue-500 transition-colors cursor-pointer"
+                    className="w-full md:w-[452px] bg-[#0961F51A] h-[60px] flex items-center justify-center pr-4 py-3 border-2 border-dashed border-[#0961F5] rounded-lg text-black hover:border-blue-500 hover:text-blue-500 transition-colors cursor-pointer"
                   >
                     <div className="flex items-center justify-center gap-5">
                       <div>
@@ -148,7 +148,7 @@ export default function ChildNext() {
                 {/* Save Button */}
                 <button
                   type="submit"
-                  className="w-[452px] cursor-pointer h-[60px] bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition-all shadow-md mt-6"
+                  className="w-full md:w-[452px] cursor-pointer h-[60px] bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition-all shadow-md mt-6"
                 >
                   Continue
                 </button>
@@ -165,21 +165,22 @@ export default function ChildNext() {
           onClick={handleOverlayClick}
         >
           <div
-            className="bg-white rounded-[23.25px] w-[649px] h-[379px] text-center relative flex items-center justify-center"
+            className="bg-white rounded-[23.25px] w-[350px] md:w-[649px] h-[220px] md:h-[379px] text-center relative flex items-center justify-center"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="w-[460px] h-[252.1px] flex flex-col justify-center items-center gap-4">
+            <div className="md:w-[460px] h-[252.1px] flex flex-col justify-center items-center md:gap-4">
               <Image
                 src="/icon-b.svg"
                 width={120.11}
                 height={120.11}
                 alt="Icon-b"
                 onClick={closeModal}
+                className="w-[80px] h-[80px] md:w-[120px] md:h-[120px]"
               />
-              <h2 className="text-[34.87px] font-[500] leading-[46.5px] text-gray-800">
+              <h2 className="text-[16px] font-semibold md:text-[34.87px] md:font-[500] leading-[46.5px] text-gray-800">
                 Connected
               </h2>
-              <p className="text-[31px] leading-[38.75px] font-[400] text-[#7D848D]">
+              <p className="md:text-[31px] leading-[38.75px] font-[400] text-[#7D848D]">
                 Youre now linked with your parent!
               </p>
             </div>
