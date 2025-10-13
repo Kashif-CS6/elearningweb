@@ -22,9 +22,9 @@ export default function ParentLogin() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50  flex items-center justify-center p-4">
-      <div className="w-full xl:w-[1152px] flex items-center justify-between gap-16 p-2 ">
+      <div className="xl:w-[1152px] flex items-center justify-between gap-16 p-2 ">
         {/* Left Side - Illustration */}
-        <div className="flex-1 hidden  md:flex items-center justify-center w-[671px] p-8 h-[671px]">
+        <div className="flex-1 hidden  xl:flex items-center justify-center w-[671px] p-8 h-[671px]">
           <Image
             src="/parentlogin.svg"
             alt=""
@@ -35,7 +35,7 @@ export default function ParentLogin() {
         </div>
 
         {/* Right Side - Form */}
-        <div className="flex-1 md:w-[692px] border border-[#DBDBDB] rounded-[30px]">
+        <div className="flex-1 xl:w-[692px] border border-[#DBDBDB] rounded-[30px]">
           <div className="bg-white rounded-2xl p-8 py-16 m-1">
             {/* Header */}
             <div className="mb-8">
