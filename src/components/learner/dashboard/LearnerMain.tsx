@@ -12,10 +12,10 @@ const LearnerMain = () => {
           {/* Left Column */}
           <div className="">
             {/* Progress Section */}
-            <div className="flex items-center justify-between gap-6">
-              <div className="flex items-end gap-2 shadow-md min-w-[382px] flex-1 h-[86px] rounded-[12px] px-4 py-3">
-                <div className=" w-14  flex flex-col gap-2">
-                  <p className="text-sm text-gray-500 w-full">Level 1</p>
+            <div className="flex items-center flex-wrap justify-between gap-6">
+              <div className="flex items-end gap-2 shadow-md w-80 md:min-w-[382px] flex-1 h-[86px] rounded-[12px] px-4 py-3">
+                <div className="w-14  flex flex-col gap-2">
+                  <p className="text-xs md:text-sm text-gray-500 w-full">Level 1</p>
                   <div>
                     <div className="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center">
                       <svg
@@ -49,7 +49,7 @@ const LearnerMain = () => {
 
               <button
                 onClick={() => router.push("/learner/modcheck")}
-                className="bg-blue-600 min-w-[397px] flex-1 h-[86px] text-[24px] text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition-all shadow-lg"
+                className="bg-blue-600 md:min-w-[397px] flex-1 h-[86px] md:text-[24px] text-white px-8 py-3 rounded-xl md:rounded-full font-semibold hover:bg-blue-700 transition-all shadow-lg"
               >
                 AI Live Session
               </button>
@@ -60,8 +60,8 @@ const LearnerMain = () => {
               <h2 className="text-[16px] font-[600] text-gray-900 mb-4">
                 Growth
               </h2>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="bg-white rounded-xl p-6 border border-gray-200 hover:shadow-lg transition-shadow">
+              <div className="flex gap-4  items-center flex-wrap md:flex-nowrap">
+                <div className="bg-white rounded-xl p-6 border border-gray-200 hover:shadow-lg transition-shadow flex-1">
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
                       <BookOpen className="w-6 h-6 text-blue-600" />
@@ -77,7 +77,7 @@ const LearnerMain = () => {
                   </div>
                 </div>
 
-                <div className="bg-white rounded-xl p-6 border border-gray-200 hover:shadow-lg transition-shadow">
+                <div className="bg-white rounded-xl p-6 border border-gray-200 hover:shadow-lg transition-shadow flex-1">
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
                       <Lightbulb className="w-6 h-6 text-blue-600" />
@@ -100,7 +100,7 @@ const LearnerMain = () => {
               <h2 className="text-[16px] font-[600] text-gray-900 mb-4">
                 Your Personal Growth Journey
               </h2>
-              <div className="w-full flex flex-wrap gap-4 flex-1">
+              <div className="w-full flex justify-center md:items-start flex-wrap gap-4 flex-1">
                 {[1, 2, 3, 4, 5].map((item) => (
                   <div
                     key={item}

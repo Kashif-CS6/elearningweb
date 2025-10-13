@@ -39,17 +39,17 @@ export default function Home() {
             <button className="p-2 hover:bg-gray-100 rounded-lg transition-colors">
               <Globe className="w-5 h-5 text-gray-600" />
             </button>
-            <button className="p-2 hover:bg-gray-100 rounded-lg transition-colors">
+            <button className="p-2 hover:bg-gray-100 rounded-lg transition-colors hidden md:block">
               <Moon className="w-5 h-5 text-gray-600" />
             </button>
-            <button className="p-2 hover:bg-gray-100 rounded-lg transition-colors">
+            <button className="p-2 hover:bg-gray-100 rounded-lg md:block hidden transition-colors">
               <Grid3x3 className="w-5 h-5 text-gray-600" />
             </button>
-            <button className="p-2 hover:bg-gray-100 rounded-lg transition-colors relative">
+            <button className="p-2 hover:bg-gray-100 rounded-lg hidden md:block transition-colors relative">
               <Bell className="w-5 h-5 text-gray-600" />
               <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
             </button>
-            <button className="w-9 h-9 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white font-semibold">
+            <button className="w-9 h-9 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full hidden md:flex items-center justify-center text-white font-semibold">
               U
             </button>
           </div>
@@ -105,7 +105,7 @@ export default function Home() {
           {/* Floating Action Buttons */}
           {!replay && (
             <div className="absolute bottom-10  left-1/2 transform -translate-x-1/2 flex items-center  gap-10">
-              <div className="bg-gradient-to-r w-[117px] h-[117px] from-blue-500 to-green-400 rounded-full p-1 shadow-2xl">
+              <div className="bg-gradient-to-r w-[80px] h-[80px] md:w-[117px] md:h-[117px] from-blue-500 to-green-400 rounded-full p-1 shadow-2xl">
                 <div className="bg-white w-full h-full rounded-full p-1 ">
                   <button
                     onClick={() => {
@@ -114,7 +114,7 @@ export default function Home() {
                     }}
                     className="bg-blue-600 w-full h-full hover:bg-blue-700 text-white p-1 flex items-center justify-center rounded-full transition-all transform hover:scale-110 shadow-lg"
                   >
-                    <Mic className="w-10 h-10" />
+                    <Mic className="w-6 h-6 md:w-10 md:h-10" />
                   </button>
                 </div>
               </div>

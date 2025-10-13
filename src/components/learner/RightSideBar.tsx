@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const RightSideBar = () => {
   return (
-    <div className=" min-w-[296px]  flex-1 h-[933px] shadow-md border-[1px] border-gray-100">
+    <div className="hidden xl:block min-w-[296px]  flex-1 h-[933px] shadow-md border-[1px] border-gray-100">
       {/* Profile Card */}
       <div className="bg-white rounded-xl p-6">
         <div className="flex items-center justify-between mb-8">

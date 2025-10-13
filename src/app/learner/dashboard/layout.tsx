@@ -23,7 +23,7 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <div className="flex h-screen overflow-hidden">
       {/* Sidebar */}
-      <aside className="w-72 bg-white border-r border-gray-200 flex flex-col">
+      <aside className="hidden w-72 bg-white border-r border-gray-200 lg:flex flex-col">
         {/* Logo */}
         <div className="px-6 py-5 flex items-center gap-3">
           <Image src="/elogo.svg" width={45.54} height={47.72} alt="e logo" />

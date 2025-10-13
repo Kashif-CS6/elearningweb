@@ -171,7 +171,7 @@ export default function KidzVoiceDashboard() {
         {option === "start-question" && (
           <StartQuestionnaire setOption={setOption} />
         )}
-        {option === "start" && <ChildHistory setOption={setOption} />}
+        {option === "begin" && <ChildHistory setOption={setOption} />}
         {option === "createChildHistory" && (
           <CurrentStruggles setOption={setOption} />
         )}

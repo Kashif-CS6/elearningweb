@@ -21,7 +21,7 @@ export default function ParentLogin() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50  flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50  flex items-center justify-center md:p-4">
       <div className="xl:w-[1152px] flex items-center justify-between gap-16 p-2 ">
         {/* Left Side - Illustration */}
         <div className="flex-1 hidden  xl:flex items-center justify-center w-[671px] p-8 h-[671px]">

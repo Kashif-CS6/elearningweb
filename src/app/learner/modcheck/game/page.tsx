@@ -6,9 +6,9 @@ import RewardScreen from "@/components/learner/Greatjob";
 const Game = () => {
   const [openReward, setOpenReward] = useState<boolean>(false);
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center p-6">
-      <div className="bg-white shadow-xl  w-[1113px] h-[758px] rounded-[6px] text-center">
-        <h2 className="text-[22px] font-[600] py-6 leading-[24px] mb-8 px-12">
+    <div className="min-h-screen bg-gray-100 flex items-center justify-center md:p-6">
+      <div className="bg-white shadow-xl  md:px-0  py-6 md:w-[1113px] xl:h-[593px] rounded-[6px] text-center">
+        <h2 className="text-sm md:text-[22px] font-[600] leading-[24px] mb-8">
           AI Live Session
         </h2>
         <div className="mb-8 flex justify-center px-12">
@@ -19,7 +19,7 @@ const Game = () => {
             alt="Bot"
           />
         </div>
-        <p className="text-gray-700  w-[809px] mx-auto text-[22.64px] font-[600] leading-[33px] mb-10">
+        <p className="text-gray-700  md:w-[809px] mx-auto px-2 md:px-0 text-sm md:text-[22.64px] font-[600] leading-[33px] mb-10">
           Let’s start with a breathing game. Imagine this ball is your breath.
           When it gets big, you breathe in. When it gets small, you breathe out.
           Ready?

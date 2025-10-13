@@ -35,8 +35,11 @@ const PlayVideo: React.FC = () => {
 
   return (
     <div className="h-screen flex items-center justify-center">
-      <div className="w-[1113px] h-[593px] rounded-[6px] flex flex-col items-center justify-center gap-10 shadow-md border border-gray-100 mx-auto">
-        <h2 className="text-center font-[600] text-[22px] leading-[24px] text-[#4B465C] mb-8">
+      <div
+        onClick={handleVideoClick}
+        className="md:w-[1113px] py-10 md:py-0 md:h-[593px] rounded-[6px] flex flex-col items-center justify-center gap-5 md:gap-10 shadow-md border border-gray-100 mx-auto"
+      >
+        <h2 className="text-center font-[600] text-sm md:text-[22px] leading-[24px] text-[#4B465C] md:mb-8">
           AI Live Session
         </h2>
         <video
@@ -45,8 +48,7 @@ const PlayVideo: React.FC = () => {
           height={351}
           controls
           onTimeUpdate={handleTimeUpdate}
-          onClick={handleVideoClick}
-          className="cursor-pointer"
+          className="cursor-pointer px-4 md:px-0 w-[400px] md:w-[501px] h-[351px]"
         >
           <source
             src="https://www.w3schools.com/html/mov_bbb.mp4"
@@ -61,7 +63,7 @@ const PlayVideo: React.FC = () => {
             max="100"
             value={progress}
             onChange={handleProgressChange}
-            className="w-[384px] h-[2px] appearance-none bg-gray-200 rounded-full outline-none cursor-pointer"
+            className="md:w-[384px] h-[2px] appearance-none bg-gray-200 rounded-full outline-none cursor-pointer"
             style={{
               background: `linear-gradient(to right, #1B84F8 ${progress}%, #e5e7eb ${progress}%)`,
             }}

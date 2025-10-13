@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 
 const Hero = () => {
   return (
-    <div className="relative h-[181px] rounded-[20px] bg-gradient-to-r from-blue-600 to-blue-500  overflow-hidden">
+    <div className="relative md:h-[181px] rounded-[20px] bg-gradient-to-r from-blue-600 to-blue-500  overflow-hidden">
       {/* Decorative Stars */}
       <div className="absolute top-8 right-32 w-16 h-16 opacity-20">
         <div className="absolute inset-0 bg-white transform rotate-45 rounded-lg"></div>
