@@ -77,7 +77,10 @@ export default function SignUpPage() {
 
             {/* Social Sign In Buttons */}
             <div className="space-y-3 mb-6 flex flex-col md:items-center xl:items-center gap-4">
-              <button className="w-full md:w-[452px] h-[60px] cursor-pointer flex items-center justify-between px-4 py-3 border-2 border-gray-200 rounded-lg hover:border-gray-300 hover:bg-gray-50 transition-all group">
+              <button
+                onClick={handleLogin}
+                className="w-full md:w-[452px] h-[60px] cursor-pointer flex items-center justify-between px-4 py-3 border-2 border-gray-200 rounded-lg hover:border-gray-300 hover:bg-gray-50 transition-all group"
+              >
                 <span className="flex-1 text-center text-gray-700 font-medium">
                   Continue with Google
                 </span>
@@ -103,7 +106,10 @@ export default function SignUpPage() {
                 </div>
               </button>
 
-              <button className="w-full md:w-[452px] h-[60px] cursor-pointer flex items-center justify-between px-4 py-3 border-2 border-gray-200 rounded-lg hover:border-gray-300 hover:bg-gray-50 transition-all">
+              <button
+                onClick={handleLogin}
+                className="w-full md:w-[452px] h-[60px] cursor-pointer flex items-center justify-between px-4 py-3 border-2 border-gray-200 rounded-lg hover:border-gray-300 hover:bg-gray-50 transition-all"
+              >
                 <span className="flex-1 text-center text-gray-700 font-medium">
                   Continue with Facebook
                 </span>
@@ -118,7 +124,10 @@ export default function SignUpPage() {
                 </div>
               </button>
 
-              <button className="w-full md:w-[452px] h-[60px] cursor-pointer flex items-center justify-between px-4 py-3 border-2 border-gray-200 rounded-lg hover:border-gray-300 hover:bg-gray-50 transition-all">
+              <button
+                onClick={handleLogin}
+                className="w-full md:w-[452px] h-[60px] cursor-pointer flex items-center justify-between px-4 py-3 border-2 border-gray-200 rounded-lg hover:border-gray-300 hover:bg-gray-50 transition-all"
+              >
                 <span className="flex-1 text-center text-gray-700 font-medium">
                   Continue with Apple
                 </span>
@@ -133,7 +142,10 @@ export default function SignUpPage() {
                 </div>
               </button>
 
-              <button className=" w-full md:w-[452px] h-[60px] cursor-pointer flex items-center justify-between px-4 py-3 border-2 border-gray-200 rounded-lg hover:border-gray-300 hover:bg-gray-50 transition-all">
+              <button
+                onClick={handleLogin}
+                className=" w-full md:w-[452px] h-[60px] cursor-pointer flex items-center justify-between px-4 py-3 border-2 border-gray-200 rounded-lg hover:border-gray-300 hover:bg-gray-50 transition-all"
+              >
                 <span className="flex-1 text-center text-gray-700 font-medium">
                   Continue with X
                 </span>

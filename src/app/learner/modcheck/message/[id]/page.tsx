@@ -6,8 +6,8 @@ const LastMessage = () => {
   return (
     <div>
       <BotSession
-        Heading="Tomorrow, we’ll go to Mirror Land and learn how to stay calm when you feel angry. Get ready for a new adventure!"
-        route=""
+        Heading="Done"
+        route="/learner/dashboard/menu"
         widthX="w-[866px]"
         setValue="message 2"
         setMessage={setMessage}

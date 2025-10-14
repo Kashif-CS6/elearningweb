@@ -1,24 +1,36 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { User, Users, ChevronRight } from "lucide-react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import toast from "react-hot-toast";
 
 interface FormData {
-  name: string;
+  id: string;
   relationship: string;
   image: File | null;
 }
 
 export default function ChildNext() {
   const router = useRouter();
+  const [resultId, setResultId] = useState<string>("");
   const [formData, setFormData] = useState<FormData>({
-    name: "",
+    id: "",
     relationship: "",
     image: null,
   });
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  useEffect(() => {
+    const id = localStorage.getItem("childid");
+
+    if (id) {
+      setResultId(id);
+    } else {
+      setResultId("");
+    }
+  }, []);
 
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0] || null; // Safety check for file
@@ -27,6 +39,20 @@ export default function ChildNext() {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    if (!formData.id) {
+      toast.error("Enter Child ID!");
+      return;
+    }
+
+    if (!formData.relationship) {
+      toast.error("Please specify your relationship!");
+      return;
+    }
+    if (formData.id != resultId) {
+      toast.error("You have entered wrong id");
+      return;
+    }
     setIsModalOpen(true); // Open modal first
     console.log("Form submitted:", formData);
   };
@@ -78,11 +104,11 @@ export default function ChildNext() {
                     <User className="w-5 h-5 text-gray-400" />
                   </div>
                   <input
-                    type="number"
+                    type="text"
                     placeholder="ID"
-                    value={formData.name}
+                    value={formData.id}
                     onChange={(e) =>
-                      setFormData({ ...formData, name: e.target.value })
+                      setFormData({ ...formData, id: e.target.value })
                     }
                     className="w-full md:w-[452px] h-[60px] pl-12 pr-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:outline-none transition-colors text-gray-800 placeholder-gray-400"
                   />

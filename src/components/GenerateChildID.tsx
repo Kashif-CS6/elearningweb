@@ -13,6 +13,7 @@ export default function GenerateChildID() {
     }
     const id = "CH-" + Math.random().toString(36).substr(2, 9).toUpperCase();
     setChildID(id);
+    localStorage.setItem("childid", id);
   };
 
   const copyToClipboard = () => {

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Jost } from "next/font/google";
 import "./globals.css";
+import { Toaster } from "react-hot-toast";
+
 
 // Existing fonts
 
@@ -23,7 +25,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={` ${jost.variable} antialiased`}>{children}</body>
+      <body className={` ${jost.variable} antialiased`}>
+        {children}
+        <Toaster />
+      </body>
     </html>
   );
 }

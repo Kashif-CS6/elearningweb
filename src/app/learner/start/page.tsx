@@ -31,7 +31,7 @@ export default function OnboardingApp() {
         </div>
 
         <button
-          onClick={() => router.push("/learner/question")}
+          onClick={() => router.push("/learner/chat")}
           className=" bg-blue-600 hover:bg-blue-700 text-white w-80 md:w-[638px] h-[60px] rounded-[6px] transition-colors duration-200 text-[19px] font-[500]"
         >
           Let{"'"}s Started

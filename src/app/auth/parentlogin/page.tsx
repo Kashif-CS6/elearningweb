@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { User, Users, ChevronRight } from "lucide-react";
+import toast from "react-hot-toast";
 
 import { useRouter } from "next/navigation";
 import Image from "next/image";
@@ -15,6 +16,18 @@ export default function ParentLogin() {
   });
 
   const handleSubmit = () => {
+    if (!formData.name) {
+      toast.error("Name is required!");
+      return;
+    }
+    if (!formData.relationship) {
+      toast.error("Relationship is required!");
+      return;
+    }
+    if (!formData.phone) {
+      toast.error("Phone Number is required!");
+      return;
+    }
     router.push("/parent/dashboard");
 
     console.log("Form submitted:", formData);
@@ -57,6 +70,7 @@ export default function ParentLogin() {
                 <input
                   type="text"
                   placeholder="Enter your name here"
+                  required={true}
                   value={formData.name}
                   onChange={(e) =>
                     setFormData({ ...formData, name: e.target.value })

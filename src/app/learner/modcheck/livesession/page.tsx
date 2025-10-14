@@ -10,20 +10,9 @@ const LiveSession = () => {
       {message === "message 0" && (
         <BotSession
           Heading="Max, what did you notice in Samis story? Why was the magic ball helpful?"
-          route="/learner/mathchallenge"
-          setValue="message 1"
+          route="/learner/modcheck/message"
+          setValue="message 0"
           widthX="w-[610px]"
-          setMessage={setMessage}
-          onSelect={() => {}}
-          setOpenModal={() => {}}
-        />
-      )}
-      {message === "message 1" && (
-        <BotSession
-          Heading="Because it helped him focus."
-          route="/learner/mathchallenge"
-          widthX=""
-          setValue="message 1"
           setMessage={setMessage}
           onSelect={() => {}}
           setOpenModal={() => {}}
