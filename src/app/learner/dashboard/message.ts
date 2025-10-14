@@ -1,4 +1,4 @@
-export const messages = [
+ const messages = [
   {
     id: "1",
     question: "Who are you?",
@@ -20,3 +20,5 @@ export const messages = [
     answer: "",
   },
 ];
+
+export default messages

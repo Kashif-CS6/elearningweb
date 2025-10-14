@@ -17,29 +17,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import toast from "react-hot-toast";
-
-export const messages = [
-  {
-    id: "1",
-    question: "Who are you?",
-    answer: "",
-  },
-  {
-    id: "2",
-    question: "What do you wish for?",
-    answer: "",
-  },
-  {
-    id: "3",
-    question: "What's your problem?",
-    answer: "",
-  },
-  {
-    id: "4",
-    question: "What are your dreams?",
-    answer: "",
-  },
-];
+import messages from "../dashboard/message";
 
 const Chat = () => {
   const [openModal, setOpenModal] = useState<boolean>(false);
@@ -73,7 +51,7 @@ const Chat = () => {
     }
   };
 
-  const handleKeyPress = (e: any) => {
+  const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
       handleSend();
