@@ -59,11 +59,11 @@ const Chat = () => {
   };
 
   return (
-    <div className="h-screen flex items-center justify-center">
-      <div className="w-[747.18px] h-[925px] border border-gray-200 mx-auto bg-white rounded-[6px] p-4 px-2 shadow-lg">
-        <div className=" p-6 flex flex-col h-full  justify-between gap-10">
+    <div className="my-20 md:my-0  md:h-screen flex items-center  justify-center">
+      <div className=" md:w-[747.18px] h-[400px] md:h-[925px] border border-gray-200 mx-auto bg-white rounded-[6px] md:p-4 md:px-2 shadow-lg">
+        <div className="p-4 md:p-6 flex flex-col h-full  justify-between gap-10">
           {/* Chat History */}
-          <div className="flex flex-col justify-between gap-4 overflow-y-auto ">
+          <div className="flex flex-col justify-between gap-4 overflow-y-auto overflow-x-hidden ">
             {messageHistory.map((msg, index) => (
               <div key={msg.id}>
                 {index <= currentIndex && (
@@ -77,7 +77,7 @@ const Chat = () => {
                           alt="ai-icon"
                         />
                       </div>
-                      <span className="text-gray-800 font-[400]">
+                      <span className="text-black text-[12px] md:text-lg font-[400]">
                         {msg.question}
                       </span>
                     </div>

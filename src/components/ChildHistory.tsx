@@ -139,7 +139,7 @@ const ChildHistory: FC<ChildHistoryProps> = ({ setOption }) => {
               onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
                 setMedicalHistory(e.target.value)
               }
-              className="w-full h-40 px-4 py-3 border border-gray-300 rounded-xl resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full h-40 px-4 py-3 border border-gray-300 rounded-xl resize-none focus:ring-1 focus:ring-blue-500 focus:border-transparent"
               placeholder=""
             />
           </div>

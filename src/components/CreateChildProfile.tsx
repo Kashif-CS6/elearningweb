@@ -63,7 +63,7 @@ const CreateChildProfile: FC<ChildHistoryProps> = ({ setOption }) => {
                 setFormData({ ...formData, name: e.target.value })
               }
               placeholder="Enter name here"
-              className="w-full px-4 h-[54px] border-[1px] rounded-[6px] border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 placeholder-gray-400"
+              className="w-full px-4 h-[54px] border-[1px] rounded-[6px]  border-gray-300     text-gray-900 placeholder-gray-400"
             />
           </div>
 
@@ -81,7 +81,7 @@ const CreateChildProfile: FC<ChildHistoryProps> = ({ setOption }) => {
                 setFormData({ ...formData, dateOfBirth: e.target.value })
               }
               placeholder="DD/MM/YY"
-              className="w-full px-4 h-[54px] border-[1px] rounded-[6px]  border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 placeholder-gray-400"
+              className="w-full px-4 h-[54px] border-[1px] rounded-[6px]  border-gray-300    text-gray-900 placeholder-gray-400"
             />
           </div>
 
