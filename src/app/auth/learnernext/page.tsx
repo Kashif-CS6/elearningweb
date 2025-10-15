@@ -14,6 +14,7 @@ interface FormData {
 
 export default function ChildNext() {
   const router = useRouter();
+  const [loading, setLoading] = useState<boolean>(false);
   const [resultId, setResultId] = useState<string>("");
   const [formData, setFormData] = useState<FormData>({
     id: "",
@@ -38,23 +39,30 @@ export default function ChildNext() {
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    setLoading(true);
     e.preventDefault();
 
     if (!formData.id) {
       toast.error("Enter Child ID!");
+      setLoading(false);
       return;
     }
 
     if (!formData.relationship) {
       toast.error("Please specify your relationship!");
+      setLoading(false);
       return;
     }
     if (formData.id != resultId) {
       toast.error("You have entered wrong id");
+      setLoading(false);
       return;
     }
-    setIsModalOpen(true); // Open modal first
-    console.log("Form submitted:", formData);
+    setTimeout(() => {
+      setIsModalOpen(true); // Open modal first
+      console.log("Form submitted:", formData);
+      setLoading(false);
+    }, 2000);
   };
 
   const closeModal = () => {
@@ -176,7 +184,7 @@ export default function ChildNext() {
                   type="submit"
                   className="w-full md:w-[452px] cursor-pointer h-[60px] bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition-all shadow-md mt-6"
                 >
-                  Continue
+                  {loading ? "..." : "Continue"}
                 </button>
               </div>
             </form>

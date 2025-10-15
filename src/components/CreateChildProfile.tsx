@@ -8,6 +8,7 @@ interface ChildHistoryProps {
   setOption: (option: string) => void;
 }
 const CreateChildProfile: FC<ChildHistoryProps> = ({ setOption }) => {
+  const [loading, setLoading] = useState<boolean>(false);
   const [formData, setFormData] = useState({
     name: "",
     dateOfBirth: "",
@@ -17,17 +18,22 @@ const CreateChildProfile: FC<ChildHistoryProps> = ({ setOption }) => {
   const [showSchoolDropdown, setShowSchoolDropdown] = useState(false);
 
   const handleSubmit = () => {
+    setLoading(true);
     if (!formData.name) {
       toast.error("Name is required!");
+      setLoading(false);
       return;
     }
     if (!formData.dateOfBirth) {
       toast.error("Date of birth is required!");
+      setLoading(false);
       return;
     }
-    console.log("Form submitted:", formData);
-    setOption("start-question");
-    // alert("Child profile created successfully!");
+    setTimeout(() => {
+      console.log("Form submitted:", formData);
+      setLoading(false);
+      setOption("start-question");
+    }, 2000);
   };
 
   const handleCancel = () => {
@@ -86,7 +92,7 @@ const CreateChildProfile: FC<ChildHistoryProps> = ({ setOption }) => {
             onClick={handleSubmit}
             className="w-full bg-blue-600 hover:bg-blue-700 text-white font-[500] text-[16px] cursor-pointer h-[54px] px-4 rounded-[6px] transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
           >
-            Next
+            {loading ? "..." : "Next"}
           </button>
 
           {/* Cancel Button */}

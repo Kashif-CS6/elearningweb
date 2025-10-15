@@ -35,7 +35,11 @@ const BotSession: FC<BotSessionProps> = ({
   };
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center md:p-6">
-      <div className="bg-white shadow-xl w-full   md:w-[1113px] py-20  rounded-[6px] flex flex-col justify-between text-center">
+      <div
+        className={`bg-white shadow-xl w-full   md:w-[1113px] ${
+          Heading === "MCQ" ? "py-20" : ""
+        }  rounded-[6px] flex flex-col justify-between text-center`}
+      >
         <div className="flex flex-col justify-center items-center ">
           <h2 className="text-sm md:text-[22px] font-[600] leading-[24px] mb-4 px-12 pt-6 ">
             AI Live Session
@@ -52,7 +56,7 @@ const BotSession: FC<BotSessionProps> = ({
             className={`text-gray-700 md:${widthX} mx-auto text-sm md:text-[22.64px] font-[600] leading-[33px]  mb-8 px-12 py-6`}
           >
             {Heading && Heading != "MCQ" && Heading}
-            {Heading === "MCQ" && <h1>Select your game?</h1>}
+            <span>{Heading === "MCQ" && <h1>Select your game?</h1>}</span>
           </p>
 
           {Heading === "MCQ" && (

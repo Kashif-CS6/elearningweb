@@ -8,6 +8,7 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 
 export default function ParentLogin() {
+  const [loading, setLoading] = useState<boolean>(false);
   const router = useRouter();
   const [formData, setFormData] = useState({
     name: "",
@@ -16,21 +17,29 @@ export default function ParentLogin() {
   });
 
   const handleSubmit = () => {
+    setLoading(true);
+
+    console.log("Loading", loading);
     if (!formData.name) {
       toast.error("Name is required!");
+      setLoading(false);
       return;
     }
     if (!formData.relationship) {
       toast.error("Relationship is required!");
+      setLoading(false);
       return;
     }
     if (!formData.phone) {
       toast.error("Phone Number is required!");
+      setLoading(false);
       return;
     }
-    router.push("/parent/dashboard");
-
-    console.log("Form submitted:", formData);
+    setTimeout(() => {
+      router.push("/parent/dashboard");
+      setLoading(false);
+      console.log("Form submitted:", formData);
+    }, 2000);
   };
 
   return (
@@ -145,7 +154,7 @@ export default function ParentLogin() {
                 onClick={handleSubmit}
                 className="w-full md:w-[452px] cursor-pointer h-[60px] bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition-all shadow-md mt-6"
               >
-                Save
+                {loading ? "..." : "Save"}
               </button>
             </div>
           </div>
