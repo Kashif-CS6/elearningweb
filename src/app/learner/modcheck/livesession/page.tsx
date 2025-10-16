@@ -10,7 +10,7 @@ const LiveSession = () => {
       {message === "message 0" && (
         <BotSession
           Heading="Max, what did you notice in Samis story? Why was the magic ball helpful?"
-          route="/learner/modcheck/message"
+          route="/learner/mathchallenge"
           setValue="message 0"
           widthX="w-[610px]"
           setMessage={setMessage}

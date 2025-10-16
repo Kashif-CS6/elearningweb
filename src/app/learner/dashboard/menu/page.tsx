@@ -10,8 +10,8 @@ const Menu = () => {
   return (
     <div className={`flex flex-col gap-4 relative p-6 `}>
       {/* top header */}
-      <div>
-        <div className="shadow-sm p-3 flex items-center justify-between mb-2">
+      <div className="sticky top-0 bg-white z-10">
+        <div className="shadow-sm p-3 flex items-center justify-between mb-2 sticky">
           <div className="flex items-center gap-4 flex-1 max-w-xl">
             <Search className="w-5 h-5 text-gray-400" />
             <input

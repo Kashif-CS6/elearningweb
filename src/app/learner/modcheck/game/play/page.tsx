@@ -30,7 +30,7 @@ const PlayVideo: React.FC = () => {
   // Handle video end navigation
   const handleVideoEnd = () => {
     if (videoRef.current) {
-      router.push("/learner/modcheck/livesession");
+      router.push("/learner/modcheck/game/play/question");
     }
   };
 
