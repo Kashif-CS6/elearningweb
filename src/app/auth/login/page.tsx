@@ -11,10 +11,13 @@ export default function SignUpPage() {
   const handleLogin = () => {
     if (selectedRole === "learner") {
       router.push("/auth/learnernext");
+      return;
     }
     if (selectedRole === "parent") {
       router.push("/auth/parentlogin");
+      return;
     }
+    router.push("/auth/coachnext");
   };
 
   return (

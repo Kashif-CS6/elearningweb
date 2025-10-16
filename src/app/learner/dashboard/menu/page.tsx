@@ -1,12 +1,20 @@
 "use client";
-
 import { Search, Globe, Moon, Grid3x3, Bell } from "lucide-react";
 
 import RightSideBar from "@/components/learner/RightSideBar";
 import Hero from "@/components/learner/dashboard/Hero";
 import LearnerMain from "@/components/learner/dashboard/LearnerMain";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 const Menu = () => {
+  const [showOption, setOption] = useState(false);
+  const router = useRouter();
+
+  const handleLogout = () => {
+    localStorage.clear();
+    router.push("/auth/login");
+  };
   return (
     <div className={`flex flex-col gap-4 relative p-6 `}>
       {/* top header */}
@@ -35,8 +43,21 @@ const Menu = () => {
               <Bell className="w-5 h-5 text-gray-600" />
               <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
             </button>
-            <button className="w-9 h-9 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full hidden md:flex items-center justify-center text-white font-semibold">
-              U
+            <button
+              onClick={() => setOption(!showOption)}
+              className="w-9 h-9 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full hidden md:flex items-center justify-center text-white font-semibold relative"
+            >
+              <span>U</span>
+              {showOption ? (
+                <span
+                  onClick={handleLogout}
+                  className="bg-white border border-gray-200 text-black absolute py-2 px-10 rounded-[6px] -bottom-11 right-0"
+                >
+                  Logout
+                </span>
+              ) : (
+                ""
+              )}
             </button>
           </div>
         </div>
