@@ -1,5 +1,7 @@
+"use client";
 import { useState } from "react";
 import { Check } from "lucide-react";
+import { toast } from "react-hot-toast"; // <-- you can use shadcn toast if already installed
 
 export default function CurrentStruggles({
   setOption,
@@ -7,7 +9,7 @@ export default function CurrentStruggles({
   setOption: (option: string) => void;
 }) {
   const [selectedStruggles, setSelectedStruggles] = useState<string[]>([]);
-  const [selectedFrequencies, setSelectedFrequencies] = useState<string[]>([]);
+  const [selectedFrequency, setSelectedFrequency] = useState<string>("");
 
   const struggles = [
     "Concentration/attention",
@@ -20,16 +22,25 @@ export default function CurrentStruggles({
 
   const frequencies = ["Rarely", "Sometimes", "Often", "Almost always"];
 
-  const toggleSelection = (
-    value: string,
-    selectedList: string[],
-    setSelectedList: (list: string[]) => void
-  ) => {
-    if (selectedList.includes(value)) {
-      setSelectedList(selectedList.filter((v) => v !== value));
+  const toggleStruggle = (value: string) => {
+    if (selectedStruggles.includes(value)) {
+      setSelectedStruggles(selectedStruggles.filter((v) => v !== value));
     } else {
-      setSelectedList([...selectedList, value]);
+      setSelectedStruggles([...selectedStruggles, value]);
     }
+  };
+
+  const handleNext = () => {
+    if (selectedStruggles.length === 0) {
+      toast.error("Please select at least one struggle.");
+      return;
+    }
+    if (!selectedFrequency) {
+      toast.error("Please select how often these struggles affect Max's life.");
+      return;
+    }
+
+    setOption("final");
   };
 
   return (
@@ -41,12 +52,12 @@ export default function CurrentStruggles({
             <div className="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center">
               <Check className="w-5 h-5 text-white" />
             </div>
-            <div className="w-[100px] md:w-[300px]  h-0.5 bg-blue-600"></div>
+            <div className="w-[100px] md:w-[300px] h-0.5 bg-blue-600"></div>
           </div>
           <div className="w-8 h-8 rounded-full border-2 border-blue-600 bg-white flex items-center justify-center">
             <div className="w-3 h-3 rounded-full bg-blue-600"></div>
           </div>
-          <div className="w-[100px] md:w-[300px]  h-0.5 bg-gray-300"></div>
+          <div className="w-[100px] md:w-[300px] h-0.5 bg-gray-300"></div>
           <div className="w-8 h-8 rounded-full bg-gray-300"></div>
         </div>
 
@@ -65,7 +76,7 @@ export default function CurrentStruggles({
             <h3 className="text-gray-900 leading-[100%] tracking-[1px] text-[14px] font-[400] mb-4">
               1. Which areas is Max currently struggling with?
             </h3>
-            <div className=" flex flex-wrap space-x-10 gap-2 md:w-[557px] items-center">
+            <div className="flex flex-wrap space-x-10 gap-2 md:w-[557px] items-center">
               {struggles.map((struggle) => (
                 <label
                   key={struggle}
@@ -74,13 +85,7 @@ export default function CurrentStruggles({
                   <input
                     type="checkbox"
                     checked={selectedStruggles.includes(struggle)}
-                    onChange={() =>
-                      toggleSelection(
-                        struggle,
-                        selectedStruggles,
-                        setSelectedStruggles
-                      )
-                    }
+                    onChange={() => toggleStruggle(struggle)}
                     className="w-4 h-4 accent-blue-600"
                   />
                   <span>{struggle}</span>
@@ -94,22 +99,17 @@ export default function CurrentStruggles({
             <h3 className="text-gray-900 leading-[100%] tracking-[1px] text-[14px] font-[400] mb-4">
               2. How often do these struggles affect Max{"'"}s daily life?
             </h3>
-            <div className=" flex flex-wrap space-x-10 gap-2 md:w-[557px] items-center">
+            <div className="flex flex-wrap space-x-10 gap-2 md:w-[557px] items-center">
               {frequencies.map((freq) => (
                 <label
                   key={freq}
                   className="flex items-center gap-3 text-gray-700 cursor-pointer"
                 >
                   <input
-                    type="checkbox"
-                    checked={selectedFrequencies.includes(freq)}
-                    onChange={() =>
-                      toggleSelection(
-                        freq,
-                        selectedFrequencies,
-                        setSelectedFrequencies
-                      )
-                    }
+                    type="radio"
+                    name="frequency"
+                    checked={selectedFrequency === freq}
+                    onChange={() => setSelectedFrequency(freq)}
                     className="w-4 h-4 accent-blue-600"
                   />
                   <span>{freq}</span>
@@ -120,7 +120,7 @@ export default function CurrentStruggles({
 
           {/* Next Button */}
           <button
-            onClick={() => setOption("final")}
+            onClick={handleNext}
             className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium h-[54px] px-6 rounded-[6px] transition-colors mt-6"
           >
             Next

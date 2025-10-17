@@ -17,6 +17,7 @@ import ChildHistory from "@/components/ChildHistory";
 import CurrentStruggles from "@/components/CurrentStruggle";
 import GenerateChildID from "@/components/GenerateChildID";
 import Image from "next/image";
+import Hero from "@/components/learner/dashboard/Hero";
 
 export default function KidzVoiceDashboard() {
   const [activeMenu, setActiveMenu] = useState("dashboard");
@@ -105,34 +106,7 @@ export default function KidzVoiceDashboard() {
       {/* Main Content */}
       <main className="flex-1 p-2 md:p-8">
         {/* Hero Banner */}
-        <div className="relative md:h-[181px] rounded-[20px] bg-gradient-to-r from-blue-600 to-blue-500  overflow-hidden">
-          {/* Decorative Stars */}
-          <div className="absolute top-8 right-32 w-16 h-16 opacity-20">
-            <div className="absolute inset-0 bg-white transform rotate-45 rounded-lg"></div>
-            <div className="absolute inset-2 bg-blue-600 transform rotate-45 rounded-lg"></div>
-          </div>
-          <div className="absolute top-20 right-64 w-12 h-12 opacity-15">
-            <div className="absolute inset-0 bg-white transform rotate-45 rounded-lg"></div>
-            <div className="absolute inset-2 bg-blue-600 transform rotate-45 rounded-lg"></div>
-          </div>
-          <div className="absolute bottom-12 right-48 w-10 h-10 opacity-10">
-            <div className="absolute inset-0 bg-white transform rotate-45 rounded-lg"></div>
-            <div className="absolute inset-2 bg-blue-600 transform rotate-45 rounded-lg"></div>
-          </div>
-
-          <div className="relative z-10 flex flex-col gap-1 p-6">
-            <p className="text-white text-[12px] font-[400]  uppercase tracking-wide">
-              Online Course
-            </p>
-            <h1 className="text-white text-[24px] font-[600]   max-w-sm">
-              Sharpen Your Skills With Professional Online Courses
-            </h1>
-            <button className="flex items-center justify-center w-[110px] h-[36px] rounded-[40px] gap-2 bg-gray-900 text-white  font-medium text-[12px] hover:bg-gray-800 transition-all">
-              Join Now
-              <ArrowRight className="w-5 h-5" />
-            </button>
-          </div>
-        </div>
+        <Hero />
 
         {/* Statistics Section */}
         <div className="flex items-center flex-wrap lg:flex-nowrap gap-4 justify-between my-4">
@@ -161,7 +135,7 @@ export default function KidzVoiceDashboard() {
             </h3>
             <button
               onClick={() => setOption("form")}
-              className="md:w-[695px]  cursor-pointer bg-blue-600 text-white h-[54px] rounded-[6px]  hover:bg-blue-700 transition-all shadow-md text-[19px] font-[500]"
+              className="md:w-[695px]  cursor-pointer bg-blue-600 text-white h-[54px] rounded-[6px]  hover:bg-blue-700 transition-all shadow-md text-sm font-[500]"
             >
               Add Child
             </button>
