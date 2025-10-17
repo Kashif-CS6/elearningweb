@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { User, Users, ChevronRight } from "lucide-react";
 import toast from "react-hot-toast";
-
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 
@@ -13,13 +12,13 @@ export default function ParentLogin() {
   const [formData, setFormData] = useState({
     name: "",
     relationship: "",
-    phone: "",
+    phone: "+41",
   });
 
   const handleSubmit = () => {
     setLoading(true);
 
-    console.log("Loading", loading);
+    // Basic field validation
     if (!formData.name) {
       toast.error("Name is required!");
       setLoading(false);
@@ -30,26 +29,49 @@ export default function ParentLogin() {
       setLoading(false);
       return;
     }
-    if (!formData.phone) {
-      toast.error("Phone Number is required!");
+
+    // Phone validation
+    const phoneRegex = /^\+41\d{9}$/; // +41 followed by exactly 9 digits
+    if (!phoneRegex.test(formData.phone)) {
+      toast.error(
+        "Phone number must start with +41 and have 9 digits after it."
+      );
       setLoading(false);
       return;
     }
+
     setTimeout(() => {
       router.push("/parent/dashboard");
       setLoading(false);
       console.log("Form submitted:", formData);
-    }, 2000);
+    }, 1000);
+  };
+
+  // Handle phone input ensuring it always starts with +41
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    let value = e.target.value;
+
+    // Ensure +41 stays at the beginning
+    if (!value.startsWith("+41")) {
+      value = "+41" + value.replace(/\D/g, ""); // remove non-digits
+    }
+
+    // Limit to +41 + 9 digits
+    if (value.length > 12) {
+      value = value.slice(0, 12);
+    }
+
+    setFormData({ ...formData, phone: value });
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50  flex items-center justify-center md:p-4">
-      <div className="xl:w-[1152px] flex items-center justify-between gap-16 p-2 ">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 flex items-center justify-center md:p-4">
+      <div className="xl:w-[1152px] flex items-center justify-between gap-16 p-2">
         {/* Left Side - Illustration */}
-        <div className="flex-1 hidden  xl:flex items-center justify-center w-[671px] p-8 h-[671px]">
+        <div className="flex-1 hidden xl:flex items-center justify-center w-[671px] p-8 h-[671px]">
           <Image
             src="/parentlogin.svg"
-            alt=""
+            alt="Parent Login Illustration"
             className="w-full h-full"
             width={671}
             height={671}
@@ -65,7 +87,7 @@ export default function ParentLogin() {
                 Enter basic profile info
               </h1>
               <p className="text-sm text-gray-500">
-                Lorem ipsum is simply dummy text of the printing
+                Please provide your details to continue.
               </p>
             </div>
 
@@ -79,7 +101,6 @@ export default function ParentLogin() {
                 <input
                   type="text"
                   placeholder="Enter your name here"
-                  required={true}
                   value={formData.name}
                   onChange={(e) =>
                     setFormData({ ...formData, name: e.target.value })
@@ -98,7 +119,7 @@ export default function ParentLogin() {
                   onChange={(e) =>
                     setFormData({ ...formData, relationship: e.target.value })
                   }
-                  className="w-full md:w-[452px] h-[60px] pl-12 pr-12 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:outline-none transition-colors text-gray-400 appearance-none cursor-pointer"
+                  className="w-full md:w-[452px] h-[60px] pl-12 pr-12 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:outline-none transition-colors text-gray-800 appearance-none cursor-pointer"
                 >
                   <option value="">Relationship With Child</option>
                   <option value="parent">Parent</option>
@@ -140,21 +161,20 @@ export default function ParentLogin() {
                 </div>
                 <input
                   type="tel"
-                  placeholder="0000 0000000"
+                  placeholder="+41XXXXXXXXX"
                   value={formData.phone}
-                  onChange={(e) =>
-                    setFormData({ ...formData, phone: e.target.value })
-                  }
-                  className="w-full md:w-[452px] h-[60px] pl-12 pr-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:outline-none transition-colors text-gray-400 placeholder-gray-400"
+                  onChange={handlePhoneChange}
+                  className="w-full md:w-[452px] h-[60px] pl-12 pr-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:outline-none transition-colors text-gray-800 placeholder-gray-400"
                 />
               </div>
 
               {/* Save Button */}
               <button
                 onClick={handleSubmit}
+                disabled={loading}
                 className="w-full md:w-[452px] cursor-pointer h-[60px] bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition-all shadow-md mt-6"
               >
-                {loading ? "..." : "Save"}
+                {loading ? "Processing..." : "Save"}
               </button>
             </div>
           </div>

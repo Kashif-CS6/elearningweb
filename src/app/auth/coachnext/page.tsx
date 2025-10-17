@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { User, Users, ChevronRight } from "lucide-react";
+import { useRouter } from "next/navigation";
 interface FormData {
   id: string;
   relationship: string;
@@ -10,6 +11,7 @@ interface FormData {
 }
 
 export default function ChildNext() {
+  const router = useRouter();
   const [formData, setFormData] = useState({
     id: "",
     relationship: "",
@@ -23,7 +25,12 @@ export default function ChildNext() {
     setLoading(true);
     // You can handle form submission here
     console.log("Form Data:", formData);
-    setTimeout(() => setLoading(false), 1500);
+    router.push("/coach/backpack");
+    setTimeout(
+      () => setLoading(false),
+
+      1500
+    );
   };
 
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {

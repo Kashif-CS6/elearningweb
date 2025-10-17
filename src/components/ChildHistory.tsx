@@ -2,6 +2,7 @@
 
 import { FC, useState } from "react";
 import { Check } from "lucide-react";
+import toast from "react-hot-toast";
 
 interface ChildHistoryProps {
   setOption: (option: string) => void;
@@ -39,7 +40,25 @@ const ChildHistory: FC<ChildHistoryProps> = ({ setOption }) => {
     }
   };
 
+  // ✅ Validation before moving to next step
   const changeOption = () => {
+    if (selectedDiagnoses.length === 0) {
+      toast.error("Please select at least one diagnosis.");
+      return;
+    }
+
+    if (selectedServices.length === 0) {
+      toast.error("Please select at least one service.");
+      return;
+    }
+
+    if (!medicalHistory.trim()) {
+      toast.error("Please describe medical or educational history.");
+      return;
+    }
+
+    // If all validation passes
+    toast.success("All fields validated successfully!");
     setOption("createChildHistory");
   };
 
@@ -72,7 +91,7 @@ const ChildHistory: FC<ChildHistoryProps> = ({ setOption }) => {
           {/* Question 1 */}
           <div>
             <h3 className="text-gray-900 leading-[100%] tracking-[1px] text-[14px] font-[400] mb-4">
-              1 Has Max received any previous diagnoses?
+              1. Has Max received any previous diagnoses?
             </h3>
             <div className="flex flex-wrap space-x-10 gap-2 md:w-[360px] items-center">
               {diagnoses.map((diagnosis) => (
@@ -102,7 +121,7 @@ const ChildHistory: FC<ChildHistoryProps> = ({ setOption }) => {
           {/* Question 2 */}
           <div>
             <h3 className="text-gray-900 leading-[100%] tracking-[1px] text-[14px] font-[400] mb-4">
-              2 Has Max ever received support services?
+              2. Has Max ever received support services?
             </h3>
             <div className="flex flex-wrap space-x-10 gap-2 md:w-[360px] items-center">
               {services.map((service) => (
@@ -132,7 +151,7 @@ const ChildHistory: FC<ChildHistoryProps> = ({ setOption }) => {
           {/* Question 3 */}
           <div>
             <h3 className="text-gray-900 leading-[100%] tracking-[1px] text-[14px] font-[400] mb-4">
-              3 Briefly describe any important medical/educational history
+              3. Briefly describe any important medical/educational history
             </h3>
             <textarea
               value={medicalHistory}
@@ -140,7 +159,7 @@ const ChildHistory: FC<ChildHistoryProps> = ({ setOption }) => {
                 setMedicalHistory(e.target.value)
               }
               className="w-full h-40 px-4 py-3 border border-gray-300 rounded-xl resize-none focus:ring-1 focus:ring-blue-500 focus:border-transparent"
-              placeholder=""
+              placeholder="Describe any important background information..."
             />
           </div>
 
