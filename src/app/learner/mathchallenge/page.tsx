@@ -19,13 +19,15 @@ const MathChallengeScreen = () => {
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center md:p-6">
       <div className="bg-white rounded-2xl shadow-xl p-12 h-[593px] md:w-[1113px] w-full text-center">
-        <h2 className=" text-sm md:text-2xl font-semibold mb-6">AI Live Session</h2>
+        <h2 className=" text-sm md:text-2xl font-semibold mb-6">
+          AI Live Session
+        </h2>
         <div className="mb-6 flex justify-center">
           <Image width={100} height={131} alt="img" src={"/ai-icon.svg"} />
         </div>
         <p className="text-gray-700 md:w-[937px] text-sm md:text-[22px] font-[600] md:font-[700] mb-4">
-          Ali, let{"'"}s try this together. Look at this math problem. Imagine your
-          own magic ball is holding all the distractions. Focus only on the
+          Ali, let{"'"}s try this together. Look at this math problem. Imagine
+          your own magic ball is holding all the distractions. Focus only on the
           numbers. Can you solve it?
         </p>
 

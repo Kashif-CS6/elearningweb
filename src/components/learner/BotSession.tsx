@@ -1,7 +1,7 @@
 import React, { FC, useState, Dispatch, SetStateAction } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { Mic, FileText, X } from "lucide-react";
+import { FileText, X } from "lucide-react";
 import RewardScreen from "./Greatjob";
 
 interface BotSessionProps {

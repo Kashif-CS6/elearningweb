@@ -8,7 +8,7 @@ import { useTranslation } from "react-i18next";
 export default function SignUpPage() {
   const [selectedRole, setSelectedRole] = useState("parent");
   const router = useRouter();
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   const handleLogin = () => {
     if (selectedRole === "learner") {

@@ -2,11 +2,9 @@
 import { useState } from "react";
 import Image from "next/image";
 import RewardScreen from "@/components/learner/Greatjob";
-import { useRouter } from "next/navigation";
 
 const Game = () => {
   const [openReward, setOpenReward] = useState<boolean>(false);
-  const router = useRouter();
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center md:p-6">
       <div className="bg-white shadow-xl  md:px-0  pt-6 md:w-[1113px]  rounded-[6px] text-center">

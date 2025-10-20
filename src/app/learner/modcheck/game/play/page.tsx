@@ -42,7 +42,7 @@ const PlayVideo: React.FC = () => {
         videoRef.current?.removeEventListener("ended", handleVideoEnd);
       };
     }
-  }, []);
+  }, [handleVideoEnd]);
 
   return (
     <div className="h-screen flex items-center justify-center">

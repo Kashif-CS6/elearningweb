@@ -1,17 +1,13 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
-import {
-  Send,
-} from "lucide-react";
+import { Send } from "lucide-react";
 import Image from "next/image";
 import toast from "react-hot-toast";
 import messages from "../dashboard/message";
 
 const Chat = () => {
-  const [openModal, setOpenModal] = useState<boolean>(false);
-  const [replay, setReplay] = useState<boolean>(false);
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [messageHistory, setMessageHistory] = useState(messages);
   const [userAnswer, setUserAnswer] = useState("");

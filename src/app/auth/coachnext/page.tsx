@@ -2,13 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { User, Users, ChevronRight } from "lucide-react";
 import { useRouter } from "next/navigation";
-interface FormData {
-  id: string;
-  relationship: string;
-  image: File | null;
-}
 
 export default function ChildNext() {
   const router = useRouter();
