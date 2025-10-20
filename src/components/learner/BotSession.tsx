@@ -95,16 +95,6 @@ const BotSession: FC<BotSessionProps> = ({
               backgroundPosition: "center",
             }}
           >
-            <div className="bg-gradient-to-r w-[100px] h-[100px] md:w-[117px] md:h-[117px] from-blue-500 to-green-400 rounded-full p-1 shadow-2xl absolute top-4">
-              <div className="bg-white w-full h-full rounded-full p-1 ">
-                <button
-                  onClick={() => setMessage(setValue)}
-                  className="bg-blue-600 cursor-pointer w-full h-full hover:bg-blue-700 text-white p-1 flex items-center justify-center rounded-full transition-all transform hover:scale-110 shadow-lg"
-                >
-                  <Mic className="w-10 h-10" />
-                </button>
-              </div>
-            </div>
             <button
               onClick={() => router.push(route)}
               className=" hover:bg-gray-50 p-4 absolute top-16 right-20 md:right-32   rounded-2xl shadow-lg border border-gray-200 transition-all transform hover:scale-105"

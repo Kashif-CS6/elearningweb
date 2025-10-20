@@ -27,8 +27,8 @@ const Hero = () => {
         </h1>
         <p className="text-white max-w-lg text-justify">
           Go beyond academics. KidzLife uses personalized AI sessions and expert
-          coaching to address your child's specific challenges, building their
-          confidence, resilience, and character for a lifetime of success.
+          coaching to address your child{"'"}s specific challenges, building
+          their confidence, resilience, and character for a lifetime of success.
         </p>
         <button className="flex items-center justify-center w-[110px] h-[36px] rounded-[40px] mt-2 gap-2 bg-gray-900 text-white  font-medium text-[12px] hover:bg-gray-800 transition-all">
           Join Now
