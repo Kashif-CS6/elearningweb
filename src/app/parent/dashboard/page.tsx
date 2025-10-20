@@ -9,7 +9,6 @@ import {
   FileText,
   ChevronRight,
   Circle,
-  ArrowRight,
 } from "lucide-react";
 import CreateChildProfile from "@/components/CreateChildProfile";
 import StartQuestionnaire from "@/components/StartQuestionaire";
@@ -18,10 +17,12 @@ import CurrentStruggles from "@/components/CurrentStruggle";
 import GenerateChildID from "@/components/GenerateChildID";
 import Image from "next/image";
 import Hero from "@/components/learner/dashboard/Hero";
+import { useTranslation } from "react-i18next";
 
 export default function KidzVoiceDashboard() {
   const [activeMenu, setActiveMenu] = useState("dashboard");
   const [option, setOption] = useState("start");
+  const { t } = useTranslation();
 
   return (
     <div className="flex min-h-screen bg-gray-50">
@@ -52,7 +53,7 @@ export default function KidzVoiceDashboard() {
               }`}
             >
               <LayoutDashboard className="w-5 h-5" />
-              <span className="font-medium">Dashboard</span>
+              <span className="font-medium">{t("sidebar.dashboard")}</span>
             </button>
 
             <button
@@ -64,7 +65,7 @@ export default function KidzVoiceDashboard() {
               }`}
             >
               <User className="w-5 h-5" />
-              <span className="font-medium">Child Profile</span>
+              <span className="font-medium">{t("sidebar.childProfile")}</span>
             </button>
 
             <button
@@ -76,27 +77,29 @@ export default function KidzVoiceDashboard() {
               }`}
             >
               <Settings className="w-5 h-5" />
-              <span className="font-medium">Settings</span>
+              <span className="font-medium">{t("sidebar.settings")}</span>
             </button>
           </div>
 
           {/* Misc Section */}
           <div className="mt-8">
             <p className="px-4 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">
-              Misc
+              {t("sidebar.misc")}
             </p>
             <div className="space-y-2">
               <button className="w-full flex items-center justify-between px-4 py-3 rounded-lg text-gray-700 hover:bg-gray-100 transition-all">
                 <div className="flex items-center gap-3">
                   <Headphones className="w-5 h-5" />
-                  <span className="font-medium">Support</span>
+                  <span className="font-medium">{t("sidebar.support")}</span>
                 </div>
                 <ChevronRight className="w-4 h-4 text-gray-400" />
               </button>
 
               <button className="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-gray-100 transition-all">
                 <FileText className="w-5 h-5" />
-                <span className="font-medium">Documentation</span>
+                <span className="font-medium">
+                  {t("sidebar.documentation")}
+                </span>
               </button>
             </div>
           </div>
@@ -111,16 +114,20 @@ export default function KidzVoiceDashboard() {
         {/* Statistics Section */}
         <div className="flex items-center flex-wrap lg:flex-nowrap gap-4 justify-between my-4">
           <h2 className="text-[18px] font-semibold text-[#4B465C]">
-            Statistics
+            {t("dashboard.statistics")}
           </h2>
-          <div className="w-80 md:w-[450px] h-[43.84px] flex items-center justify-center  bg-[linear-gradient(90deg,rgba(255,62,62,0)_0%,#FF4B4B_200%,rgba(255,75,75,0)_100.97%)] rounded-md   ">
+
+          <div className="w-80 md:w-[450px] h-[43.84px] flex items-center justify-center  bg-[linear-gradient(90deg,rgba(255,62,62,0)_0%,#FF4B4B_200%,rgba(255,75,75,0)_100.97%)] rounded-md">
             <p className="text-[#FF4B4B] text-[18px] font-[400] text-center">
-              Please Complete Child Profile
+              {t("dashboard.childProfile")}
             </p>
           </div>
+
           <div className="flex items-center gap-3">
-            <span className="text-gray-600 font-medium">Profile</span>
-            <div className="flex items-center gap-2 w-[274.61px] ">
+            <span className="text-gray-600 font-medium">
+              {t("dashboard.profile")}
+            </span>
+            <div className="flex items-center gap-2 w-[274.61px]">
               <div className="flex-1 h-2 bg-green-500 rounded-full"></div>
               <span className="text-gray-800 font-semibold">5%</span>
             </div>
@@ -129,18 +136,20 @@ export default function KidzVoiceDashboard() {
 
         {/* Add Child Card */}
         {option === "start" && (
-          <div className="bg-white rounded-[6px] shadow-sm  md:w-[747.41px] h-[171px] mx-auto my-10 flex flex-col justify-between p-8  ">
-            <h3 className="text-gray-800 text-[18px] leading-[24px] font-medium ">
-              Add your child details
+          <div className="bg-white rounded-[6px] shadow-sm md:w-[747.41px] h-[171px] mx-auto my-10 flex flex-col justify-between p-8">
+            <h3 className="text-gray-800 text-[18px] leading-[24px] font-medium">
+              {t("dashboard.childheading")}
             </h3>
             <button
               onClick={() => setOption("form")}
-              className="md:w-[695px]  cursor-pointer bg-blue-600 text-white h-[54px] rounded-[6px]  hover:bg-blue-700 transition-all shadow-md text-sm font-[500]"
+              className="md:w-[695px] cursor-pointer bg-blue-600 text-white h-[54px] rounded-[6px] hover:bg-blue-700 transition-all shadow-md text-sm font-[500]"
             >
-              Add Child
+              {t("dashboard.childbtn")}
             </button>
           </div>
         )}
+
+        {/* Conditional Pages */}
         {option === "form" && <CreateChildProfile setOption={setOption} />}
         {option === "start-question" && (
           <StartQuestionnaire setOption={setOption} />

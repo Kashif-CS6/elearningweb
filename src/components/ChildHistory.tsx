@@ -3,12 +3,14 @@
 import { FC, useState } from "react";
 import { Check } from "lucide-react";
 import toast from "react-hot-toast";
+import { useTranslation } from "react-i18next";
 
 interface ChildHistoryProps {
   setOption: (option: string) => void;
 }
 
 const ChildHistory: FC<ChildHistoryProps> = ({ setOption }) => {
+  const { t } = useTranslation(); // ✅ translation hook
   const [selectedDiagnoses, setSelectedDiagnoses] = useState<string[]>([]);
   const [selectedServices, setSelectedServices] = useState<string[]>([]);
   const [medicalHistory, setMedicalHistory] = useState<string>("");
@@ -20,6 +22,7 @@ const ChildHistory: FC<ChildHistoryProps> = ({ setOption }) => {
     "None",
     "Other",
   ];
+
   const services: string[] = [
     "Speech therapy",
     "Occupational therapy",
@@ -43,22 +46,22 @@ const ChildHistory: FC<ChildHistoryProps> = ({ setOption }) => {
   // ✅ Validation before moving to next step
   const changeOption = () => {
     if (selectedDiagnoses.length === 0) {
-      toast.error("Please select at least one diagnosis.");
+      toast.error(t("toast.diagnoses"));
       return;
     }
 
     if (selectedServices.length === 0) {
-      toast.error("Please select at least one service.");
+      toast.error(t("toast.service"));
       return;
     }
 
     if (!medicalHistory.trim()) {
-      toast.error("Please describe medical or educational history.");
+      toast.error(t("toast.educationHistory"));
       return;
     }
 
     // If all validation passes
-    toast.success("All fields validated successfully!");
+    toast.success(t("toast.allsuccess"));
     setOption("createChildHistory");
   };
 
@@ -80,10 +83,10 @@ const ChildHistory: FC<ChildHistoryProps> = ({ setOption }) => {
 
         <div className="mb-8">
           <h2 className="text-[16px] font-[500] text-[#282727] mb-2">
-            Child History
+            {t("dashboard.childHistory")}
           </h2>
           <p className="text-[#7C7979] tracking-[1px] text-[10px] font-[400]">
-            Purpose: Quick background about Max
+            {t("dashboard.historyPurpose")}
           </p>
         </div>
 
@@ -91,7 +94,7 @@ const ChildHistory: FC<ChildHistoryProps> = ({ setOption }) => {
           {/* Question 1 */}
           <div>
             <h3 className="text-gray-900 leading-[100%] tracking-[1px] text-[14px] font-[400] mb-4">
-              1. Has Max received any previous diagnoses?
+              {t("dashboard.history1")}
             </h3>
             <div className="flex flex-wrap space-x-10 gap-2 md:w-[360px] items-center">
               {diagnoses.map((diagnosis) => (
@@ -121,7 +124,7 @@ const ChildHistory: FC<ChildHistoryProps> = ({ setOption }) => {
           {/* Question 2 */}
           <div>
             <h3 className="text-gray-900 leading-[100%] tracking-[1px] text-[14px] font-[400] mb-4">
-              2. Has Max ever received support services?
+              {t("dashboard.history2")}
             </h3>
             <div className="flex flex-wrap space-x-10 gap-2 md:w-[360px] items-center">
               {services.map((service) => (
@@ -151,7 +154,7 @@ const ChildHistory: FC<ChildHistoryProps> = ({ setOption }) => {
           {/* Question 3 */}
           <div>
             <h3 className="text-gray-900 leading-[100%] tracking-[1px] text-[14px] font-[400] mb-4">
-              3. Briefly describe any important medical/educational history
+              {t("dashboard.historyQ3")}
             </h3>
             <textarea
               value={medicalHistory}
@@ -159,7 +162,7 @@ const ChildHistory: FC<ChildHistoryProps> = ({ setOption }) => {
                 setMedicalHistory(e.target.value)
               }
               className="w-full h-40 px-4 py-3 border border-gray-300 rounded-xl resize-none focus:ring-1 focus:ring-blue-500 focus:border-transparent"
-              placeholder="Describe any important background information..."
+              placeholder={t("dashboard.historyQ3")}
             />
           </div>
 
@@ -177,7 +180,7 @@ const ChildHistory: FC<ChildHistoryProps> = ({ setOption }) => {
               <polyline points="17 8 12 3 7 8" />
               <line x1="12" y1="3" x2="12" y2="15" />
             </svg>
-            Submit Reports
+            {t("dashboard.submitReport")}
           </button>
 
           {/* Next Button */}
@@ -185,7 +188,7 @@ const ChildHistory: FC<ChildHistoryProps> = ({ setOption }) => {
             onClick={changeOption}
             className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium h-[54px] px-6 rounded-[6px] cursor-pointer transition-colors"
           >
-            Next
+            {t("dashboard.nextBtn")}
           </button>
         </div>
       </div>

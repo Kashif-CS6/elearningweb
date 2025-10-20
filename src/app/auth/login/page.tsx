@@ -40,7 +40,9 @@ export default function SignUpPage() {
         <div className="w-full xl:w-[692px] flex-1 p-2 border border-[#DBDBDB] rounded-[30px]">
           <div className="bg-white rounded-2xl p-8 py-16">
             <div className="text-center mb-6 flex flex-col gap-4">
-              <h1 className="text-[24px] font-[600] mb-4">{t("welcome")}</h1>
+              <h1 className="text-[24px] font-[600] mb-4">
+                {t("signup.welcome")}
+              </h1>
 
               {/* Role Selection */}
               <div className="flex gap-3 justify-center mb-6">
@@ -52,7 +54,7 @@ export default function SignUpPage() {
                       : " border border-blue-600"
                   }`}
                 >
-                  {t("parent")}
+                  {t("signup.parent")}
                 </button>
                 <button
                   onClick={() => setSelectedRole("coach")}
@@ -62,7 +64,7 @@ export default function SignUpPage() {
                       : " border border-blue-600"
                   }`}
                 >
-                  {t("coach")}
+                  {t("signup.coach")}
                 </button>
                 <button
                   onClick={() => setSelectedRole("learner")}
@@ -72,7 +74,7 @@ export default function SignUpPage() {
                       : "border border-blue-600"
                   }`}
                 >
-                  {t("learner")}
+                  {t("signup.learner")}
                 </button>
               </div>
             </div>
@@ -84,7 +86,7 @@ export default function SignUpPage() {
                 className="w-full md:w-[452px] h-[60px] cursor-pointer flex items-center justify-between px-4 py-3 border-2 border-gray-200 rounded-lg hover:border-gray-300 hover:bg-gray-50 transition-all"
               >
                 <span className="flex-1 text-center text-gray-700 font-medium">
-                  {t("continueGoogle")}
+                  {t("signup.continueGoogle")}
                 </span>
               </button>
 
@@ -93,7 +95,7 @@ export default function SignUpPage() {
                 className="w-full md:w-[452px] h-[60px] cursor-pointer flex items-center justify-between px-4 py-3 border-2 border-gray-200 rounded-lg hover:border-gray-300 hover:bg-gray-50 transition-all"
               >
                 <span className="flex-1 text-center text-gray-700 font-medium">
-                  {t("continueFacebook")}
+                  {t("signup.continueFacebook")}
                 </span>
               </button>
 
@@ -102,7 +104,7 @@ export default function SignUpPage() {
                 className="w-full md:w-[452px] h-[60px] cursor-pointer flex items-center justify-between px-4 py-3 border-2 border-gray-200 rounded-lg hover:border-gray-300 hover:bg-gray-50 transition-all"
               >
                 <span className="flex-1 text-center text-gray-700 font-medium">
-                  {t("continueApple")}
+                  {t("signup.continueApple")}
                 </span>
               </button>
 
@@ -111,14 +113,16 @@ export default function SignUpPage() {
                 className="w-full md:w-[452px] h-[60px] cursor-pointer flex items-center justify-between px-4 py-3 border-2 border-gray-200 rounded-lg hover:border-gray-300 hover:bg-gray-50 transition-all"
               >
                 <span className="flex-1 text-center text-gray-700 font-medium">
-                  {t("continueX")}
+                  {t("signup.continueX")}
                 </span>
               </button>
             </div>
 
             {/* Divider */}
             <div className="text-center mb-4">
-              <span className="text-sm text-gray-500">{t("alreadyUser")}</span>
+              <span className="text-sm text-gray-500">
+                {t("signup.alreadyUser")}
+              </span>
             </div>
 
             {/* Sign In Buttons */}
@@ -127,13 +131,13 @@ export default function SignUpPage() {
                 onClick={handleLogin}
                 className="w-full md:w-[452px] h-[60px] cursor-pointer bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition-all shadow-md mb-3"
               >
-                {t("signIn")}
+                {t("signup.signIn")}
               </button>
               <button
                 onClick={handleLogin}
                 className="w-full md:w-[452px] my-4 h-[60px] cursor-pointer border-2 border-gray-200 text-gray-700 py-3 rounded-lg font-medium hover:bg-gray-50 transition-all"
               >
-                {t("guest")}
+                {t("signup.guest")}
               </button>
             </div>
           </div>

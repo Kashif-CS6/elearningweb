@@ -1,16 +1,19 @@
 "use client";
 import { useState } from "react";
 import { Check } from "lucide-react";
-import { toast } from "react-hot-toast"; // <-- you can use shadcn toast if already installed
+import { toast } from "react-hot-toast";
+import { useTranslation } from "react-i18next";
 
 export default function CurrentStruggles({
   setOption,
 }: {
   setOption: (option: string) => void;
 }) {
+  const { t } = useTranslation(); // ✅ i18n hook
   const [selectedStruggles, setSelectedStruggles] = useState<string[]>([]);
   const [selectedFrequency, setSelectedFrequency] = useState<string>("");
 
+  // ✅ Translate options (can also come from translation file if needed)
   const struggles = [
     "Concentration/attention",
     "Reading/writing",
@@ -32,11 +35,11 @@ export default function CurrentStruggles({
 
   const handleNext = () => {
     if (selectedStruggles.length === 0) {
-      toast.error("Please select at least one struggle.");
+      toast.error(t("toast.struggle"));
       return;
     }
     if (!selectedFrequency) {
-      toast.error("Please select how often these struggles affect Max's life.");
+      toast.error(t("toast.maxStruggle"));
       return;
     }
 
@@ -61,12 +64,13 @@ export default function CurrentStruggles({
           <div className="w-8 h-8 rounded-full bg-gray-300"></div>
         </div>
 
+        {/* Heading */}
         <div className="mb-8">
           <h2 className="text-[16px] font-[500] text-[#282727] mb-2">
-            Current Struggles
+            {t("dashboard.struggle")}
           </h2>
           <p className="text-[#7C7979] tracking-[1px] text-[10px] font-[400]">
-            Purpose: Quick background about Max
+            {t("dashboard.historyPurpose")}
           </p>
         </div>
 
@@ -74,7 +78,7 @@ export default function CurrentStruggles({
           {/* Question 1 */}
           <div>
             <h3 className="text-gray-900 leading-[100%] tracking-[1px] text-[14px] font-[400] mb-4">
-              1. Which areas is Max currently struggling with?
+              {t("dashboard.struggle1")}
             </h3>
             <div className="flex flex-wrap space-x-10 gap-2 md:w-[557px] items-center">
               {struggles.map((struggle) => (
@@ -97,7 +101,7 @@ export default function CurrentStruggles({
           {/* Question 2 */}
           <div>
             <h3 className="text-gray-900 leading-[100%] tracking-[1px] text-[14px] font-[400] mb-4">
-              2. How often do these struggles affect Max{"'"}s daily life?
+              {t("dashboard.struggle2")}
             </h3>
             <div className="flex flex-wrap space-x-10 gap-2 md:w-[557px] items-center">
               {frequencies.map((freq) => (
@@ -123,7 +127,7 @@ export default function CurrentStruggles({
             onClick={handleNext}
             className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium h-[54px] px-6 rounded-[6px] transition-colors mt-6"
           >
-            Next
+            {t("dashboard.nextBtn")}
           </button>
         </div>
       </div>

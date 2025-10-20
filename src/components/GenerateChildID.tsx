@@ -1,7 +1,12 @@
+"use client";
+
 import { useState } from "react";
 import { ChevronRight, Copy, Check } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { useTranslation } from "react-i18next";
+
 export default function GenerateChildID() {
+  const { t } = useTranslation();
   const [childID, setChildID] = useState("");
   const [copied, setCopied] = useState(false);
   const router = useRouter();
@@ -24,7 +29,8 @@ export default function GenerateChildID() {
 
   return (
     <div className="py-10 bg-gray-50 flex items-center justify-center lg:p-4">
-      <div className=" md:w-[747.47px] bg-white rounded-[6px] shadow-sm p-8">
+      <div className="md:w-[747.47px] bg-white rounded-[6px] shadow-sm p-8">
+        {/* SVG ICON */}
         <div className="flex justify-center mb-6">
           <div className="relative">
             <svg width="180" height="180" viewBox="0 0 180 180">
@@ -70,7 +76,6 @@ export default function GenerateChildID() {
                 stroke="#E0E0E0"
                 strokeWidth="2"
               />
-
               <path
                 d="M70 110 L75 120 L90 100"
                 stroke="#0066CC"
@@ -79,7 +84,6 @@ export default function GenerateChildID() {
                 strokeLinecap="round"
                 strokeLinejoin="round"
               />
-
               <circle cx="130" cy="110" r="35" fill="#0066CC" />
               <path
                 d="M115 110 L125 120 L145 95"
@@ -102,14 +106,15 @@ export default function GenerateChildID() {
           </div>
         </div>
 
+        {/* TEXT SECTION */}
         <div className="text-center mb-8">
-          <p className="text-gray-700 font-medium">
-            Your answers are securely saved.
-          </p>
-          <p className="text-gray-600">You can update anytime</p>
+          <p className="text-gray-700 font-medium">{t("dashboard.idTitle")}</p>
+          <p className="text-gray-600">{t("dashboard.idDescription")}</p>
         </div>
 
+        {/* BUTTONS & INPUT */}
         <div className="space-y-4">
+          {/* View Summary Button */}
           <button className="w-full h-[54px] px-4 bg-white border border-gray-300 rounded-[6px] text-gray-700 hover:bg-gray-50 transition-colors flex items-center justify-between">
             <div className="flex items-center gap-2">
               <svg
@@ -125,21 +130,22 @@ export default function GenerateChildID() {
                 <line x1="7" y1="10" x2="13" y2="10" />
                 <line x1="7" y1="13" x2="10" y2="13" />
               </svg>
-              <span>View summary</span>
+              <span>{t("dashboard.summary")}</span>
             </div>
             <ChevronRight className="w-5 h-5 text-gray-400" />
           </button>
 
+          {/* Child ID Section */}
           <div>
             <p className="text-sm text-gray-600 mb-2">
-              Secure link between account
+              {t("dashboard.shareLink")}
             </p>
             <div className="relative">
               <input
                 type="text"
                 value={childID}
                 readOnly
-                placeholder="Generate child ID"
+                placeholder={t("dashboard.generateIDbtn")}
                 className="w-full h-[54px] pl-10 pr-12 bg-white border border-gray-300 rounded-[6px] text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
               <svg
@@ -170,18 +176,20 @@ export default function GenerateChildID() {
             </div>
             {childID && (
               <p className="text-sm text-gray-600 text-center mt-3">
-                When your child installs the app and uses this ID,
-                <br />
-                their account will connect with yours.
+                {t("dashboard.idLinkDesc", {
+                  defaultValue:
+                    "When your child installs the app and uses this ID, their account will connect with yours.",
+                })}
               </p>
             )}
           </div>
 
+          {/* Generate ID Button */}
           <button
             onClick={generateID}
             className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium h-[54px] px-6 rounded-[6px] cursor-pointer transition-colors"
           >
-            Generate Child ID
+            {t("dashboard.generateIDbtn")}
           </button>
         </div>
       </div>

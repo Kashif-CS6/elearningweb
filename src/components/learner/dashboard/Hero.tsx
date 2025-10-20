@@ -1,9 +1,13 @@
+"use client";
 import React from "react";
 import { ArrowRight } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const Hero = () => {
+  const { t } = useTranslation();
+
   return (
-    <div className="z-9 relative rounded-[20px] bg-gradient-to-r from-blue-600 to-blue-500  overflow-hidden">
+    <div className="z-9 relative rounded-[20px] bg-gradient-to-r from-blue-600 to-blue-500 overflow-hidden">
       {/* Decorative Stars */}
       <div className="absolute top-8 right-32 w-16 h-16 opacity-20">
         <div className="absolute inset-0 bg-white transform rotate-45 rounded-lg"></div>
@@ -19,19 +23,13 @@ const Hero = () => {
       </div>
 
       <div className="relative z-10 flex flex-col gap-1 p-6">
-        <p className="text-white text-[12px] font-[400]  uppercase tracking-wide">
-          The complete personality and intelligence development app.
+        <p className="text-white text-[12px] font-[400] uppercase tracking-wide">
+          {t("hero.top")}
         </p>
-        <h1 className="text-white text-[24px] font-[600]">
-          KidzLife: Grow Their IQ, EQ, and SQ.
-        </h1>
-        <p className="text-white max-w-lg text-justify">
-          Go beyond academics. KidzLife uses personalized AI sessions and expert
-          coaching to address your child{"'"}s specific challenges, building
-          their confidence, resilience, and character for a lifetime of success.
-        </p>
-        <button className="flex items-center justify-center w-[110px] h-[36px] rounded-[40px] mt-2 gap-2 bg-gray-900 text-white  font-medium text-[12px] hover:bg-gray-800 transition-all">
-          Join Now
+        <h1 className="text-white text-[24px] font-[600]">{t("hero.title")}</h1>
+        <p className="text-white max-w-lg text-justify">{t("hero.desc")}</p>
+        <button className="flex items-center justify-center w-[110px] h-[36px] rounded-[40px] mt-2 gap-2 bg-gray-900 text-white font-medium text-[12px] hover:bg-gray-800 transition-all">
+          {t("hero.button")}
           <ArrowRight className="w-5 h-5" />
         </button>
       </div>

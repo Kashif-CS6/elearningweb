@@ -5,8 +5,10 @@ import { User, Users, ChevronRight } from "lucide-react";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import { useTranslation } from "react-i18next";
 
 export default function ParentLogin() {
+  const { t } = useTranslation();
   const [loading, setLoading] = useState<boolean>(false);
   const router = useRouter();
   const [formData, setFormData] = useState({
@@ -20,12 +22,12 @@ export default function ParentLogin() {
 
     // Basic field validation
     if (!formData.name) {
-      toast.error("Name is required!");
+      toast.error(t("toast.name"));
       setLoading(false);
       return;
     }
     if (!formData.relationship) {
-      toast.error("Relationship is required!");
+      toast.error(t("toast.relation"));
       setLoading(false);
       return;
     }
@@ -33,9 +35,7 @@ export default function ParentLogin() {
     // Phone validation
     const phoneRegex = /^\+41\d{9}$/; // +41 followed by exactly 9 digits
     if (!phoneRegex.test(formData.phone)) {
-      toast.error(
-        "Phone number must start with +41 and have 9 digits after it."
-      );
+      toast.error(t("toast.phone"));
       setLoading(false);
       return;
     }
@@ -84,11 +84,9 @@ export default function ParentLogin() {
             {/* Header */}
             <div className="mb-8">
               <h1 className="text-2xl font-semibold text-gray-800 mb-2">
-                Enter basic profile info
+                {t("parentPage.basic")}
               </h1>
-              <p className="text-sm text-gray-500">
-                Please provide your details to continue.
-              </p>
+              <p className="text-sm text-gray-500">{t("parentPage.desc")}</p>
             </div>
 
             {/* Form */}
@@ -100,7 +98,7 @@ export default function ParentLogin() {
                 </div>
                 <input
                   type="text"
-                  placeholder="Enter your name here"
+                  placeholder={t("parentPage.namePlaceholder")}
                   value={formData.name}
                   onChange={(e) =>
                     setFormData({ ...formData, name: e.target.value })
@@ -121,11 +119,13 @@ export default function ParentLogin() {
                   }
                   className="w-full md:w-[452px] h-[60px] pl-12 pr-12 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:outline-none transition-colors text-gray-800 appearance-none cursor-pointer"
                 >
-                  <option value="">Relationship With Child</option>
-                  <option value="parent">Parent</option>
-                  <option value="guardian">Guardian</option>
-                  <option value="teacher">Teacher</option>
-                  <option value="relative">Relative</option>
+                  <option value="">
+                    {t("parentPage.relationPlaceholder")}
+                  </option>
+                  <option value="parent"> {t("parentPage.parent")}</option>
+                  <option value="guardian">{t("parentPage.guardian")}</option>
+                  <option value="teacher">{t("parentPage.teacher")}</option>
+                  <option value="relative">{t("parentPage.relative")}</option>
                 </select>
                 <div className="absolute right-4 top-1/2 transform -translate-y-1/2 pointer-events-none">
                   <ChevronRight className="w-5 h-5 text-gray-400" />
@@ -174,7 +174,7 @@ export default function ParentLogin() {
                 disabled={loading}
                 className="w-full md:w-[452px] cursor-pointer h-[60px] bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition-all shadow-md mt-6"
               >
-                {loading ? "Processing..." : "Save"}
+                {loading ? "..." : t("parentPage.save")}
               </button>
             </div>
           </div>
