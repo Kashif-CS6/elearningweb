@@ -77,6 +77,12 @@
     "idDescription": "You can update anytime",
     "summary": "View summary",
     "shareLink": "Secure link between account",
-    "generateIDbtn": "Generate Child ID"
+    "generateIDbtn": "Generate Child ID",
+    "accountSetup": "Account Setup",
+    "id": "ID",
+    "upload": "Upload Image",
+    "continueBtn": "Continue",
+    "connected": "Connected",
+    "linked": " Youre now linked with your parent!"
   }
 }

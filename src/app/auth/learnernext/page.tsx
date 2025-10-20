@@ -5,6 +5,7 @@ import { User, Users, ChevronRight } from "lucide-react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import toast from "react-hot-toast";
+import { useTranslation } from "react-i18next";
 
 interface FormData {
   id: string;
@@ -13,6 +14,7 @@ interface FormData {
 }
 
 export default function ChildNext() {
+  const { t } = useTranslation();
   const router = useRouter();
   const [loading, setLoading] = useState<boolean>(false);
   const [resultId, setResultId] = useState<string>("");
@@ -96,7 +98,7 @@ export default function ChildNext() {
             {/* Header */}
             <div className="mb-8">
               <h1 className="text-2xl font-semibold text-gray-800 mb-2">
-                Account Setup
+                {t("dashboard.accountSetup")}
               </h1>
               <p className="text-sm text-gray-500">
                 Lorem ipsum is simply dummy text of the printing
@@ -113,7 +115,7 @@ export default function ChildNext() {
                   </div>
                   <input
                     type="text"
-                    placeholder="ID"
+                    placeholder={`${t("dashboard.id")}`}
                     value={formData.id}
                     onChange={(e) =>
                       setFormData({ ...formData, id: e.target.value })
@@ -134,11 +136,11 @@ export default function ChildNext() {
                     }
                     className="w-full md:w-[452px] h-[60px] pl-12 pr-12 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:outline-none transition-colors text-gray-400 appearance-none cursor-pointer"
                   >
-                    <option value="">Enter Your Name here</option>
-                    <option value="parent">Parent</option>
-                    <option value="guardian">Guardian</option>
-                    <option value="teacher">Teacher</option>
-                    <option value="relative">Relative</option>
+                    <option value="">{t("dashboard.enterName")}</option>
+                    <option value="parent">{t("parentPage.parent")}</option>
+                    <option value="guardian">{t("parentPage.guardian")}</option>
+                    <option value="teacher">{t("parentPage.teacher")}</option>
+                    <option value="relative">{t("parentPage.relative")}</option>
                   </select>
                   <div className="absolute right-4 top-1/2 transform -translate-y-1/2 pointer-events-none">
                     <ChevronRight className="w-5 h-5 text-gray-400" />
@@ -167,7 +169,9 @@ export default function ChildNext() {
                           />
                         </svg>
                       </div>
-                      {formData.image ? formData.image.name : "Upload Image"}
+                      {formData.image
+                        ? formData.image.name
+                        : t("dashboard.upload")}
                     </div>
                   </label>
                   <input
@@ -184,7 +188,7 @@ export default function ChildNext() {
                   type="submit"
                   className="w-full md:w-[452px] cursor-pointer h-[60px] bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition-all shadow-md mt-6"
                 >
-                  {loading ? "..." : "Continue"}
+                  {loading ? "..." : t("dashboard.continueBtn")}
                 </button>
               </div>
             </form>
@@ -212,10 +216,10 @@ export default function ChildNext() {
                 className="w-[80px] h-[80px] md:w-[120px] md:h-[120px]"
               />
               <h2 className="text-[16px] font-semibold md:text-[34.87px] md:font-[500] leading-[46.5px] text-gray-800">
-                Connected
+                {t("dashboard.connected")}
               </h2>
               <p className="md:text-[31px] leading-[38.75px] font-[400] text-[#7D848D]">
-                Youre now linked with your parent!
+                {t("dashboard.linked")}
               </p>
             </div>
           </div>
