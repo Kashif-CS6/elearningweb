@@ -4,16 +4,25 @@ import React, { useState } from "react";
 import { ChevronRight } from "lucide-react";
 import Image from "next/image";
 import RewardScreen from "../learner/Greatjob";
+import { useRouter } from "next/navigation";
 
 const RequestDetails = () => {
   const [showModal, setModal] = useState(false);
+
+  const router = useRouter();
+
+  const handleBack = () => {
+    router.back();
+  };
 
   return (
     <div className="w-full mx-auto py-6 relative">
       <div className="flex items-center gap-4 my-4">
         <button className="flex items-center gap-2 text-gray-600 hover:text-gray-900">
           <ChevronRight className="w-4 h-4 rotate-180" />
-          <span className="text-sm">Back</span>
+          <span className="text-sm" onClick={handleBack}>
+            Back
+          </span>
         </button>
         <h1 className="text-2xl font-bold text-gray-900">Request</h1>
       </div>
@@ -129,7 +138,7 @@ const RequestDetails = () => {
 as your learner!"
           btnText="Go to Learner Profile"
           openReward={showModal}
-          route="/teacher/dashboard/studentlist"
+          route="/learner/dashboard"
         />
       )}
     </div>

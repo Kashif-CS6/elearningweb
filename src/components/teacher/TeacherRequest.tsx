@@ -9,6 +9,10 @@ const TeacherRequest = () => {
   const handleRoute = () => {
     router.push("/teacher/dashboard/recent");
   };
+
+  const handleRouteStudent = () => {
+    router.push("/teacher/dashboard/studentlist");
+  };
   return (
     <div className="w-full mx-auto  mt-4  space-y-6">
       <div
@@ -25,7 +29,7 @@ const TeacherRequest = () => {
       </div>
       <div className="flex items-center flex-1 gap-4 w-full flex-wrap">
         <div
-          onClick={handleRoute}
+          onClick={handleRouteStudent}
           className="bg-white cursor-pointer flex-1 rounded-lg shadow-sm border border-gray-200 p-6 flex items-start gap-4"
         >
           <div className="w-12 h-12 bg-yellow-500 rounded-lg flex items-center justify-center flex-shrink-0">

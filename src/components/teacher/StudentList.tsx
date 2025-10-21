@@ -1,14 +1,22 @@
+"use client"
 import React from "react";
 import { Award, ChevronRight } from "lucide-react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const StudentList = () => {
+  const router = useRouter();
   return (
     <div className="w-full mx-auto py-6">
       <div className="mb-6 flex items-center gap-4">
         <button className="flex items-center gap-2 text-gray-600 hover:text-gray-900 ">
           <ChevronRight className="w-4 h-4 rotate-180" />
-          <span className="text-sm">Back</span>
+          <span
+            className="text-sm"
+            onClick={() => router.back()}
+          >
+            Back
+          </span>
         </button>
         <h1 className="text-[24px] font-[500] text-gray-900">Students</h1>
       </div>
