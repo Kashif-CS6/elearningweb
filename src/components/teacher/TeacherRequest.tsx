@@ -1,12 +1,21 @@
 import React from "react";
 import { Bell, Users, Calendar } from "lucide-react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const TeacherRequest = () => {
+  const router = useRouter();
+
+  const handleRoute = () => {
+    router.push("/teacher/dashboard/recent");
+  };
   return (
     <div className="w-full mx-auto  mt-4  space-y-6">
-      <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 flex items-start gap-4">
-        <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
+      <div
+        onClick={handleRoute}
+        className="bg-white cursor-pointer rounded-lg shadow-sm border border-gray-200 p-6 flex items-start gap-4"
+      >
+        <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0 cursor-pointer">
           <Bell className="w-6 h-6 text-white" />
         </div>
         <div>
@@ -15,7 +24,10 @@ const TeacherRequest = () => {
         </div>
       </div>
       <div className="flex items-center flex-1 gap-4 w-full flex-wrap">
-        <div className="bg-white flex-1 rounded-lg shadow-sm border border-gray-200 p-6 flex items-start gap-4">
+        <div
+          onClick={handleRoute}
+          className="bg-white cursor-pointer flex-1 rounded-lg shadow-sm border border-gray-200 p-6 flex items-start gap-4"
+        >
           <div className="w-12 h-12 bg-yellow-500 rounded-lg flex items-center justify-center flex-shrink-0">
             <Users className="w-6 h-6 text-white" />
           </div>
@@ -27,7 +39,10 @@ const TeacherRequest = () => {
           </div>
         </div>
 
-        <div className="bg-white flex-1 rounded-lg shadow-sm border border-gray-200 p-6 flex items-start gap-4">
+        <div
+          onClick={handleRoute}
+          className="bg-white cursor-pointer flex-1 rounded-lg shadow-sm border border-gray-200 p-6 flex items-start gap-4"
+        >
           <div className="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center flex-shrink-0">
             <Calendar className="w-6 h-6 text-white" />
           </div>

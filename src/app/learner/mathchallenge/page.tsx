@@ -7,12 +7,18 @@ const MathChallengeScreen = () => {
   const [onAnswer, setOnAnswer] = useState<string>("");
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
   const [openReward, setOpenReward] = useState<boolean>(false); // ✅ start closed
+  const [goNext, setGoNext] = useState<boolean>(false);
 
   const handleAnswer = (num: number) => {
     setSelectedAnswer(num);
+
     if (num === 7) {
+      setGoNext(false);
       setOpenReward(true); // ✅ open only when correct
+      return;
     }
+    setGoNext(true);
+    setOpenReward(true);
     setTimeout(() => setOnAnswer(num.toString()), 500);
   };
 
@@ -63,9 +69,16 @@ const MathChallengeScreen = () => {
       {/* ✅ Reward modal only opens when correct answer */}
       {openReward && (
         <RewardScreen
+          heading={goNext ? "Wrong Answer😩" : "Max earns: ⭐ x10 + 💎 x1"}
+          description={
+            goNext
+              ? "Try Again"
+              : "Amazing work, Ali! You’re one step closer to becoming a Focus Hero. Keep collecting stars to unlock your next adventure"
+          }
+          btnText="Next"
           setOpenReward={setOpenReward}
           openReward={openReward}
-          route="/learner/modcheck/message"
+          route={goNext ? "" : "/learner/modcheck/message"}
         />
       )}
     </div>

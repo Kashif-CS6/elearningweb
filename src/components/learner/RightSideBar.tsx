@@ -17,7 +17,13 @@ const RightSideBar = () => {
         </div>
 
         <div className="flex flex-col items-center mb-6">
-          <div className="w-24 h-24 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full mb-3"></div>
+          <Image
+            width={500}
+            height={500}
+            alt="proifle"
+            src={"/child.jpg"}
+            className="w-24 h-24 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full mb-3 object-cover"
+          ></Image>
           <h4 className="font-[500] text-[16px] text-[#202020]">Max</h4>
           <p className="text-sm text-gray-500">maxloren@email.com</p>
         </div>
