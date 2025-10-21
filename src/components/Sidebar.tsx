@@ -22,7 +22,7 @@ const Sidebar = () => {
         <Image src={"/elogo.svg"} width={45.54} height={47.72} alt="e logo" />
         <div className="flex items-center justify-between w-full">
           <span className="text-[25.48px] tracking-normal leading-[100%] font-[600] text-[#1B84F8]">
-            KidzVoice
+            KidzLive
           </span>
           <div className="flex items-center justify-center py-2">
             <Circle className="w-4 h-4 text-gray-400" />

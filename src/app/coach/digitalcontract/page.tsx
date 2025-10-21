@@ -9,10 +9,10 @@ const DigitalContract = () => {
   const [agreed, setAgreed] = useState(false);
 
   const handleSave = () => {
-    if (!agreed) {
-      toast.error("Please agree to safeguarding policies before proceeding.");
-      return;
-    }
+    // if (!agreed) {
+    //   toast.error("Please agree to safeguarding policies before proceeding.");
+    //   return;
+    // }
 
     toast.success("Contract saved successfully!");
     setTimeout(() => {
@@ -21,7 +21,7 @@ const DigitalContract = () => {
   };
 
   return (
-    <div className="h-screen flex items-center justify-center">
+    <div className="my-10 flex items-center justify-center">
       <div className="w-[747.18px] h-[925px] border border-gray-200 mx-auto bg-white rounded-[6px] p-8 px-5 shadow-lg">
         <h2 className="font-[600] text-[18px] leading-[24px] text-[#4B465C] text-center">
           Digital Contract

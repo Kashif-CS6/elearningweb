@@ -124,7 +124,7 @@ export default function ChildNext() {
 
                   <input
                     type="text"
-                    placeholder="Usama Khan"
+                    placeholder="XYZ"
                     value={formData.id}
                     onChange={(e) =>
                       setFormData({ ...formData, id: e.target.value })

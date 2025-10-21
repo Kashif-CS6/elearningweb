@@ -34,21 +34,21 @@ export default function BackPack() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (
-      !formData.educationDate ||
-      !formData.licenseDate ||
-      !formData.experience ||
-      !formData.motivation ||
-      !formData.idFile ||
-      !formData.degreeFile ||
-      !formData.certificateFile ||
-      !formData.referenceFile ||
-      !formData.agreeSafeguard ||
-      !formData.agreePolicy
-    ) {
-      toast.error("Please fill all fields and upload all required documents.");
-      return;
-    }
+    // if (
+    //   !formData.educationDate ||
+    //   !formData.licenseDate ||
+    //   !formData.experience ||
+    //   !formData.motivation ||
+    //   !formData.idFile ||
+    //   !formData.degreeFile ||
+    //   !formData.certificateFile ||
+    //   !formData.referenceFile ||
+    //   !formData.agreeSafeguard ||
+    //   !formData.agreePolicy
+    // ) {
+    //   toast.error("Please fill all fields and upload all required documents.");
+    //   return;
+    // }
 
     setLoading(true);
 
@@ -64,7 +64,7 @@ export default function BackPack() {
   };
 
   return (
-    <div className="h-screen flex justify-center items-center bg-gray-50">
+    <div className="my-10 flex justify-center items-center bg-gray-50">
       <div className="w-[747px] mx-auto bg-white border border-gray-300 rounded-2xl p-8 shadow-md">
         <h2 className="text-2xl font-semibold text-[#4B465C] mb-8">
           Backpack Questionnaire

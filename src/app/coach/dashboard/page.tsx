@@ -6,17 +6,16 @@ import VidoePlayer from "@/components/coach/VidoePlayer";
 import QuizMode from "@/components/coach/QuizMode";
 import AssignmentMode from "@/components/coach/AssignmentMode";
 import Certificate from "@/components/coach/Certificate";
+import Training from "@/components/coach/Training";
 
 const Coach = () => {
   return (
-    <div className="flex min-h-screen bg-gray-50">
+    <div className="flex min-h-screen ">
       {/* Sidebar */}
-      <Sidebar />
+
       {/* Main Content */}
-      <main className="flex-1 p-2 md:p-8">
-        {/* Hero Banner */}
-        <Hero />
-        <AssignmentMode />
+      <main className="flex-1 my-5">
+        <QuizMode/>
       </main>
     </div>
   );
