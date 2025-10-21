@@ -12,23 +12,23 @@ const VideoPlayer = () => {
   const iframeRef = useRef<HTMLIFrameElement>(null);
 
   // 🧠 Progress: simulate full playback in 10 seconds
-  useEffect(() => {
-    let interval: any;
-    if (playing) {
-      interval = setInterval(() => {
-        setPlayed((p) => {
-          const newProgress = p + 0.1; // 0.1 every second = 10 seconds total
-          if (newProgress >= 1) {
-            clearInterval(interval);
-            router.push("/coach/dashboard/quiz");
-            return 1;
-          }
-          return newProgress;
-        });
-      }, 1000);
-    }
-    return () => clearInterval(interval);
-  }, [playing, router]);
+ useEffect(() => {
+   let interval: ReturnType<typeof setInterval>;
+   if (playing) {
+     interval = setInterval(() => {
+       setPlayed((p) => {
+         const newProgress = p + 0.1;
+         if (newProgress >= 1) {
+           clearInterval(interval);
+           router.push("/coach/dashboard/quiz");
+           return 1;
+         }
+         return newProgress;
+       });
+     }, 1000);
+   }
+   return () => clearInterval(interval);
+ }, [playing, router]);
 
   return (
     <div className="max-w-4xl mx-auto p-6">
