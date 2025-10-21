@@ -1,14 +1,17 @@
 "use client";
+
 import React, { useState } from "react";
 import { ChevronRight } from "lucide-react";
 import Image from "next/image";
+import RewardScreen from "../learner/Greatjob";
 
 const RequestDetails = () => {
-  const [showModal, setModal] = useState<boolean>(false);
+  const [showModal, setModal] = useState(false);
+
   return (
-    <div className="w-full mx-auto py-6">
-      <div className="mb-6">
-        <button className="flex items-center gap-2 text-gray-600 hover:text-gray-900 mb-4">
+    <div className="w-full mx-auto py-6 relative">
+      <div className="flex items-center gap-4 my-4">
+        <button className="flex items-center gap-2 text-gray-600 hover:text-gray-900">
           <ChevronRight className="w-4 h-4 rotate-180" />
           <span className="text-sm">Back</span>
         </button>
@@ -20,10 +23,10 @@ const RequestDetails = () => {
         <div className="flex items-center justify-between pb-6 border-b border-gray-200">
           <div className="flex items-center gap-4">
             <Image
-              src={"/child.jpg"}
+              src="/child.jpg"
               className="w-[79px] h-[79px] object-cover rounded-[12px]"
-              width={500}
-              height={500}
+              width={79}
+              height={79}
               alt="child"
             />
             <div>
@@ -31,7 +34,7 @@ const RequestDetails = () => {
                 Stephane Maarek
               </h2>
               <p className="text-xs text-gray-600 mb-2">
-                CBT | Diagnosis | Crisis Care......
+                CBT | Diagnosis | Crisis Care...
               </p>
               <div className="flex items-center gap-3 text-xs">
                 <div className="flex items-center gap-1 text-gray-600">
@@ -83,81 +86,48 @@ const RequestDetails = () => {
         </div>
 
         {/* Child History */}
-        <div>
-          <h3 className="font-semibold text-gray-900 text-base mb-2">
-            Child History
-          </h3>
-          <p className="text-xs text-gray-600 mb-3">
-            CBT | Diagnosis | Crisis Care | Research | Empathy
-          </p>
-          <p className="text-xs text-gray-700 leading-relaxed mb-2">
-            lic. phil. & Dipl. Psych., licensed psychotherapist
-          </p>
-          <p className="text-xs text-gray-600 leading-relaxed">
-            Depth psychology, cognitive behavioral therapy, family and couples
-            therapy, psychodrama, and resource therapy. Specialist for gifted
-            children with learning disabilities and trainer in Nonviolent
-            Communication.
-          </p>
-          <p className="text-xs text-gray-600 leading-relaxed mt-1">
-            Psychotherapy, supervision, individual, couple, group. Lecturer,
-            speaker
-          </p>
-        </div>
-
-        {/* Current Struggles */}
-        <div>
-          <h3 className="font-semibold text-gray-900 text-base mb-2">
-            Current Struggles
-          </h3>
-          <p className="text-xs text-gray-600 mb-3">
-            CBT | Diagnosis | Crisis Care | Research | Empathy
-          </p>
-          <p className="text-xs text-gray-700 leading-relaxed mb-2">
-            lic. phil. & Dipl. Psych., licensed psychotherapist
-          </p>
-          <p className="text-xs text-gray-600 leading-relaxed">
-            Depth psychology, cognitive behavioral therapy, family and couples
-            therapy, psychodrama, and resource therapy. Specialist for gifted
-            children with learning disabilities and trainer in Nonviolent
-            Communication.
-          </p>
-          <p className="text-xs text-gray-600 leading-relaxed mt-1">
-            Psychotherapy, supervision, individual, couple, group. Lecturer,
-            speaker
-          </p>
-        </div>
-
-        {/* Family Context */}
-        <div>
-          <h3 className="font-semibold text-gray-900 text-base mb-2">
-            Family Context
-          </h3>
-          <p className="text-xs text-gray-600 mb-3">
-            CBT | Diagnosis | Crisis Care | Research | Empathy
-          </p>
-          <p className="text-xs text-gray-700 leading-relaxed mb-2">
-            lic. phil. & Dipl. Psych., licensed psychotherapist
-          </p>
-          <p className="text-xs text-gray-600 leading-relaxed">
-            Depth psychology, cognitive behavioral therapy, family and couples
-            therapy, psychodrama, and resource therapy. Specialist for gifted
-            children with learning disabilities and trainer in Nonviolent
-            Communication.
-          </p>
-          <p className="text-xs text-gray-600 leading-relaxed mt-1">
-            Psychotherapy, supervision, individual, couple, group. Lecturer,
-            speaker
-          </p>
-        </div>
+        {["Child History", "Current Struggles", "Family Context"].map(
+          (section, idx) => (
+            <div key={idx}>
+              <h3 className="font-semibold text-gray-900 text-base mb-2">
+                {section}
+              </h3>
+              <p className="text-xs text-gray-600 mb-3">
+                CBT | Diagnosis | Crisis Care | Research | Empathy
+              </p>
+              <p className="text-xs text-gray-700 leading-relaxed mb-2">
+                lic. phil. & Dipl. Psych., licensed psychotherapist
+              </p>
+              <p className="text-xs text-gray-600 leading-relaxed">
+                Depth psychology, cognitive behavioral therapy, family and
+                couples therapy, psychodrama, and resource therapy. Specialist
+                for gifted children with learning disabilities and trainer in
+                Nonviolent Communication.
+              </p>
+              <p className="text-xs text-gray-600 leading-relaxed mt-1">
+                Psychotherapy, supervision, individual, couple, group. Lecturer,
+                speaker.
+              </p>
+            </div>
+          )
+        )}
 
         {/* Accept Button */}
-        <button className="w-full font-[400] text-[16px] bg-blue-600 text-white h-[60px] py-3.5 rounded-[16px] leading-[100%] hover:bg-blue-700 transition-colors shadow-sm">
+        <button
+          onClick={() => setModal(true)}
+          className="w-full font-[500] text-[16px] bg-blue-600 text-white h-[60px] py-3.5 rounded-[16px] leading-[100%] hover:bg-blue-700 transition-colors shadow-sm"
+        >
           Accept
         </button>
       </div>
 
-      {showModal  }
+      {showModal && (
+        <RewardScreen
+          setOpenReward={setModal}
+          openReward={showModal}
+          route="/teacher/dashboard"
+        />
+      )}
     </div>
   );
 };
