@@ -22,6 +22,10 @@ export default function SignUpPage() {
     router.push("/auth/coachnext");
   };
 
+  const handleTeacher = () => {
+    router.push("/teacher/dashboard");
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 flex items-center justify-center p-4 relative">
       <div className="xl:w-[1152px] flex items-center justify-between md:gap-20">
@@ -114,6 +118,14 @@ export default function SignUpPage() {
               >
                 <span className="flex-1 text-center text-gray-700 font-medium">
                   {t("signup.continueX")}
+                </span>
+              </button>
+              <button
+                onClick={handleTeacher}
+                className="w-full md:w-[452px] h-[60px] cursor-pointer flex items-center justify-between px-4 py-3 border-2 border-gray-200 rounded-lg hover:border-gray-300 hover:bg-gray-50 transition-all"
+              >
+                <span className="flex-1 text-center text-gray-700 font-medium">
+                  Continue as Teacher
                 </span>
               </button>
             </div>
