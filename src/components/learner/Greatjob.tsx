@@ -8,12 +8,18 @@ interface RewardScreenProps {
   setOpenReward: Dispatch<SetStateAction<boolean>>;
   openReward: boolean;
   route: string;
+  heading: string;
+  description: string;
+  btnText: string;
 }
 
 const RewardScreen: FC<RewardScreenProps> = ({
   setOpenReward,
   openReward,
   route,
+  heading,
+  description,
+  btnText = "Next",
 }) => {
   const router = useRouter();
 
@@ -36,18 +42,17 @@ const RewardScreen: FC<RewardScreenProps> = ({
         />
 
         <h3 className="text-[24px] leading-[24px] font-[600] mb-2">
-          Great job 🎉
+          {heading}
         </h3>
         <p className="text-[#7D848D] font-[400] text-[16px] leading-[20px] mb-6 w-[344px] text-center">
-          Max! You just trained your focus, just like a football player before a
-          big match.
+          {description}
         </p>
 
         <button
           onClick={GoToPlay}
           className="w-[340px] h-[52px] bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-[14.2px] transition-colors"
         >
-          Next
+          {btnText}
         </button>
       </div>
     </div>

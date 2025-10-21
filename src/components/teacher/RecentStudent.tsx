@@ -1,8 +1,15 @@
+"use client";
 import React from "react";
 import { Calendar } from "lucide-react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const RecentStudent = () => {
+  const router = useRouter();
+
+  const handleRouter = (id: number) => {
+    router.push(`/teacher/dashboard/recent/${id}`);
+  };
   return (
     <div className="w-full mx-auto py-6">
       <h2 className="text-xl font-semibold text-gray-900 mb-6">
@@ -33,7 +40,10 @@ const RecentStudent = () => {
                 <span className="text-xs">15 Classes Done</span>
               </div>
             </div>
-            <button className="text-blue-600 hover:text-blue-700 font-medium text-sm pr-10">
+            <button
+              onClick={() => handleRouter(i)}
+              className="text-blue-600 hover:text-blue-700 font-medium cursor-pointer text-sm pr-10"
+            >
               view report
             </button>
           </div>

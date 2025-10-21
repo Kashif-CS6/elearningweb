@@ -124,8 +124,12 @@ const RequestDetails = () => {
       {showModal && (
         <RewardScreen
           setOpenReward={setModal}
+          heading="Accepted"
+          description="ou have successfully accepted Ali
+as your learner!"
+          btnText="Go to Learner Profile"
           openReward={showModal}
-          route="/teacher/dashboard"
+          route="/teacher/dashboard/studentlist"
         />
       )}
     </div>

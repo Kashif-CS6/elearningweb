@@ -52,6 +52,10 @@ const Game = () => {
       </div>
       {openReward && (
         <RewardScreen
+          heading="Great job"
+          description="Max! You just trained your focus, just like a football
+player before a big match."
+          btnText="Next"
           openReward={openReward}
           setOpenReward={setOpenReward}
           route="/learner/modcheck/game/play"

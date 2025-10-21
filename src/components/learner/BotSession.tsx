@@ -56,7 +56,7 @@ const BotSession: FC<BotSessionProps> = ({
             className={`text-gray-700 md:${widthX} mx-auto text-sm md:text-[22.64px] font-[600] leading-[33px]  mb-8 px-12 py-6`}
           >
             {Heading && Heading != "MCQ" && Heading}
-            <span>{Heading === "MCQ" && <h1>Select your game?</h1>}</span>
+            <span>{Heading === "MCQ" && "Pick One Option?"}</span>
           </p>
 
           {Heading === "MCQ" && (
@@ -70,7 +70,7 @@ const BotSession: FC<BotSessionProps> = ({
               </button>
               <button
                 onClick={() => HandleOption("breathing")}
-                className="md:w-[336px] h-[80px] border-2 border-gray-200 focus:border-purple-300 hover:bg-purple-50 rounded-xl py-4 px-6 flex items-center justify-center gap-3 transition-colors opacity-50"
+                className="md:w-[336px] h-[80px] border-2 border-gray-200 focus:border-purple-300 hover:bg-purple-50 rounded-xl py-4 px-6 flex items-center justify-center gap-3 transition-colors"
               >
                 <span>🌬️</span>
                 <span className="font-medium">Breathing Game</span>
@@ -111,6 +111,9 @@ const BotSession: FC<BotSessionProps> = ({
 
       {Heading === "MCQ" && openRewardModal && (
         <RewardScreen
+          heading=""
+          btnText="Done"
+          description="Perfect! I’ll remember that. We’ll use the magic ball more often in your training."
           setOpenReward={setOpenRewardModal}
           openReward={openRewardModal}
           route="/learner/modcheck/message/ai"
