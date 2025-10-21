@@ -16,7 +16,7 @@ const Coach = () => {
       <main className="flex-1 p-2 md:p-8">
         {/* Hero Banner */}
         <Hero />
-        <QuizMode />
+        <AssignmentMode />
       </main>
     </div>
   );
