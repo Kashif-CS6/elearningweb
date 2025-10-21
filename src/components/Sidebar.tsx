@@ -16,7 +16,7 @@ const Sidebar = () => {
   const [activeMenu, setActiveMenu] = useState("dashboard");
   const { t } = useTranslation();
   return (
-    <aside className="hidden w-72 bg-white border-r border-gray-200 xl:flex flex-col">
+    <aside className="hidden w-72 h-screen bg-white border-r border-gray-200 xl:flex flex-col">
       {/* Logo */}
       <div className="px-6 py-5 flex items-center gap-3">
         <Image src={"/elogo.svg"} width={45.54} height={47.72} alt="e logo" />
