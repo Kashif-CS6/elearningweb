@@ -6,20 +6,16 @@ import Hero from "@/components/learner/dashboard/Hero";
 
 export default function DashboardLayout({ children }: { children: ReactNode }) {
   return (
-    <div className="flex gap-6 min-h-screen">
+    <div className="flex gap-6 h-screen">
       {/* Left Sidebar */}
       <Sidebar />
 
       {/* Main Section */}
-      <div className="flex flex-col gap-2 w-full">
+      <div className="w-full my-4">
         <Hero />
 
-        <div className="flex gap-4 w-full flex-1">
-          {/* Page Content */}
-          <div className="flex-1">{children}</div>
-
-          {/* Right Sidebar */}
-        </div>
+        {/* Page Content */}
+        <div className="flex-1">{children}</div>
       </div>
     </div>
   );

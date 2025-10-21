@@ -7,7 +7,7 @@ const LastMessage = () => {
     <div>
       <BotSession
         Heading="Done"
-        route="/learner/dashboard/menu"
+        route="/learner/dashboard"
         widthX="w-[866px]"
         setValue="message 2"
         setMessage={setMessage}

@@ -1,11 +1,6 @@
 "use client";
-import React, { useState } from "react";
-import Hero from "@/components/learner/dashboard/Hero";
-import Sidebar from "@/components/Sidebar";
-import VidoePlayer from "@/components/coach/VidoePlayer";
-import QuizMode from "@/components/coach/QuizMode";
-import AssignmentMode from "@/components/coach/AssignmentMode";
-import Certificate from "@/components/coach/Certificate";
+import React from "react";
+
 import Training from "@/components/coach/Training";
 
 const Coach = () => {
@@ -15,7 +10,7 @@ const Coach = () => {
 
       {/* Main Content */}
       <main className="flex-1 my-5">
-        <QuizMode />
+        <Training />
       </main>
     </div>
   );

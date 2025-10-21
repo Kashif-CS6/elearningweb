@@ -23,8 +23,8 @@ const QuizMode = () => {
 
   return (
     <div className="py-20 min-h-screen">
-      <div className="w-[747px] mx-auto p-6">
-        <div className="bg-white rounded-lg shadow-lg p-4 px-10">
+      <div className="w-[747px] mx-auto p-6 ">
+        <div className="bg-white rounded-lg shadow-lg p-4 px-10 border-gray-200 border">
           <h2 className="text-[18px] font-[600] leading-[24px] text-[#4B465C] text-center pt-2 pb-6">
             Quiz
           </h2>
