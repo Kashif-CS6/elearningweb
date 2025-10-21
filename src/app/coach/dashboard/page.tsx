@@ -15,7 +15,7 @@ const Coach = () => {
 
       {/* Main Content */}
       <main className="flex-1 my-5">
-        <QuizMode/>
+        <QuizMode />
       </main>
     </div>
   );
