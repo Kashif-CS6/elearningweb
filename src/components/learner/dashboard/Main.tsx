@@ -3,12 +3,12 @@ import Image from "next/image";
 const Main = () => {
   return (
     <div className="min-h-screen w-full py-8">
-      <div className=" mx-auto">
+      <div className="mx-auto">
         {/* Header Section with Progress Circles and Stats */}
         <div className="">
-          <div className="flex items-center justify-between my-10">
+          <div className="flex flex-col md:flex-row  items-center justify-center md:justify-between flex-wrap md:my-10">
             {/* Progress Circles */}
-            <div className="relative w-[333px] h-[333px]">
+            <div className="relative w-[200px] h-[200px] md:w-[333px] md:h-[333px]">
               {/* Outer circle - Blue (Meeting) */}
               <Image
                 width={333}
@@ -20,10 +20,10 @@ const Main = () => {
             </div>
 
             {/* Stats and Button */}
-            <div className="flex-1 ml-12">
+            <div className="flex-1  my-10 md:my-0 md:ml-12">
               {/* Stats */}
-              <div className="flex gap-12 mb-8">
-                <div className="flex items-start  gap-3">
+              <div className="flex flex-wrap  gap-12 mb-8">
+                <div className="  flex items-start  gap-3">
                   <div className="w-[20px] h-[20px] bg-blue-400 rounded-full mt-3"></div>
                   <div className="text-[23.33px] font-[500] leading-[33.33px]">
                     <p className="text-gray-600 ">Meeting</p>
@@ -31,7 +31,7 @@ const Main = () => {
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3">
+                <div className="flex items-start  gap-3">
                   <div className="w-[20px] h-[20px] bg-red-400 rounded-full mt-3"></div>
                   <div className="text-[23.33px] font-[500] leading-[33.33px]">
                     <p className="text-gray-600 ">Assignment</p>
@@ -49,7 +49,7 @@ const Main = () => {
               </div>
 
               {/* Start Live Session Button */}
-              <button className="w-full h-[84px] bg-blue-600 hover:bg-blue-700 text-white font-medium py-4 px-6 rounded-2xl flex items-center justify-center gap-3 transition-colors">
+              <button className="w-full h-[60px] cursor-pointer md:h-[84px] bg-blue-600 hover:bg-blue-700 text-white font-medium py-4 px-6 rounded-2xl flex items-center justify-center gap-3 transition-colors">
                 <svg
                   className="w-6 h-6"
                   fill="none"

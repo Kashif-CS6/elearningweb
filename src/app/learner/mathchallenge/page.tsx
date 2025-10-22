@@ -23,21 +23,21 @@ const MathChallengeScreen = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center md:p-6">
-      <div className="bg-white rounded-2xl shadow-xl p-12 h-[593px] md:w-[1113px] w-full text-center">
+    <div className="h-screen bg-gray-50 flex items-center justify-center md:p-6">
+      <div className="bg-white rounded-2xl shadow-xl p-12 lg:h-[593px] lg:w-[1113px] w-full text-center">
         <h2 className=" text-sm md:text-2xl font-semibold mb-6">
           AI Live Session
         </h2>
         <div className="mb-6 flex justify-center">
           <Image width={100} height={131} alt="img" src={"/ai-icon.svg"} />
         </div>
-        <p className="text-gray-700 md:w-[937px] text-sm md:text-[22px] font-[600] md:font-[700] mb-4">
+        <p className="text-gray-700 lg:w-[937px] text-sm md:text-[22px] font-[600] md:font-[700] mb-4">
           Ali, let{"'"}s try this together. Look at this math problem. Imagine
           your own magic ball is holding all the distractions. Focus only on the
           numbers. Can you solve it?
         </p>
 
-        <div className="rounded-xl p-8 mb-6">
+        <div className="rounded-xl md:p-8 mb-6">
           <div className="flex items-center justify-center gap-4 text-3xl font-bold mb-4 md:mb-8">
             <span className="max-w-[336px] text-[24px] font-[400] w-full flex items-center justify-center border-gray-200 h-[60px] border-[2px]">
               2 + 5
@@ -48,7 +48,7 @@ const MathChallengeScreen = () => {
             </div>
           </div>
 
-          <div className="flex items-center justify-center flex-wrap md:flex-wrap gap-2 md:gap-7">
+          <div className="flex items-center justify-center  flex-wrap gap-6 md:gap-7">
             {[5, 7, -7, 8].map((num) => (
               <button
                 key={num}

@@ -13,7 +13,7 @@ const LearnerMain = () => {
           <div className="">
             {/* Progress Section */}
             <div className="flex items-center flex-wrap justify-between gap-6">
-              <div className="flex items-end gap-2 shadow-md w-80 md:min-w-[382px] flex-1 h-[86px] rounded-[12px] px-4 py-3">
+              <div className="flex items-end gap-2 shadow-md border border-gray-200 w-80 md:min-w-[382px] flex-1 h-[86px] rounded-[12px] px-4 py-3">
                 <div className="w-14  flex flex-col gap-2">
                   <p className="text-xs md:text-sm text-gray-500 w-full">Level 1</p>
                   <div>
