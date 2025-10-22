@@ -19,7 +19,7 @@ const RecentStudent = () => {
         {[1, 2, 3, 4, 5].map((i) => (
           <div
             key={i}
-            className="bg-white rounded-xl h-[150px]  md:h-[89px] p-1 flex items-center gap-4 hover:shadow-md transition-shadow border border-gray-200"
+            className="bg-white rounded-xl h-[140px]  md:h-[89px] p-1 flex items-center gap-4 hover:shadow-md transition-shadow border border-gray-200"
           >
             <Image
               src={"/child.jpg"}
@@ -42,7 +42,7 @@ const RecentStudent = () => {
             </div>
             <button
               onClick={() => handleRouter(i)}
-              className="text-blue-600 hover:text-blue-700 font-medium cursor-pointer text-sm pr-10"
+              className="text-blue-600 hover:text-blue-700 font-medium cursor-pointer text-sm pr-2 md:pr-10"
             >
               view report
             </button>
