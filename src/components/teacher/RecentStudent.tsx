@@ -19,13 +19,13 @@ const RecentStudent = () => {
         {[1, 2, 3, 4, 5].map((i) => (
           <div
             key={i}
-            className="bg-white rounded-xl h-[89px] p-1 flex items-center gap-4 hover:shadow-md transition-shadow border border-gray-200"
+            className="bg-white rounded-xl h-[150px]  md:h-[89px] p-1 flex items-center gap-4 hover:shadow-md transition-shadow border border-gray-200"
           >
             <Image
               src={"/child.jpg"}
               width={500}
               height={500}
-              className="rounded-xl w-[79px] h-[79px] object-cover"
+              className="rounded-xl w-[90px] md:w-[79px] h-full md:h-[79px] object-cover"
               alt="profile"
             />
             <div className="flex-1">
