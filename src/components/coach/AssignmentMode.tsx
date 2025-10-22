@@ -21,8 +21,8 @@ const AssignmentMode = () => {
   return (
     <div className="py-20">
       <Toaster position="top-right" />
-      <div className="w-[747px] mx-auto p-6">
-        <div className="bg-white rounded-lg shadow-lg p-8">
+      <div className="lg:w-[747px] mx-auto lg:p-6 ">
+        <div className="bg-white rounded-lg border border-gray-200 shadow-lg p-8">
           <h2 className="text-[18px] text-[#4B465C] font-[600] text-center">
             Assignment
           </h2>
@@ -39,7 +39,7 @@ const AssignmentMode = () => {
 
             <div>
               <label className="block font-medium mb-3">Practical Exam</label>
-              <button className="w-full border-2 border-blue-600 text-blue-600 py-4 rounded-[6px] font-medium hover:bg-blue-50 transition-colors">
+              <button className="w-full border-1 border-blue-600 text-blue-600 py-4 rounded-[6px] font-medium hover:bg-blue-50 transition-colors">
                 Schedule Live Observed Session
               </button>
             </div>

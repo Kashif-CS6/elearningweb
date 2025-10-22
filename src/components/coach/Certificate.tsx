@@ -3,13 +3,13 @@ import { Award, Linkedin, Mail } from "lucide-react";
 
 const Certificate = () => {
   return (
-    <div className="w-[747px] mx-auto p-6 rounded-[6px]">
-      <div className="bg-white rounded-lg shadow-lg p-8">
+    <div className="lg:w-[747px] mx-auto py-6 lg:p-6 rounded-[6px]">
+      <div className="bg-white rounded-lg shadow-lg p-8 border border-gray-200">
         <h2 className="text-[18px] font-[600] leading-[24px] text-[#4B465C] text-center">
           Quiz
         </h2>
         <hr className=" border-[#D6D6D6] my-4" />
-        <div className="flex items-center justify-between mb-8 pb-6 ">
+        <div className="flex items-center flex-wrap gap-4 md:flex-nowrap justify-between mb-8 pb-6 ">
           <div className="flex items-center gap-4">
             <div className="w-[66.25px] h-[66.25px] bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xl">
               DA
