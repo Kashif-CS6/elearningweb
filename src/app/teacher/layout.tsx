@@ -13,12 +13,12 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
       <Sidebar />
 
       {/* Main Content Area */}
-      <div className="flex flex-col gap-2 w-full mt-2">
+      <div className="flex flex-col gap-2 w-full mt-2 ">
         <TopHeader />
 
         <div className="flex gap-4 w-full flex-1">
           {/* Main Page Content */}
-          <div className="flex-1">
+          <div className="flex-1 ml-4 xl:ml-0">
             <Hero />
             {children}
           </div>
