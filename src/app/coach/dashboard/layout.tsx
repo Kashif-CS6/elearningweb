@@ -11,7 +11,7 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
       <Sidebar />
 
       {/* Main Section */}
-      <div className="w-full my-4">
+      <div className="w-full px-1 my-4">
         <Hero />
 
         {/* Page Content */}

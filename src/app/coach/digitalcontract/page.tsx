@@ -22,13 +22,13 @@ const DigitalContract = () => {
 
   return (
     <div className="my-10 flex items-center justify-center">
-      <div className="w-[747.18px] h-[925px] border border-gray-200 mx-auto bg-white rounded-[6px] p-8 px-5 shadow-lg">
+      <div className="md:w-[747.18px] md:h-[925px] border border-gray-200 mx-auto bg-white rounded-[16px] md:rounded-[6px] p-8 px-5 shadow-lg">
         <h2 className="font-[600] text-[18px] leading-[24px] text-[#4B465C] text-center">
           Digital Contract
         </h2>
 
         <div className="space-y-6">
-          <div className="w-[699px] h-[288px] font-[400] pt-3 text-justify overflow-y-auto">
+          <div className="md:w-[699px] h-[288px] font-[400] pt-3 text-justify overflow-y-auto">
             <p>
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been the industrys standard dummy text
@@ -45,7 +45,6 @@ const DigitalContract = () => {
               Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been the industrys standard dummy text
               ever since the 1500s, when an unknown printer took a galley of
-             
             </p>
           </div>
 
@@ -67,7 +66,7 @@ const DigitalContract = () => {
             <label className="block text-sm font-medium text-gray-700 mb-3">
               E-Signature
             </label>
-            <div className="border-2 w-[699.18px] h-[134px] border-dashed border-gray-300 rounded-[6px] flex items-center justify-center">
+            <div className="border-2 md:w-[699.18px] h-[134px] border-dashed border-gray-300 rounded-[6px] flex items-center justify-center">
               <span className="text-gray-400 text-sm">Click to sign</span>
             </div>
           </div>

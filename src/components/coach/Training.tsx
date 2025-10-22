@@ -18,7 +18,7 @@ export default function Training() {
       </h2>
 
       {/* Main Module Section */}
-      <section className="bg-white p-6  flex items-end justify-between">
+      <section className="bg-white py-4 lg:p-4  flex flex-wrap lg:flex-nowrap gap-6 items-end justify-between">
         <div className="flex flex-col gap-3">
           <h3 className="text-gray-800 font-semibold mb-4">Modules</h3>
 
@@ -36,7 +36,7 @@ export default function Training() {
                 psychology, cognitive behavioral therapy,
               </p>
 
-              <div className="flex items-center gap-4 text-gray-500 text-sm mb-5">
+              <div className="flex items-center flex-wrap md:flex-nowrap gap-4 text-gray-500 text-sm mb-5">
                 <div className="flex items-center gap-1">
                   <Eye className="w-4 h-4" />
                   <span>745,123 Views</span>
@@ -61,24 +61,24 @@ export default function Training() {
             {/* Image Section */}
           </div>
         </div>
-        <div className="relative w-[991px] h-[276px] rounded-lg overflow-hidden">
+        <div className="relative w-full lg:w-[991px] h-[276px] rounded-lg overflow-hidden">
           <Image
             src="/child.jpg"
             alt="Friendship Work"
             fill
-            className="object-cover"
+            className="w-full lg:w-[991px] h-[276px] object-cover"
           />
         </div>
       </section>
 
       {/* Popular Courses Section */}
-      <section>
-        <h3 className="text-lg font-medium text-gray-800 mb-4">
+      <section className="lg:p-4">
+        <h3 className="text-lg font-medium text-gray-800 my-6 mb-4">
           Our <span className="text-blue-600 font-semibold">popular</span>{" "}
           course in <span className="text-blue-600 font-semibold">2025</span>
         </h3>
 
-        <div className="flex items-center justify-between flex-wrap">
+        <div className="flex items-center justify-center lg:justify-between gap-6   flex-wrap">
           {[1, 2, 3, 4, 5].map((_, i) => (
             <div
               key={i}
