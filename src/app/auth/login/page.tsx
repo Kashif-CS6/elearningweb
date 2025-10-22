@@ -19,6 +19,10 @@ export default function SignUpPage() {
       router.push("/auth/parentlogin");
       return;
     }
+    if (selectedRole === "teacher") {
+      handleTeacher();
+      return;
+    }
     router.push("/auth/coachnext");
   };
 
@@ -49,7 +53,7 @@ export default function SignUpPage() {
               </h1>
 
               {/* Role Selection */}
-              <div className="flex gap-3 justify-center mb-6">
+              <div className="flex gap-3 justify-center flex-wrap mb-6">
                 <button
                   onClick={() => setSelectedRole("parent")}
                   className={`px-6 md:px-0 md:w-[132px] h-[60px] rounded-[16px] font-[400] text-[16px] transition-all ${
@@ -79,6 +83,16 @@ export default function SignUpPage() {
                   }`}
                 >
                   {t("signup.learner")}
+                </button>
+                <button
+                  onClick={() => setSelectedRole("teacher")}
+                  className={`px-6 md:px-0 md:w-[132px] h-[60px] rounded-[16px] font-[400] text-[16px] transition-all ${
+                    selectedRole === "teacher"
+                      ? "bg-blue-600 text-white shadow-md"
+                      : "border border-blue-600"
+                  }`}
+                >
+                  Teacher
                 </button>
               </div>
             </div>
@@ -118,14 +132,6 @@ export default function SignUpPage() {
               >
                 <span className="flex-1 text-center text-gray-700 font-medium">
                   {t("signup.continueX")}
-                </span>
-              </button>
-              <button
-                onClick={handleTeacher}
-                className="w-full md:w-[452px] h-[60px] cursor-pointer flex items-center justify-between px-4 py-3 border-2 border-gray-200 rounded-lg hover:border-gray-300 hover:bg-gray-50 transition-all"
-              >
-                <span className="flex-1 text-center text-gray-700 font-medium">
-                  Continue as Teacher
                 </span>
               </button>
             </div>

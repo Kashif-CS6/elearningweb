@@ -29,7 +29,7 @@ const StudentList = () => {
         {[1, 2, 3, 4, 5].map((i) => (
           <div
             key={i}
-            className="bg-white rounded-[16px] h-[79px] px-5 flex items-center gap-4 hover:shadow-md transition-shadow border border-gray-100 cursor-pointer"
+            className="bg-white rounded-[16px] h-[90px] md:h-[79px] px-5 flex items-center gap-4 hover:shadow-md transition-shadow border border-gray-200 cursor-pointer"
           >
             <span className="text-lg font-semibold text-gray-900 w-2">{i}</span>
             <Image
