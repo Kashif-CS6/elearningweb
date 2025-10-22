@@ -46,7 +46,7 @@ const Chat = () => {
 
   return (
     <div className="my-20 md:my-0  md:h-screen flex items-center  justify-center">
-      <div className=" md:w-[747.18px] h-[400px] md:h-[500px] border border-gray-200 mx-auto bg-white rounded-[6px] md:p-4 md:px-2 shadow-lg">
+      <div className="w-full mx-2 md:w-[747.18px] h-[500px] md:h-[500px] border border-gray-200 md:mx-auto bg-white rounded-[6px] md:p-4 md:px-2 shadow-lg overflow-x-hidden">
         <div className="p-4 md:p-6 flex flex-col h-full  justify-between gap-10">
           {/* Chat History */}
           <div className="flex flex-col justify-between gap-4 overflow-y-auto overflow-x-hidden ">
