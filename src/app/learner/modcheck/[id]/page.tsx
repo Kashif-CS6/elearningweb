@@ -6,8 +6,8 @@ import { useRouter } from "next/navigation";
 const MoodCheckScreenNext = () => {
   const router = useRouter();
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center p-6 py-8">
-      <div className="bg-white shadow-xl px-12 py-10 md:w-[1113px] xl:h-auto rounded-[6px] text-center">
+    <div className="min-h-screen  flex items-center justify-center p-6 py-8">
+      <div className="bg-white border border-gray-200 shadow-xl w-fit px-12 py-10 md:w-[1113px] xl:h-auto rounded-[6px] text-center">
         <h2 className="text-sm md:text-[22px] font-[600] leading-[24px] mb-8">
           AI Live Session
         </h2>
@@ -26,7 +26,7 @@ const MoodCheckScreenNext = () => {
         </p>
         <button
           onClick={() => router.push("/learner/modcheck/game")}
-          className=" bg-blue-600 hover:bg-blue-700 text-white w-80 md:w-[638px] h-[60px] rounded-[6px] transition-colors duration-200 text-[19px] font-[500]"
+          className=" bg-blue-600 hover:bg-blue-700 text-white w-full md:w-[638px] h-[60px] rounded-[6px] transition-colors duration-200 text-[19px] font-[500]"
         >
           Next
         </button>

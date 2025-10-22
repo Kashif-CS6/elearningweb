@@ -12,8 +12,8 @@ const MoodCheckScreen = () => {
     router.push(`/learner/modcheck/${e}`);
   };
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center p-6">
-      <div className="bg-white shadow-xl px-12 py-6 md:w-[1113px] xl:h-[593px] rounded-[6px] text-center">
+    <div className="min-h-screen  flex items-center justify-center p-6">
+      <div className="bg-white border border-gray-200 shadow-xl px-12 w-80 py-6 md:w-[1113px] xl:h-[593px] rounded-[6px] text-center">
         <h2 className="text-sm md:text-[22px] font-[600] leading-[24px] mb-8">
           AI Live Session
         </h2>
@@ -24,28 +24,28 @@ const MoodCheckScreen = () => {
           Hi Max! I{"'"}m happy to see you again. Before we start, tell me, how
           do you feel today?
         </p>
-        <div className="flex items-center flex-wrap gap-8 justify-center ">
+        <div className="flex items-center flex-wrap gap-4 md:gap-8 justify-center ">
           <button
             onClick={() => handleOption("happy")}
-            className=" hover:border-yellow-400  py-4 transition-colors w-[336px] h-[60px] rounded-[6px] border-[1px] border-[#DBDADE]"
+            className=" hover:border-yellow-400  md:py-4 transition-colors w-[336px] h-[50px] md:h-[60px] rounded-[6px] border-[1px] border-[#DBDADE]"
           >
             😊 Happy
           </button>
           <button
             onClick={() => handleOption("sad")}
-            className=" hover:border-yellow-400  py-4 transition-colors w-[336px] h-[60px] rounded-[6px] border-[1px] border-[#DBDADE]"
+            className=" hover:border-yellow-400  md:py-4 transition-colors w-[336px] h-[50px] md:h-[60px] rounded-[6px] border-[1px] border-[#DBDADE]"
           >
             😢 Sad
           </button>
           <button
             onClick={() => handleOption("okay")}
-            className=" hover:border-yellow-400  py-4 transition-colors w-[336px] h-[60px] rounded-[6px] border-[1px] border-[#DBDADE]"
+            className=" hover:border-yellow-400  md:py-4 transition-colors w-[336px] h-[50px] md:h-[60px] rounded-[6px] border-[1px] border-[#DBDADE]"
           >
             😐 Okay
           </button>
           <button
             onClick={() => handleOption("angry")}
-            className=" hover:border-yellow-400  py-4 transition-colors w-[336px] h-[60px] rounded-[6px] border-[1px] border-[#DBDADE]"
+            className=" hover:border-yellow-400  md:py-4 transition-colors w-[336px] h-[50px] md:h-[60px] rounded-[6px] border-[1px] border-[#DBDADE]"
           >
             😠 Angry
           </button>

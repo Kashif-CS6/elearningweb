@@ -34,9 +34,9 @@ const BotSession: FC<BotSessionProps> = ({
     setOpenModal(false);
   };
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center md:p-6">
+    <div className="min-h-screen bg-gray-50 border border-gray-200 flex items-center justify-center md:p-6">
       <div
-        className={`bg-white shadow-xl w-full   md:w-[1113px] ${
+        className={`bg-white border border-gray-200 shadow-xl w-full   md:w-[1113px] ${
           Heading === "MCQ" ? "py-20" : ""
         }  rounded-[6px] flex flex-col justify-between text-center`}
       >
@@ -60,7 +60,7 @@ const BotSession: FC<BotSessionProps> = ({
           </p>
 
           {Heading === "MCQ" && (
-            <div className=" flex items-center justify-center gap-8">
+            <div className=" flex items-center justify-center gap-4 md:gap-8">
               <button
                 onClick={() => HandleOption("magic-ball")}
                 className="md:w-[336px] h-[80px] border-2 border-gray-200 focus:border-purple-300 hover:bg-purple-50 rounded-xl py-4 px-6 flex items-center justify-center gap-3 transition-colors"

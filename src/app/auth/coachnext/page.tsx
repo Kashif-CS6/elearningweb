@@ -129,7 +129,7 @@ export default function ChildNext() {
                     onChange={(e) =>
                       setFormData({ ...formData, id: e.target.value })
                     }
-                    className="w-full md:w-[452px] h-[60px] px-4 pr-4 py-3 border-2 border-gray-200 rounded-[16px] focus:border-blue-500 focus:outline-none transition-colors text-gray-800 placeholder-gray-400"
+                    className="w-full lg:w-[452px] h-[60px] px-4 pr-4 py-3 border-2 border-gray-200 rounded-[16px] focus:border-blue-500 focus:outline-none transition-colors text-gray-800 placeholder-gray-400"
                   />
                 </div>
 
@@ -149,7 +149,7 @@ export default function ChildNext() {
                     onChange={(e) =>
                       setFormData({ ...formData, id: e.target.value })
                     }
-                    className="w-full md:w-[452px] h-[60px] px-4 pr-4 py-3 border-2 border-gray-200 rounded-[16px] focus:border-blue-500 focus:outline-none transition-colors text-gray-800 placeholder-gray-400"
+                    className="w-full lg:w-[452px] h-[60px] px-4 pr-4 py-3 border-2 border-gray-200 rounded-[16px] focus:border-blue-500 focus:outline-none transition-colors text-gray-800 placeholder-gray-400"
                   />
                 </div>
                 <div className="relative">
@@ -167,7 +167,7 @@ export default function ChildNext() {
                     onChange={(e) =>
                       setFormData({ ...formData, id: e.target.value })
                     }
-                    className="w-full md:w-[452px] h-[60px] px-4 pr-4 py-3 border-2 border-gray-200 rounded-[16px] focus:border-blue-500 focus:outline-none transition-colors text-gray-800 placeholder-gray-400"
+                    className="w-full lg:w-[452px] h-[60px] px-4 pr-4 py-3 border-2 border-gray-200 rounded-[16px] focus:border-blue-500 focus:outline-none transition-colors text-gray-800 placeholder-gray-400"
                   />
                 </div>
 
