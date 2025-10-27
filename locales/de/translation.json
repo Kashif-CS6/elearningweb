@@ -201,5 +201,168 @@
     "chatKid": "Chat mit Kind",
     "assignmentCard": "Aufgabe",
     "chatParent": "Chat mit Elternteil"
+  },
+  "coachNext": {
+    "illustrationAlt": "Illustration",
+    "uploadedPreview": "Hochgeladenes Vorschaubild",
+    "change": "Ändern",
+    "uploadImage": "Bild hochladen",
+    "accountSetup": "Konto einrichten",
+    "personalInfo": "Persönliche Informationen",
+    "name": "Name",
+    "namePlaceholder": "Geben Sie den Namen ein",
+    "dob": "Geburtsdatum",
+    "contact": "Kontakt",
+    "contactPlaceholder": "Geben Sie Kontaktdaten ein",
+    "next": "Weiter"
+  },
+  "backpackQuestion": {
+    "title": "Rucksack-Fragebogen",
+    "education": {
+      "title": "Ausbildung",
+      "qualificationDate": "Datum des höchsten Abschlusses",
+      "uploadDegree": "Abschluss hochladen"
+    },
+    "license": {
+      "title": "Berufslizenz",
+      "licenseDate": "Lizenzdatum",
+      "uploadLicense": "Lizenz hochladen"
+    },
+    "experience": {
+      "title": "Erfahrung",
+      "shortCV": "Kurzlebenslauf",
+      "placeholderCV": "Kurzen Lebenslauf schreiben",
+      "motivation": "Motivation",
+      "selectMotivation": "Motivation auswählen",
+      "growth": "Persönliches Wachstum",
+      "career": "Beruflicher Aufstieg",
+      "education": "Bildung"
+    },
+    "documents": {
+      "title": "Dokumenten-Upload",
+      "uploadID": "Ausweis hochladen",
+      "uploadCertificate": "Zertifikat hochladen",
+      "uploadReference": "Referenz hochladen"
+    },
+    "agreements": {
+      "safeguard": "Ich stimme den Schutzrichtlinien zu",
+      "policy": "Ich stimme der Datenschutzrichtlinie zu"
+    },
+    "button": {
+      "submit": "Senden",
+      "processing": "Wird verarbeitet..."
+    },
+    "toast": {
+      "processing": "Bitte warten Sie, während wir Ihr Formular bearbeiten.",
+      "success": "Ihr Formular wurde erfolgreich eingereicht!",
+      "error": "Bitte füllen Sie alle Felder aus und laden Sie alle erforderlichen Dokumente hoch."
+    }
+  },
+  "digitalContract": {
+    "title": "Digitaler Vertrag",
+    "contractText": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of",
+    "agreeText": "Ich stimme den Schutzrichtlinien zu",
+    "eSignature": "Elektronische Unterschrift",
+    "clickToSign": "Zum Unterschreiben klicken",
+    "codeOfConduct": "Verhaltenskodex",
+    "followGuidelines": "Ich werde die Schutzrichtlinien befolgen",
+    "dataProtection": "Ich verstehe die Verantwortlichkeiten des Datenschutzes",
+    "professionalConduct": "Ich verpflichte mich zu professionellem Verhalten",
+    "save": "Speichern",
+    "approvalNote": "Sie müssen warten, bis der Vertrag genehmigt wurde.",
+    "toastError": "Bitte stimmen Sie den Schutzrichtlinien zu, bevor Sie fortfahren.",
+    "toastSuccess": "Vertrag erfolgreich gespeichert!"
+  },
+  "payout": {
+    "title": "Auszahlungs-Einrichtung",
+    "accountHolder": "Name des Kontoinhabers",
+    "bankName": "Name der Bank",
+    "accountNumber": "Kontonummer / IBAN",
+    "sortCode": "Bankleitzahl / SWIFT-Code",
+    "currency": "Währung",
+    "selectCurrency": "Währung auswählen",
+    "placeholder": "Hier schreiben",
+    "save": "Speichern",
+    "saving": "Speichern...",
+    "toastError": "Bitte füllen Sie alle erforderlichen Felder aus.",
+    "toastSuccess": "Auszahlung eingerichtet! Weiterleitung..."
+  },
+  "training": {
+    "pageTitle": "Schulung",
+    "modules": "Module",
+    "mainModuleTitle": "Lernen und Freundschaftsarbeit",
+    "mainModuleSubTitle": "KVT | Diagnose | Krisenintervention",
+    "mainModuleDescription": "lic. phil. & Dipl. Psych, approbierter Psychotherapeut Tiefenpsychologie, kognitive Verhaltenstherapie",
+    "views": "745.123 Aufrufe",
+    "duration": "6 Std.",
+    "lastUpdated": "Zuletzt aktualisiert am 23. Mai 2023",
+    "startNow": "Jetzt starten",
+    "popularTitle": "Unser beliebter Kurs im Jahr 2025",
+    "courseTitle": "Lernen und Freundschaftsarbeit",
+    "courseSubtitle": "KVT | Diagnose | Krisenintervention",
+    "courseDescription": "lic. phil. & Dipl. Psych, approbierter Psychotherapeut Tiefenpsychologie, kognitive Verhaltenstherapie",
+    "courseViews": "66.255 Aufrufe",
+    "startNowLocked": "Jetzt starten 🔒"
+  },
+  "video": {
+    "titleFull": "Wie man eine großartige Freundschaft aufbaut",
+    "titleLine1": "Wie man aufbaut",
+    "titleLine2": "Eine großartige Freundschaft",
+    "channel": "DIE SCHLECHTE KINDHEITSFEE",
+    "lesson1": {
+      "title": "Emotionen: Die verborgene Botschaft",
+      "duration": "2:40"
+    },
+    "lesson2": {
+      "title": "Empathie entwickeln",
+      "duration": "3:10"
+    }
+  },
+  "quizMode": {
+    "title": "Quiz",
+    "ready": "Bereit zum Üben?",
+    "prompt": "Okay, zeig uns, was du kannst!",
+    "startButton": "Quiz starten",
+    "module": "Modul 1",
+    "topic": "Kinderschutz",
+    "question": "1. Emotionen werden als versteckte Botschaften bezeichnet, weil sie:",
+    "options": [
+      { "id": "a", "text": "Keine Bedeutung haben" },
+      { "id": "b", "text": "Zufällig sind" },
+      { "id": "c", "text": "Ignoriert werden sollten" },
+      { "id": "d", "text": "Signale über Bedürfnisse sind" }
+    ],
+    "related": "Verwandte Inhalte",
+    "videoTitle": "Emotionen: die versteckte Botschaft",
+    "videoDuration": "2:40",
+    "skip": "Überspringen",
+    "submit": "Absenden",
+    "submitting": "Wird gesendet...",
+    "report": "Ein Problem melden",
+    "toast": "Erfolgreich eingereicht! Weiterleitung..."
+  },
+  "assignmentMode": {
+    "title": "Aufgabe",
+    "writeExam": "Schriftliche Prüfung",
+    "placeholder": "Hier schreiben...",
+    "practicalExam": "Praktische Prüfung",
+    "scheduleSession": "Live-Beobachtungssitzung planen",
+    "portfolioSubmission": "Portfolio-Einreichung",
+    "upload": "Fallberichte hochladen",
+    "status": "Ihre eingereichte Aufgabe wird überprüft",
+    "save": "Speichern",
+    "saving": "Wird gespeichert...",
+    "toast": "Aufgabe erfolgreich eingereicht 🎉"
+  },
+  "certificate": {
+    "title": "Quiz",
+    "name": "DC alex",
+    "email": "dcalex@mail.com",
+    "certified": "Zertifiziert",
+    "level": "Stufe 1",
+    "download": "Zertifikat herunterladen",
+    "badgeTitle": "Abzeichenfreigabeoptionen",
+    "linkedin": "auf LinkedIn",
+    "emailShare": "per E-Mail"
   }
 }

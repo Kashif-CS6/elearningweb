@@ -201,5 +201,168 @@
     "chatKid": "Chat Kid",
     "assignmentCard": "Assignment",
     "chatParent": "Chat Parent"
+  },
+  "coachNext": {
+    "illustrationAlt": "Illustration",
+    "uploadedPreview": "Uploaded Preview",
+    "change": "Change",
+    "uploadImage": "Upload Image",
+    "accountSetup": "Account Setup",
+    "personalInfo": "Personal Info",
+    "name": "Name",
+    "namePlaceholder": "Enter name",
+    "dob": "Date of birth",
+    "contact": "Contact",
+    "contactPlaceholder": "Enter contact info",
+    "next": "Next"
+  },
+  "backpackQuestion": {
+    "title": "Backpack Questionnaire",
+    "education": {
+      "title": "Education",
+      "qualificationDate": "Highest qualification date",
+      "uploadDegree": "Upload Degree"
+    },
+    "license": {
+      "title": "Professional License",
+      "licenseDate": "License date",
+      "uploadLicense": "Upload License"
+    },
+    "experience": {
+      "title": "Experience",
+      "shortCV": "Short CV",
+      "placeholderCV": "Write short CV",
+      "motivation": "Motivation",
+      "selectMotivation": "Select motivation",
+      "growth": "Personal Growth",
+      "career": "Career Advancement",
+      "education": "Education"
+    },
+    "documents": {
+      "title": "Documents Upload",
+      "uploadID": "Upload ID",
+      "uploadCertificate": "Upload Certificate",
+      "uploadReference": "Upload Reference"
+    },
+    "agreements": {
+      "safeguard": "I agree to safeguarding policies",
+      "policy": "I agree to the data policy"
+    },
+    "button": {
+      "submit": "Post",
+      "processing": "Processing..."
+    },
+    "toast": {
+      "processing": "Please wait while we process your form.",
+      "success": "Your form has been submitted successfully!",
+      "error": "Please fill all fields and upload all required documents."
+    }
+  },
+  "digitalContract": {
+    "title": "Digital Contract",
+    "contractText": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of",
+    "agreeText": "I agree to safeguarding policies",
+    "eSignature": "E-Signature",
+    "clickToSign": "Click to sign",
+    "codeOfConduct": "Code of Conduct",
+    "followGuidelines": "I will follow safeguarding guidelines",
+    "dataProtection": "I understood data protection responsibilities",
+    "professionalConduct": "I commit to professional conduct",
+    "save": "Save",
+    "approvalNote": "You will need to wait until the contract is approved.",
+    "toastError": "Please agree to safeguarding policies before proceeding.",
+    "toastSuccess": "Contract saved successfully!"
+  },
+  "payout": {
+    "title": "Payout Setup",
+    "accountHolder": "Account holder name",
+    "bankName": "Bank name",
+    "accountNumber": "Account number / IBAN",
+    "sortCode": "Sort Code / SWIFT Code",
+    "currency": "Currency",
+    "selectCurrency": "Select currency",
+    "placeholder": "Write here",
+    "save": "Save",
+    "saving": "Saving...",
+    "toastError": "Please fill in all required fields.",
+    "toastSuccess": "Payout setup done! Redirecting..."
+  },
+  "training": {
+    "pageTitle": "Training",
+    "modules": "Modules",
+    "mainModuleTitle": "Learning And Friendship Work",
+    "mainModuleSubTitle": "CBT | Diagnosis | Crisis Care",
+    "mainModuleDescription": "lic. phil. & Dipl. Psych, licensed psychotherapist Depth psychology, cognitive behavioral therapy",
+    "views": "745,123 Views",
+    "duration": "6 hr",
+    "lastUpdated": "Last Updated on 23 May, 2023",
+    "startNow": "Start now",
+    "popularTitle": "Our popular course in 2025",
+    "courseTitle": "Learning and friendship work",
+    "courseSubtitle": "CBT | Diagnosis | Crisis Care",
+    "courseDescription": "lic. phil. & Dipl. Psych, licensed psychotherapist Depth psychology, cognitive behavioral therapy",
+    "courseViews": "66,255 Views",
+    "startNowLocked": "Start now 🔒"
+  },
+  "video": {
+    "titleFull": "How to Grow A Great Friendship",
+    "titleLine1": "How to Grow",
+    "titleLine2": "A Great Friendship",
+    "channel": "THE CRAPPY CHILDHOOD FAIRY",
+    "lesson1": {
+      "title": "Emotions: The Hidden Message",
+      "duration": "2:40"
+    },
+    "lesson2": {
+      "title": "Building Empathy",
+      "duration": "3:10"
+    }
+  },
+  "quizMode": {
+    "title": "Quiz",
+    "ready": "Ready To Practice?",
+    "prompt": "Okay, show us what you can do!",
+    "startButton": "Start Quiz",
+    "module": "Module 1",
+    "topic": "Safeguarding",
+    "question": "1. Emotions are called hidden messages because they:",
+    "options": [
+      { "id": "a", "text": "Have no meaning" },
+      { "id": "b", "text": "Are random" },
+      { "id": "c", "text": "Should be ignored" },
+      { "id": "d", "text": "Are signals about needs" }
+    ],
+    "related": "Related content",
+    "videoTitle": "Emotions: the hidden message",
+    "videoDuration": "2:40",
+    "skip": "Skip",
+    "submit": "Submit",
+    "submitting": "Submitting...",
+    "report": "Report a problem",
+    "toast": "Submitted successfully! Redirecting..."
+  },
+  "assignmentMode": {
+    "title": "Assignment",
+    "writeExam": "Write Exam",
+    "placeholder": "Write here...",
+    "practicalExam": "Practical Exam",
+    "scheduleSession": "Schedule Live Observed Session",
+    "portfolioSubmission": "Portfolio Submission",
+    "upload": "Upload case reports",
+    "status": "Your submitted assignment is under review",
+    "save": "Save",
+    "saving": "Saving...",
+    "toast": "Assignment submitted successfully 🎉"
+  },
+  "certificate": {
+    "title": "Quiz",
+    "name": "DC alex",
+    "email": "dcalex@mail.com",
+    "certified": "Certified",
+    "level": "Level 1",
+    "download": "Download Certificate",
+    "badgeTitle": "Badge share options",
+    "linkedin": "on LinkedIn",
+    "emailShare": "on Email"
   }
 }
