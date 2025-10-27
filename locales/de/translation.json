@@ -144,5 +144,62 @@
   "playVideo": {
     "title": "Session IA en direct",
     "unsupportedBrowser": "Votre navigateur ne prend pas en charge la balise vidéo."
+  },
+  "chat": {
+    "placeholder": "Gib deine Antwort ein...",
+    "thankYou": "Danke für deine Antwort!"
+  },
+  "videoQuestions": {
+    "1": { "question": "Worum ging es in dem Video?" },
+    "2": { "question": "Was hat dir an diesem Video am besten gefallen?" },
+    "3": { "question": "Hast du etwas Neues aus dem Video gelernt?" },
+    "4": { "question": "Gab es etwas, das du nicht verstanden hast?" },
+    "5": { "question": "Wie hat dich das Video fühlen lassen?" },
+    "6": { "question": "Möchtest du mehr Videos wie dieses sehen?" },
+    "7": {
+      "question": "Welcher Teil des Videos war für dich am interessantesten?"
+    },
+    "8": { "question": "Stimmst du der Botschaft im Video zu oder nicht?" },
+    "9": { "question": "Wie würdest du dieses Video einem Freund erklären?" },
+    "10": { "question": "Was hast du aus diesem Video mitgenommen?" }
+  },
+  "aiSession": {
+    "title": "KI-Live-Sitzung",
+    "pickOption": "Wähle eine Option aus?",
+    "magicBall": "Magischer Ball",
+    "breathingGame": "Atemübung",
+    "doneButton": "Fertig",
+    "rewardTitle": "Perfekt!",
+    "rewardButton": "Fertig",
+    "rewardDescription": "Ich werde es mir merken. Wir werden den magischen Ball häufiger in deinem Training verwenden.",
+    "Done": "Sitzung abgeschlossen",
+    "MCQ": "Mehrfachauswahlfrage"
+  },
+  "liveSession": {
+    "heading": "Max, was ist dir in Samis Geschichte aufgefallen? Warum war der magische Ball hilfreich?"
+  },
+  "mathChallenge": {
+    "title": "KI Live-Sitzung",
+    "instructions": "Ali, lass uns das gemeinsam versuchen. Schau dir diese Matheaufgabe an. Stell dir vor, dein eigener magischer Ball hält alle Ablenkungen fest. Konzentriere dich nur auf die Zahlen. Kannst du sie lösen?",
+    "rewardCorrect": {
+      "heading": "Max verdient: ⭐ x10 + 💎 x1",
+      "description": "Großartige Arbeit, Ali! Du bist einen Schritt näher daran, ein Fokus-Held zu werden. Sammle weiter Sterne, um dein nächstes Abenteuer freizuschalten."
+    },
+    "rewardWrong": {
+      "heading": "Falsche Antwort 😩",
+      "description": "Versuche es noch einmal"
+    },
+    "nextButton": "Weiter"
+  },
+  "learnerDashboard": {
+    "meeting": "Besprechung",
+    "assignment": "Aufgabe",
+    "activities": "Aktivitäten",
+    "startLiveSession": "Live-Sitzung starten",
+    "progressTitle": "Sie können den aktuellen Fortschritt überprüfen",
+    "activitiesCard": "Aktivitäten",
+    "chatKid": "Chat mit Kind",
+    "assignmentCard": "Aufgabe",
+    "chatParent": "Chat mit Elternteil"
   }
 }

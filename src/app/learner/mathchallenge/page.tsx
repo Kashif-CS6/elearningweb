@@ -2,11 +2,13 @@
 import RewardScreen from "@/components/learner/Greatjob";
 import Image from "next/image";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const MathChallengeScreen = () => {
+  const { t } = useTranslation();
   const [onAnswer, setOnAnswer] = useState<string>("");
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
-  const [openReward, setOpenReward] = useState<boolean>(false); // ✅ start closed
+  const [openReward, setOpenReward] = useState<boolean>(false);
   const [goNext, setGoNext] = useState<boolean>(false);
 
   const handleAnswer = (num: number) => {
@@ -14,7 +16,7 @@ const MathChallengeScreen = () => {
 
     if (num === 7) {
       setGoNext(false);
-      setOpenReward(true); // ✅ open only when correct
+      setOpenReward(true);
       return;
     }
     setGoNext(true);
@@ -25,16 +27,16 @@ const MathChallengeScreen = () => {
   return (
     <div className="h-screen bg-gray-50 flex items-center justify-center md:p-6">
       <div className="bg-white rounded-2xl shadow-xl p-12 lg:h-[593px] lg:w-[1113px] w-full text-center">
-        <h2 className=" text-sm md:text-2xl font-semibold mb-6">
-          AI Live Session
+        <h2 className="text-sm md:text-2xl font-semibold mb-6">
+          {t("mathChallenge.title")}
         </h2>
+
         <div className="mb-6 flex justify-center">
-          <Image width={100} height={131} alt="img" src={"/ai-icon.svg"} />
+          <Image width={100} height={131} alt="AI Icon" src="/ai-icon.svg" />
         </div>
+
         <p className="text-gray-700 lg:w-[937px] text-sm md:text-[22px] font-[600] md:font-[700] mb-4">
-          Ali, let{"'"}s try this together. Look at this math problem. Imagine
-          your own magic ball is holding all the distractions. Focus only on the
-          numbers. Can you solve it?
+          {t("mathChallenge.instructions")}
         </p>
 
         <div className="rounded-xl md:p-8 mb-6">
@@ -48,12 +50,12 @@ const MathChallengeScreen = () => {
             </div>
           </div>
 
-          <div className="flex items-center justify-center  flex-wrap gap-6 md:gap-7">
+          <div className="flex items-center justify-center flex-wrap gap-6 md:gap-7">
             {[5, 7, -7, 8].map((num) => (
               <button
                 key={num}
                 onClick={() => handleAnswer(num)}
-                className={`w-[120px] md:w-[159px] text-[24px] font-[400]  flex items-center justify-center border-gray-200 h-[60px] border-[2px] py-4 text-lg transition-all ${
+                className={`w-[120px] md:w-[159px] text-[24px] font-[400] flex items-center justify-center border-gray-200 h-[60px] border-[2px] py-4 text-lg transition-all ${
                   selectedAnswer === num
                     ? "bg-blue-600 text-white scale-105"
                     : "bg-white border-2 border-gray-200 hover:border-blue-400"
@@ -69,13 +71,17 @@ const MathChallengeScreen = () => {
       {/* ✅ Reward modal only opens when correct answer */}
       {openReward && (
         <RewardScreen
-          heading={goNext ? "Wrong Answer😩" : "Max earns: ⭐ x10 + 💎 x1"}
+          heading={
+            goNext
+              ? t("mathChallenge.rewardWrong.heading")
+              : t("mathChallenge.rewardCorrect.heading")
+          }
           description={
             goNext
-              ? "Try Again"
-              : "Amazing work, Ali! You’re one step closer to becoming a Focus Hero. Keep collecting stars to unlock your next adventure"
+              ? t("mathChallenge.rewardWrong.description")
+              : t("mathChallenge.rewardCorrect.description")
           }
-          btnText="Next"
+          btnText={t("mathChallenge.nextButton")}
           setOpenReward={setOpenReward}
           openReward={openReward}
           route={goNext ? "" : "/learner/modcheck/message"}

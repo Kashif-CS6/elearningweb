@@ -144,5 +144,62 @@
   "playVideo": {
     "title": "AI Live Session",
     "unsupportedBrowser": "Your browser does not support the video tag."
+  },
+  "chat": {
+    "placeholder": "Type your answer...",
+    "thankYou": "Thank you for your response!"
+  },
+  "videoQuestions": {
+    "1": { "question": "What was the video about?" },
+    "2": { "question": "What did you like most about this video?" },
+    "3": { "question": "Did you learn something new from the video?" },
+    "4": { "question": "Was there anything you didn’t understand?" },
+    "5": { "question": "How did the video make you feel?" },
+    "6": { "question": "Would you like to watch more videos like this?" },
+    "7": { "question": "What part of the video was most interesting to you?" },
+    "8": {
+      "question": "Do you agree or disagree with the message in the video?"
+    },
+    "9": { "question": "How would you explain this video to a friend?" },
+    "10": { "question": "What did you learn or take away from this video?" }
+  },
+  "aiSession": {
+    "title": "AI Live Session",
+    "pickOption": "Pick one option?",
+    "magicBall": "Magic Ball",
+    "breathingGame": "Breathing Game",
+    "doneButton": "Done",
+    "rewardTitle": "Perfect!",
+    "rewardButton": "Done",
+    "rewardDescription": "I’ll remember that. We’ll use the magic ball more often in your training.",
+    "Done": "Session Completed",
+    "MCQ": "Multiple Choice Question"
+  },
+  "liveSession": {
+    "heading": "Max, what did you notice in Samis story? Why was the magic ball helpful?"
+  },
+  "mathChallenge": {
+    "title": "AI Live Session",
+    "instructions": "Ali, let's try this together. Look at this math problem. Imagine your own magic ball is holding all the distractions. Focus only on the numbers. Can you solve it?",
+    "rewardCorrect": {
+      "heading": "Max earns: ⭐ x10 + 💎 x1",
+      "description": "Amazing work, Ali! You’re one step closer to becoming a Focus Hero. Keep collecting stars to unlock your next adventure."
+    },
+    "rewardWrong": {
+      "heading": "Wrong Answer 😩",
+      "description": "Try Again"
+    },
+    "nextButton": "Next"
+  },
+  "learnerDashboard": {
+    "meeting": "Meeting",
+    "assignment": "Assignment",
+    "activities": "Activities",
+    "startLiveSession": "Start Live Session",
+    "progressTitle": "You can check out the ongoing progress",
+    "activitiesCard": "Activities",
+    "chatKid": "Chat Kid",
+    "assignmentCard": "Assignment",
+    "chatParent": "Chat Parent"
   }
 }

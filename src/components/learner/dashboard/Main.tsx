@@ -1,15 +1,19 @@
+"use client";
 import React from "react";
 import Image from "next/image";
+import { useTranslation } from "react-i18next";
+
 const Main = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="min-h-screen w-full py-8">
       <div className="mx-auto">
         {/* Header Section with Progress Circles and Stats */}
-        <div className="">
-          <div className="flex flex-col md:flex-row  items-center justify-center md:justify-between flex-wrap md:my-10">
+        <div>
+          <div className="flex flex-col md:flex-row items-center justify-center md:justify-between flex-wrap md:my-10">
             {/* Progress Circles */}
             <div className="relative w-[200px] h-[200px] md:w-[333px] md:h-[333px]">
-              {/* Outer circle - Blue (Meeting) */}
               <Image
                 width={333}
                 height={333}
@@ -20,30 +24,36 @@ const Main = () => {
             </div>
 
             {/* Stats and Button */}
-            <div className="flex-1  my-10 md:my-0 md:ml-12">
+            <div className="flex-1 my-10 md:my-0 md:ml-12">
               {/* Stats */}
-              <div className="flex flex-wrap  gap-12 mb-8">
-                <div className="  flex items-start  gap-3">
+              <div className="flex flex-wrap gap-12 mb-8">
+                <div className="flex items-start gap-3">
                   <div className="w-[20px] h-[20px] bg-blue-400 rounded-full mt-3"></div>
                   <div className="text-[23.33px] font-[500] leading-[33.33px]">
-                    <p className="text-gray-600 ">Meeting</p>
-                    <p className="">2</p>
+                    <p className="text-gray-600">
+                      {t("learnerDashboard.meeting")}
+                    </p>
+                    <p>2</p>
                   </div>
                 </div>
 
-                <div className="flex items-start  gap-3">
+                <div className="flex items-start gap-3">
                   <div className="w-[20px] h-[20px] bg-red-400 rounded-full mt-3"></div>
                   <div className="text-[23.33px] font-[500] leading-[33.33px]">
-                    <p className="text-gray-600 ">Assignment</p>
-                    <p className="">10</p>
+                    <p className="text-gray-600">
+                      {t("learnerDashboard.assignment")}
+                    </p>
+                    <p>10</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3">
                   <div className="w-[20px] h-[20px] bg-yellow-400 rounded-full mt-3"></div>
                   <div className="text-[23.33px] font-[500] leading-[33.33px]">
-                    <p className="text-gray-600 ">Activities</p>
-                    <p className="">20</p>
+                    <p className="text-gray-600">
+                      {t("learnerDashboard.activities")}
+                    </p>
+                    <p>20</p>
                   </div>
                 </div>
               </div>
@@ -63,7 +73,7 @@ const Main = () => {
                     d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
                   />
                 </svg>
-                Start Live Session
+                {t("learnerDashboard.startLiveSession")}
               </button>
             </div>
           </div>
@@ -72,7 +82,7 @@ const Main = () => {
         {/* Progress Section */}
         <div className="mb-4">
           <h2 className="text-lg font-medium text-gray-700">
-            Your can check out the ongoing progress
+            {t("learnerDashboard.progressTitle")}
           </h2>
         </div>
 
@@ -96,7 +106,9 @@ const Main = () => {
                   />
                 </svg>
               </div>
-              <span className="text-gray-800 font-medium">Activites</span>
+              <span className="text-gray-800 font-medium">
+                {t("learnerDashboard.activitiesCard")}
+              </span>
             </div>
           </div>
 
@@ -118,7 +130,9 @@ const Main = () => {
                   />
                 </svg>
               </div>
-              <span className="text-gray-800 font-medium">Chat Kid</span>
+              <span className="text-gray-800 font-medium">
+                {t("learnerDashboard.chatKid")}
+              </span>
             </div>
           </div>
 
@@ -140,7 +154,9 @@ const Main = () => {
                   />
                 </svg>
               </div>
-              <span className="text-gray-800 font-medium">Assignment</span>
+              <span className="text-gray-800 font-medium">
+                {t("learnerDashboard.assignmentCard")}
+              </span>
             </div>
           </div>
 
@@ -162,7 +178,9 @@ const Main = () => {
                   />
                 </svg>
               </div>
-              <span className="text-gray-800 font-medium">Chat Parent</span>
+              <span className="text-gray-800 font-medium">
+                {t("learnerDashboard.chatParent")}
+              </span>
             </div>
           </div>
         </div>
