@@ -71,7 +71,7 @@ const Chat = () => {
                     </div>
                     {msg.answer && (
                       <div className="flex items-end gap-2 justify-end mt-2">
-                        <div className="w-fit md:w-[500px] bg-gray-100 rounded-[6px] py-2 pl-4 pr-10 rounded-tr-full">
+                        <div className="w-fit  bg-gray-100 rounded-[6px] py-2 pl-4 pr-10 rounded-tr-full">
                           <h1 className="text-[12px] pt-2">{msg.answer}</h1>
                         </div>
                         <Image

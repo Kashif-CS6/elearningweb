@@ -15,7 +15,7 @@ export default function KidzVoiceDashboard() {
   const { t } = useTranslation();
 
   return (
-    <div className="flex min-h-screen bg-gray-50">
+    <div className="flex h-screen bg-gray-50">
       {/* Sidebar */}
       <Sidebar />
 

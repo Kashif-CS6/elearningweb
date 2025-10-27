@@ -4,7 +4,6 @@ import "./globals.css";
 import { Toaster } from "react-hot-toast";
 import "../i18n";
 import { TranslationProvider } from "@/context/TranslationContext";
-import LanguageSwitcher from "@/components/LanguageSwitcher";
 
 // Existing fonts
 
@@ -28,12 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={` ${jost.variable} antialiased`}>
-        <TranslationProvider>
-          <div className="absolute right-4 top-2 z-10">
-            <LanguageSwitcher />
-          </div>
-          {children}
-        </TranslationProvider>
+        <TranslationProvider>{children}</TranslationProvider>
 
         <Toaster />
       </body>
