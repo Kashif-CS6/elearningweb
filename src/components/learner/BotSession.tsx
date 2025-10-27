@@ -1,8 +1,11 @@
+"use client";
+
 import React, { FC, useState, Dispatch, SetStateAction } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { FileText, X } from "lucide-react";
 import RewardScreen from "./Greatjob";
+import { useTranslation } from "react-i18next";
 
 interface BotSessionProps {
   Heading: string;
@@ -25,25 +28,27 @@ const BotSession: FC<BotSessionProps> = ({
 }) => {
   const router = useRouter();
   const [openRewardModal, setOpenRewardModal] = useState<boolean>(false);
+  const { t } = useTranslation();
 
   const HandleOption = (e: string) => {
     onSelect(e);
     setOpenRewardModal(!openRewardModal);
-    // setOpenModal(true);
     setMessage(setValue);
     setOpenModal(false);
   };
+
   return (
     <div className="min-h-screen bg-gray-50 border border-gray-200 flex items-center justify-center md:p-6">
       <div
-        className={`bg-white border border-gray-200 shadow-xl w-full   md:w-[1113px] ${
+        className={`bg-white border border-gray-200 shadow-xl w-full md:w-[1113px] ${
           Heading === "MCQ" ? "py-20" : ""
-        }  rounded-[6px] flex flex-col justify-between text-center`}
+        } rounded-[6px] flex flex-col justify-between text-center`}
       >
         <div className="flex flex-col justify-center items-center ">
-          <h2 className="text-sm md:text-[22px] font-[600] leading-[24px] mb-4 px-12 pt-6 ">
-            AI Live Session
+          <h2 className="text-sm md:text-[22px] font-[600] leading-[24px] mb-4 px-12 pt-6">
+            {t("aiSession.title")}
           </h2>
+
           <div className="mb-0 flex justify-center px-12 py-2">
             <Image
               src={"/circle-bot-icon.svg"}
@@ -52,57 +57,62 @@ const BotSession: FC<BotSessionProps> = ({
               alt="Bot"
             />
           </div>
+
           <p
-            className={`text-gray-700 md:${widthX} mx-auto text-sm md:text-[22.64px] font-[600] leading-[33px]  mb-8 px-12 py-6`}
+            className={`text-gray-700 md:${widthX} mx-auto text-sm md:text-[22.64px] font-[600] leading-[33px] mb-8 px-12 py-6`}
           >
             {Heading && Heading != "MCQ" && Heading}
-            <span>{Heading === "MCQ" && "Pick One Option?"}</span>
+            <span>{Heading === "MCQ" && t("aiSession.pickOption")}</span>
           </p>
 
           {Heading === "MCQ" && (
-            <div className=" flex items-center justify-center gap-4 md:gap-8">
+            <div className="flex items-center justify-center gap-4 md:gap-8">
               <button
                 onClick={() => HandleOption("magic-ball")}
                 className="md:w-[336px] h-[80px] border-2 border-gray-200 focus:border-purple-300 hover:bg-purple-50 rounded-xl py-4 px-6 flex items-center justify-center gap-3 transition-colors"
               >
                 <span className="text-purple-600">🔮</span>
-                <span className="font-medium">Magic Ball</span>
+                <span className="font-medium">{t("aiSession.magicBall")}</span>
               </button>
+
               <button
                 onClick={() => HandleOption("breathing")}
                 className="md:w-[336px] h-[80px] border-2 border-gray-200 focus:border-purple-300 hover:bg-purple-50 rounded-xl py-4 px-6 flex items-center justify-center gap-3 transition-colors"
               >
                 <span>🌬️</span>
-                <span className="font-medium">Breathing Game</span>
+                <span className="font-medium">
+                  {t("aiSession.breathingGame")}
+                </span>
               </button>
             </div>
           )}
         </div>
+
         {Heading === "Done" && (
           <button
             onClick={() => router.push(route)}
             className="w-[340px] mx-auto cursor-pointer h-[52px] bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-[14.2px] transition-colors mb-20"
           >
-            Done
+            {t("aiSession.doneButton")}
           </button>
         )}
+
         {!(Heading === "MCQ" || Heading === "Done") && (
           <div
-            className="h-[230px] w-full relative  px-0  flex flex-col items-center  justify-end "
+            className="h-[230px] w-full relative px-0 flex flex-col items-center justify-end"
             style={{
               backgroundImage: "url('/live session.svg')",
-              backgroundSize: "",
               backgroundPosition: "center",
             }}
           >
             <button
               onClick={() => router.push(route)}
-              className=" hover:bg-gray-50 p-4 absolute top-16 right-20 md:right-32   rounded-2xl shadow-lg border border-gray-200 transition-all transform hover:scale-105"
+              className="hover:bg-gray-50 p-4 absolute top-16 right-20 md:right-32 rounded-2xl shadow-lg border border-gray-200 transition-all transform hover:scale-105"
             >
               <FileText className="w-5 h-5 text-gray-700" />
             </button>
 
-            <button className="bg-white hover:bg-gray-50 absolute  top-16 right-3 md:right-10 p-4 rounded-2xl shadow-lg border border-gray-200 transition-all transform hover:scale-105">
+            <button className="bg-white hover:bg-gray-50 absolute top-16 right-3 md:right-10 p-4 rounded-2xl shadow-lg border border-gray-200 transition-all transform hover:scale-105">
               <X className="w-5 h-5 text-gray-700" />
             </button>
           </div>
@@ -111,9 +121,9 @@ const BotSession: FC<BotSessionProps> = ({
 
       {Heading === "MCQ" && openRewardModal && (
         <RewardScreen
-          heading=""
-          btnText="Done"
-          description="Perfect! I’ll remember that. We’ll use the magic ball more often in your training."
+          heading={t("aiSession.rewardTitle")}
+          btnText={t("aiSession.rewardButton")}
+          description={t("aiSession.rewardDescription")}
           setOpenReward={setOpenRewardModal}
           openReward={openRewardModal}
           route="/learner/modcheck/message/ai"

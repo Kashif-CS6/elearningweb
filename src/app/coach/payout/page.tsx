@@ -3,9 +3,11 @@
 import React, { useState } from "react";
 import { toast } from "react-hot-toast";
 import { useRouter } from "next/navigation";
+import { useTranslation } from "react-i18next";
 
 const Payout = () => {
   const router = useRouter();
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     accountHolder: "",
     bankName: "",
@@ -14,7 +16,7 @@ const Payout = () => {
     currency: "",
   });
 
-  const [loading, setLoading] = useState(false); // 🔹 loading state
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
@@ -27,22 +29,14 @@ const Payout = () => {
     const { accountHolder, bankName, accountNumber, sortCode, currency } =
       formData;
 
-    // Optional validation
-    // if (
-    //   !accountHolder ||
-    //   !bankName ||
-    //   !accountNumber ||
-    //   !sortCode ||
-    //   !currency
-    // ) {
-    //   toast.error("Please fill in all required fields.");
+    // if (!accountHolder || !bankName || !accountNumber || !sortCode || !currency) {
+    //   toast.error(t("payout.toastError"));
     //   return;
     // }
 
     setLoading(true);
-    toast.success("Payout setup done! Redirecting...");
+    toast.success(t("payout.toastSuccess"));
 
-    // Simulate API delay (2 seconds)
     setTimeout(() => {
       setLoading(false);
       router.push("/coach/dashboard");
@@ -53,69 +47,69 @@ const Payout = () => {
     <div className="h-screen flex items-center justify-center bg-gray-50">
       <div className="w-[747.18px] border border-gray-200 bg-white rounded-[6px] p-8 shadow-lg">
         <h2 className="font-[600] text-[18px] leading-[24px] text-[#4B465C] text-center mb-6">
-          Payout Setup
+          {t("payout.title")}
         </h2>
 
         <div className="space-y-3">
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Account holder name
+              {t("payout.accountHolder")}
             </label>
             <input
               type="text"
               name="accountHolder"
               value={formData.accountHolder}
               onChange={handleChange}
-              placeholder="Write here"
+              placeholder={t("payout.placeholder")}
               className="w-full px-4 py-2 border border-[#DBDADE] h-[60px] rounded-[6px] focus:ring-2 focus:ring-blue-500 outline-none transition"
             />
           </div>
 
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Bank name
+              {t("payout.bankName")}
             </label>
             <input
               type="text"
               name="bankName"
               value={formData.bankName}
               onChange={handleChange}
-              placeholder="Write here"
+              placeholder={t("payout.placeholder")}
               className="w-full px-4 py-2 border border-gray-200 h-[60px] rounded-[6px] focus:ring-2 focus:ring-blue-500 outline-none transition"
             />
           </div>
 
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Account number / IBAN
+              {t("payout.accountNumber")}
             </label>
             <input
               type="text"
               name="accountNumber"
               value={formData.accountNumber}
               onChange={handleChange}
-              placeholder="Write here"
+              placeholder={t("payout.placeholder")}
               className="w-full px-4 py-2 border border-gray-200 h-[60px] rounded-[6px] focus:ring-2 focus:ring-blue-500 outline-none transition"
             />
           </div>
 
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Sort Code / SWIFT Code
+              {t("payout.sortCode")}
             </label>
             <input
               type="text"
               name="sortCode"
               value={formData.sortCode}
               onChange={handleChange}
-              placeholder="Write here"
+              placeholder={t("payout.placeholder")}
               className="w-full px-4 py-2 border border-gray-200 h-[60px] rounded-[6px] focus:ring-2 focus:ring-blue-500 outline-none transition"
             />
           </div>
 
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Currency
+              {t("payout.currency")}
             </label>
             <select
               name="currency"
@@ -123,7 +117,7 @@ const Payout = () => {
               onChange={handleChange}
               className="w-full px-4 py-2 border border-gray-200 h-[60px] rounded-[6px] focus:ring-2 focus:ring-blue-500 outline-none transition"
             >
-              <option value="">Select currency</option>
+              <option value="">{t("payout.selectCurrency")}</option>
               <option value="USD">USD</option>
               <option value="EUR">EUR</option>
               <option value="GBP">GBP</option>
@@ -143,10 +137,10 @@ const Payout = () => {
               {loading ? (
                 <div className="flex items-center gap-2">
                   <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                  <span>Saving...</span>
+                  <span>{t("payout.saving")}</span>
                 </div>
               ) : (
-                "Save"
+                t("payout.save")
               )}
             </button>
           </div>

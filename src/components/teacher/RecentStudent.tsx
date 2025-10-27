@@ -3,23 +3,26 @@ import React from "react";
 import { Calendar } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { useTranslation } from "react-i18next"; // ✅ translation hook
 
 const RecentStudent = () => {
   const router = useRouter();
+  const { t } = useTranslation(); // ✅ initialize translation
 
   const handleRouter = (id: number) => {
     router.push(`/teacher/dashboard/recent/${id}`);
   };
+
   return (
     <div className="w-full mx-auto py-6">
       <h2 className="text-xl font-semibold text-gray-900 mb-6">
-        Recent students meeting
+        {t("recentStudents.title")}
       </h2>
       <div className="space-y-3">
         {[1, 2, 3, 4, 5].map((i) => (
           <div
             key={i}
-            className="bg-white rounded-xl h-[140px]  md:h-[89px] p-1 flex items-center gap-4 hover:shadow-md transition-shadow border border-gray-200"
+            className="bg-white rounded-xl h-[140px] md:h-[89px] p-1 flex items-center gap-4 hover:shadow-md transition-shadow border border-gray-200"
           >
             <Image
               src={"/child.jpg"}
@@ -37,14 +40,16 @@ const RecentStudent = () => {
               </p>
               <div className="flex items-center gap-1.5 text-gray-600">
                 <Calendar className="w-3.5 h-3.5" />
-                <span className="text-xs">15 Classes Done</span>
+                <span className="text-xs">
+                  {t("recentStudents.classesDone")}
+                </span>
               </div>
             </div>
             <button
               onClick={() => handleRouter(i)}
               className="text-blue-600 hover:text-blue-700 font-medium cursor-pointer text-sm pr-2 md:pr-10"
             >
-              view report
+              {t("recentStudents.viewReport")}
             </button>
           </div>
         ))}

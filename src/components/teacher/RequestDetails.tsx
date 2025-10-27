@@ -5,11 +5,12 @@ import { ChevronRight } from "lucide-react";
 import Image from "next/image";
 import RewardScreen from "../learner/Greatjob";
 import { useRouter } from "next/navigation";
+import { useTranslation } from "react-i18next"; // ✅ translation hook
 
 const RequestDetails = () => {
   const [showModal, setModal] = useState(false);
-
   const router = useRouter();
+  const { t } = useTranslation(); // ✅ translation instance
 
   const handleBack = () => {
     router.back();
@@ -21,10 +22,12 @@ const RequestDetails = () => {
         <button className="flex items-center gap-2 text-gray-600 hover:text-gray-900">
           <ChevronRight className="w-4 h-4 rotate-180" />
           <span className="text-sm" onClick={handleBack}>
-            Back
+            {t("requestDetails.back")}
           </span>
         </button>
-        <h1 className="text-2xl font-bold text-gray-900">Request</h1>
+        <h1 className="text-2xl font-bold text-gray-900">
+          {t("requestDetails.title")}
+        </h1>
       </div>
 
       <div className="bg-white rounded-xl shadow-md border border-gray-100 p-6 space-y-6">
@@ -66,7 +69,7 @@ const RequestDetails = () => {
                       d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                     />
                   </svg>
-                  <span>Rawalpindi, Pakistan</span>
+                  <span>{t("requestDetails.location")}</span>
                 </div>
                 <div className="flex items-center gap-1 text-gray-600">
                   <svg
@@ -82,7 +85,7 @@ const RequestDetails = () => {
                       d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"
                     />
                   </svg>
-                  <span>English</span>
+                  <span>{t("requestDetails.language")}</span>
                 </div>
               </div>
             </div>
@@ -94,49 +97,51 @@ const RequestDetails = () => {
           </button>
         </div>
 
-        {/* Child History */}
-        {["Child History", "Current Struggles", "Family Context"].map(
-          (section, idx) => (
-            <div key={idx}>
-              <h3 className="font-semibold text-gray-900 text-base mb-2">
-                {section}
-              </h3>
-              <p className="text-xs text-gray-600 mb-3">
-                CBT | Diagnosis | Crisis Care | Research | Empathy
-              </p>
-              <p className="text-xs text-gray-700 leading-relaxed mb-2">
-                lic. phil. & Dipl. Psych., licensed psychotherapist
-              </p>
-              <p className="text-xs text-gray-600 leading-relaxed">
-                Depth psychology, cognitive behavioral therapy, family and
-                couples therapy, psychodrama, and resource therapy. Specialist
-                for gifted children with learning disabilities and trainer in
-                Nonviolent Communication.
-              </p>
-              <p className="text-xs text-gray-600 leading-relaxed mt-1">
-                Psychotherapy, supervision, individual, couple, group. Lecturer,
-                speaker.
-              </p>
-            </div>
-          )
-        )}
+        {/* Child History Sections */}
+        {[
+          t("requestDetails.sections.history"),
+          t("requestDetails.sections.struggles"),
+          t("requestDetails.sections.family"),
+        ].map((section, idx) => (
+          <div key={idx}>
+            <h3 className="font-semibold text-gray-900 text-base mb-2">
+              {section}
+            </h3>
+            <p className="text-xs text-gray-600 mb-3">
+              CBT | Diagnosis | Crisis Care | Research | Empathy
+            </p>
+            <p className="text-xs text-gray-700 leading-relaxed mb-2">
+              lic. phil. & Dipl. Psych., licensed psychotherapist
+            </p>
+            <p className="text-xs text-gray-600 leading-relaxed">
+              Depth psychology, cognitive behavioral therapy, family and couples
+              therapy, psychodrama, and resource therapy. Specialist for gifted
+              children with learning disabilities and trainer in Nonviolent
+              Communication.
+            </p>
+            <p className="text-xs text-gray-600 leading-relaxed mt-1">
+              Psychotherapy, supervision, individual, couple, group. Lecturer,
+              speaker.
+            </p>
+          </div>
+        ))}
 
         {/* Accept Button */}
         <button
           onClick={() => setModal(true)}
           className="w-full font-[500] text-[16px] bg-blue-600 text-white h-[60px] py-3.5 rounded-[16px] leading-[100%] hover:bg-blue-700 transition-colors shadow-sm"
         >
-          Accept
+          {t("requestDetails.accept")}
         </button>
       </div>
 
+      {/* Modal */}
       {showModal && (
         <RewardScreen
           setOpenReward={setModal}
-          heading="Accepted"
-          description="ou have successfully accepted Ali
-as your learner!"
-          btnText="Go to Learner Profile"
+          heading={t("requestDetails.modal.heading")}
+          description={t("requestDetails.modal.description")}
+          btnText={t("requestDetails.modal.btnText")}
           openReward={showModal}
           route="/learner/dashboard"
         />

@@ -1,9 +1,13 @@
+"use client";
+
 import React from "react";
 import { Bell, Users, Calendar } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { useTranslation } from "react-i18next"; // ✅ translation hook
 
 const TeacherRequest = () => {
+  const { t } = useTranslation();
   const router = useRouter();
 
   const handleRoute = () => {
@@ -13,8 +17,10 @@ const TeacherRequest = () => {
   const handleRouteStudent = () => {
     router.push("/teacher/dashboard/studentlist");
   };
+
   return (
-    <div className="w-full mx-auto  mt-4  space-y-6">
+    <div className="w-full mx-auto mt-4 space-y-6">
+      {/* 🔹 New Requests */}
       <div
         onClick={handleRoute}
         className="bg-white cursor-pointer rounded-lg shadow-sm border border-gray-200 p-6 flex items-start gap-4"
@@ -23,10 +29,14 @@ const TeacherRequest = () => {
           <Bell className="w-6 h-6 text-white" />
         </div>
         <div>
-          <p className="text-sm text-gray-600 mb-1">Upto 15 students request</p>
-          <p className="font-bold">New Request</p>
+          <p className="text-sm text-gray-600 mb-1">
+            {t("teacherRequest.newRequestSubtitle")}
+          </p>
+          <p className="font-bold">{t("teacherRequest.newRequestTitle")}</p>
         </div>
       </div>
+
+      {/* 🔹 Students and Schedule */}
       <div className="flex items-center flex-1 gap-4 w-full flex-wrap">
         <div
           onClick={handleRouteStudent}
@@ -37,9 +47,9 @@ const TeacherRequest = () => {
           </div>
           <div>
             <p className="text-sm text-gray-600 mb-1">
-              30 students in your class
+              {t("teacherRequest.studentsSubtitle")}
             </p>
-            <p className="font-bold">Students</p>
+            <p className="font-bold">{t("teacherRequest.studentsTitle")}</p>
           </div>
         </div>
 
@@ -52,15 +62,18 @@ const TeacherRequest = () => {
           </div>
           <div>
             <p className="text-sm text-gray-600 mb-1">
-              5 meeting have upcoming
+              {t("teacherRequest.scheduleSubtitle")}
             </p>
-            <p className="font-bold">Schedule</p>
+            <p className="font-bold">{t("teacherRequest.scheduleTitle")}</p>
           </div>
         </div>
       </div>
 
-      <div className="  ">
-        <h3 className="font-bold text-lg mb-4">Recent students meeting</h3>
+      {/* 🔹 Recent Meetings */}
+      <div>
+        <h3 className="font-bold text-lg mb-4">
+          {t("teacherRequest.recentMeetingTitle")}
+        </h3>
         <div className="space-y-4">
           {[1, 2, 3].map((i) => (
             <div
@@ -71,7 +84,7 @@ const TeacherRequest = () => {
                 src={"/child.jpg"}
                 width={500}
                 height={500}
-                className="w-20 h-20 bg-gray-300  rounded-lg  object-cover"
+                className="w-20 h-20 bg-gray-300 rounded-lg object-cover"
                 alt=""
               />
               <div className="flex-1">
@@ -83,7 +96,9 @@ const TeacherRequest = () => {
                 </p>
                 <div className="flex items-center gap-2 mt-1">
                   <Calendar className="w-3 h-3 text-gray-500" />
-                  <span className="text-xs text-gray-600">15 Classes Done</span>
+                  <span className="text-xs text-gray-600">
+                    {t("teacherRequest.classesDone")}
+                  </span>
                 </div>
               </div>
               <button className="text-gray-600 hover:text-gray-800">

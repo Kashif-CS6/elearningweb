@@ -84,5 +84,323 @@
     "continueBtn": "Continue",
     "connected": "Connected",
     "linked": " Youre now linked with your parent!"
+  },
+  "onboarding": {
+    "title": "This is your magic backpack.",
+    "description": "Let's pack it with your dreams and secrets so I can know you better!",
+    "button": "Let's Get Started"
+  },
+  "chatPage": {
+    "goodAnswers": "Good answers!",
+    "placeholder": "Type your answer...",
+    "send": "Send"
+  },
+  "messages": {
+    "1": "Who are you?",
+    "2": "What do you wish for?",
+    "3": "What's your problem?",
+    "4": "What are your dreams?"
+  },
+  "learnerMain": {
+    "level": "Level 1",
+    "completed": "Completed",
+    "aiLiveSession": "AI Live Session",
+    "growth": "Growth",
+    "assignment": "Assignment",
+    "activities": "Activities",
+    "yourJourney": "Your Personal Growth Journey",
+    "completedCount": "2/10 Completed"
+  },
+  "rightSidebar": {
+    "profile": "Your Profile",
+    "homeworkHero": "Homework Hero",
+    "friendlyStar": "Friendly Star",
+    "sessions": "Sessions",
+    "magicBall": "Magic Ball"
+  },
+  "moodCheck": {
+    "title": "AI Live Session",
+    "greeting": "Hi Max! I'm happy to see you again. Before we start, tell me, how do you feel today?",
+    "happy": "Happy",
+    "sad": "Sad",
+    "okay": "Okay",
+    "angry": "Angry"
+  },
+  "moodNext": {
+    "title": "AI Live Session",
+    "description": "Got it, you’re feeling just okay today. Don’t worry, I’ve got something fun planned that might cheer you up.",
+    "nextButton": "Next"
+  },
+  "game": {
+    "title": "AI Live Session",
+    "description": "Let’s start with a breathing game. Imagine this ball is your breath. When it gets big, you breathe in. When it gets small, you breathe out. Ready?",
+    "nextButton": "Next",
+    "reward": {
+      "heading": "Great job",
+      "description": "Max! You just trained your focus, just like a football player before a big match.",
+      "nextButton": "Next"
+    }
+  },
+  "playVideo": {
+    "title": "AI Live Session",
+    "unsupportedBrowser": "Your browser does not support the video tag."
+  },
+  "chat": {
+    "placeholder": "Type your answer...",
+    "thankYou": "Thank you for your response!"
+  },
+  "videoQuestions": {
+    "1": { "question": "What was the video about?" },
+    "2": { "question": "What did you like most about this video?" },
+    "3": { "question": "Did you learn something new from the video?" },
+    "4": { "question": "Was there anything you didn’t understand?" },
+    "5": { "question": "How did the video make you feel?" },
+    "6": { "question": "Would you like to watch more videos like this?" },
+    "7": { "question": "What part of the video was most interesting to you?" },
+    "8": {
+      "question": "Do you agree or disagree with the message in the video?"
+    },
+    "9": { "question": "How would you explain this video to a friend?" },
+    "10": { "question": "What did you learn or take away from this video?" }
+  },
+  "aiSession": {
+    "title": "AI Live Session",
+    "pickOption": "Pick one option?",
+    "magicBall": "Magic Ball",
+    "breathingGame": "Breathing Game",
+    "doneButton": "Done",
+    "rewardTitle": "Perfect!",
+    "rewardButton": "Done",
+    "rewardDescription": "I’ll remember that. We’ll use the magic ball more often in your training.",
+    "Done": "Session Completed",
+    "MCQ": "Multiple Choice Question"
+  },
+  "liveSession": {
+    "heading": "Max, what did you notice in Samis story? Why was the magic ball helpful?"
+  },
+  "mathChallenge": {
+    "title": "AI Live Session",
+    "instructions": "Ali, let's try this together. Look at this math problem. Imagine your own magic ball is holding all the distractions. Focus only on the numbers. Can you solve it?",
+    "rewardCorrect": {
+      "heading": "Max earns: ⭐ x10 + 💎 x1",
+      "description": "Amazing work, Ali! You’re one step closer to becoming a Focus Hero. Keep collecting stars to unlock your next adventure."
+    },
+    "rewardWrong": {
+      "heading": "Wrong Answer 😩",
+      "description": "Try Again"
+    },
+    "nextButton": "Next"
+  },
+  "learnerDashboard": {
+    "meeting": "Meeting",
+    "assignment": "Assignment",
+    "activities": "Activities",
+    "startLiveSession": "Start Live Session",
+    "progressTitle": "You can check out the ongoing progress",
+    "activitiesCard": "Activities",
+    "chatKid": "Chat Kid",
+    "assignmentCard": "Assignment",
+    "chatParent": "Chat Parent"
+  },
+  "coachNext": {
+    "illustrationAlt": "Illustration",
+    "uploadedPreview": "Uploaded Preview",
+    "change": "Change",
+    "uploadImage": "Upload Image",
+    "accountSetup": "Account Setup",
+    "personalInfo": "Personal Info",
+    "name": "Name",
+    "namePlaceholder": "Enter name",
+    "dob": "Date of birth",
+    "contact": "Contact",
+    "contactPlaceholder": "Enter contact info",
+    "next": "Next"
+  },
+  "backpackQuestion": {
+    "title": "Backpack Questionnaire",
+    "education": {
+      "title": "Education",
+      "qualificationDate": "Highest qualification date",
+      "uploadDegree": "Upload Degree"
+    },
+    "license": {
+      "title": "Professional License",
+      "licenseDate": "License date",
+      "uploadLicense": "Upload License"
+    },
+    "experience": {
+      "title": "Experience",
+      "shortCV": "Short CV",
+      "placeholderCV": "Write short CV",
+      "motivation": "Motivation",
+      "selectMotivation": "Select motivation",
+      "growth": "Personal Growth",
+      "career": "Career Advancement",
+      "education": "Education"
+    },
+    "documents": {
+      "title": "Documents Upload",
+      "uploadID": "Upload ID",
+      "uploadCertificate": "Upload Certificate",
+      "uploadReference": "Upload Reference"
+    },
+    "agreements": {
+      "safeguard": "I agree to safeguarding policies",
+      "policy": "I agree to the data policy"
+    },
+    "button": {
+      "submit": "Post",
+      "processing": "Processing..."
+    },
+    "toast": {
+      "processing": "Please wait while we process your form.",
+      "success": "Your form has been submitted successfully!",
+      "error": "Please fill all fields and upload all required documents."
+    }
+  },
+  "digitalContract": {
+    "title": "Digital Contract",
+    "contractText": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of",
+    "agreeText": "I agree to safeguarding policies",
+    "eSignature": "E-Signature",
+    "clickToSign": "Click to sign",
+    "codeOfConduct": "Code of Conduct",
+    "followGuidelines": "I will follow safeguarding guidelines",
+    "dataProtection": "I understood data protection responsibilities",
+    "professionalConduct": "I commit to professional conduct",
+    "save": "Save",
+    "approvalNote": "You will need to wait until the contract is approved.",
+    "toastError": "Please agree to safeguarding policies before proceeding.",
+    "toastSuccess": "Contract saved successfully!"
+  },
+  "payout": {
+    "title": "Payout Setup",
+    "accountHolder": "Account holder name",
+    "bankName": "Bank name",
+    "accountNumber": "Account number / IBAN",
+    "sortCode": "Sort Code / SWIFT Code",
+    "currency": "Currency",
+    "selectCurrency": "Select currency",
+    "placeholder": "Write here",
+    "save": "Save",
+    "saving": "Saving...",
+    "toastError": "Please fill in all required fields.",
+    "toastSuccess": "Payout setup done! Redirecting..."
+  },
+  "training": {
+    "pageTitle": "Training",
+    "modules": "Modules",
+    "mainModuleTitle": "Learning And Friendship Work",
+    "mainModuleSubTitle": "CBT | Diagnosis | Crisis Care",
+    "mainModuleDescription": "lic. phil. & Dipl. Psych, licensed psychotherapist Depth psychology, cognitive behavioral therapy",
+    "views": "745,123 Views",
+    "duration": "6 hr",
+    "lastUpdated": "Last Updated on 23 May, 2023",
+    "startNow": "Start now",
+    "popularTitle": "Our popular course in 2025",
+    "courseTitle": "Learning and friendship work",
+    "courseSubtitle": "CBT | Diagnosis | Crisis Care",
+    "courseDescription": "lic. phil. & Dipl. Psych, licensed psychotherapist Depth psychology, cognitive behavioral therapy",
+    "courseViews": "66,255 Views",
+    "startNowLocked": "Start now 🔒"
+  },
+  "video": {
+    "titleFull": "How to Grow A Great Friendship",
+    "titleLine1": "How to Grow",
+    "titleLine2": "A Great Friendship",
+    "channel": "THE CRAPPY CHILDHOOD FAIRY",
+    "lesson1": {
+      "title": "Emotions: The Hidden Message",
+      "duration": "2:40"
+    },
+    "lesson2": {
+      "title": "Building Empathy",
+      "duration": "3:10"
+    }
+  },
+  "quizMode": {
+    "title": "Quiz",
+    "ready": "Ready To Practice?",
+    "prompt": "Okay, show us what you can do!",
+    "startButton": "Start Quiz",
+    "module": "Module 1",
+    "topic": "Safeguarding",
+    "question": "1. Emotions are called hidden messages because they:",
+    "options": [
+      { "id": "a", "text": "Have no meaning" },
+      { "id": "b", "text": "Are random" },
+      { "id": "c", "text": "Should be ignored" },
+      { "id": "d", "text": "Are signals about needs" }
+    ],
+    "related": "Related content",
+    "videoTitle": "Emotions: the hidden message",
+    "videoDuration": "2:40",
+    "skip": "Skip",
+    "submit": "Submit",
+    "submitting": "Submitting...",
+    "report": "Report a problem",
+    "toast": "Submitted successfully! Redirecting..."
+  },
+  "assignmentMode": {
+    "title": "Assignment",
+    "writeExam": "Write Exam",
+    "placeholder": "Write here...",
+    "practicalExam": "Practical Exam",
+    "scheduleSession": "Schedule Live Observed Session",
+    "portfolioSubmission": "Portfolio Submission",
+    "upload": "Upload case reports",
+    "status": "Your submitted assignment is under review",
+    "save": "Save",
+    "saving": "Saving...",
+    "toast": "Assignment submitted successfully 🎉"
+  },
+  "certificate": {
+    "title": "Quiz",
+    "name": "DC alex",
+    "email": "dcalex@mail.com",
+    "certified": "Certified",
+    "level": "Level 1",
+    "download": "Download Certificate",
+    "badgeTitle": "Badge share options",
+    "linkedin": "on LinkedIn",
+    "emailShare": "on Email"
+  },
+  "teacherRequest": {
+    "newRequestTitle": "New Request",
+    "newRequestSubtitle": "Up to 15 students request",
+    "studentsTitle": "Students",
+    "studentsSubtitle": "30 students in your class",
+    "scheduleTitle": "Schedule",
+    "scheduleSubtitle": "5 meetings are upcoming",
+    "recentMeetingTitle": "Recent students meeting",
+    "classesDone": "15 Classes Done"
+  },
+  "recentStudents": {
+    "title": "Recent students meeting",
+    "classesDone": "15 Classes Done",
+    "viewReport": "View report"
+  },
+  "requestDetails": {
+    "back": "Back",
+    "title": "Request",
+    "location": "Rawalpindi, Pakistan",
+    "language": "English",
+    "sections": {
+      "history": "Child History",
+      "struggles": "Current Struggles",
+      "family": "Family Context"
+    },
+    "accept": "Accept",
+    "modal": {
+      "heading": "Accepted",
+      "description": "You have successfully accepted Ali as your learner!",
+      "btnText": "Go to Learner Profile"
+    }
+  },
+  "studentList": {
+    "back": "Back",
+    "title": "Students",
+    "subtitle": "List of your students",
+    "level": "Level"
   }
 }

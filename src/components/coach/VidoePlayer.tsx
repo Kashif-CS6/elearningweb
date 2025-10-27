@@ -3,32 +3,34 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { Star, Video, Award } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const VideoPlayer = () => {
+  const { t } = useTranslation();
   const router = useRouter();
   const [played, setPlayed] = useState(0);
   const [playing, setPlaying] = useState(true);
   const [playbackRate, setPlaybackRate] = useState(1);
   const iframeRef = useRef<HTMLIFrameElement>(null);
 
-  // 🧠 Progress: simulate full playback in 10 seconds
- useEffect(() => {
-   let interval: ReturnType<typeof setInterval>;
-   if (playing) {
-     interval = setInterval(() => {
-       setPlayed((p) => {
-         const newProgress = p + 0.1;
-         if (newProgress >= 1) {
-           clearInterval(interval);
-           router.push("/coach/dashboard/quiz");
-           return 1;
-         }
-         return newProgress;
-       });
-     }, 1000);
-   }
-   return () => clearInterval(interval);
- }, [playing, router]);
+  // Simulate full playback progress (10 seconds)
+  useEffect(() => {
+    let interval: ReturnType<typeof setInterval>;
+    if (playing) {
+      interval = setInterval(() => {
+        setPlayed((p) => {
+          const newProgress = p + 0.1;
+          if (newProgress >= 1) {
+            clearInterval(interval);
+            router.push("/coach/dashboard/quiz");
+            return 1;
+          }
+          return newProgress;
+        });
+      }, 1000);
+    }
+    return () => clearInterval(interval);
+  }, [playing, router]);
 
   return (
     <div className="max-w-4xl mx-auto p-6">
@@ -39,7 +41,7 @@ const VideoPlayer = () => {
             ref={iframeRef}
             className="w-full h-full"
             src={`https://www.youtube.com/embed/zBjJUV-lzHo?autoplay=1&mute=1&modestbranding=1&rel=0&controls=0`}
-            title="How to Grow A Great Friendship"
+            title={t("video.titleFull")}
             allow="autoplay; encrypted-media; fullscreen"
             allowFullScreen
           />
@@ -48,19 +50,20 @@ const VideoPlayer = () => {
           <div className="absolute inset-0 flex flex-col justify-between p-6 pointer-events-none">
             {/* 🎬 Title */}
             <div className="text-white">
-              <h2 className="text-4xl font-bold mb-2">How to Grow</h2>
+              <h2 className="text-4xl font-bold mb-2">
+                {t("video.titleLine1")}
+              </h2>
               <h2 className="text-4xl font-bold text-yellow-400">
-                A Great Friendship
+                {t("video.titleLine2")}
               </h2>
               <div className="flex items-center gap-2 mt-4">
                 <Star className="w-5 h-5 text-yellow-400 fill-yellow-400" />
-                <span className="text-sm">THE CRAPPY CHILDHOOD FAIRY</span>
+                <span className="text-sm">{t("video.channel")}</span>
               </div>
             </div>
 
-            {/* Custom Controls (Same Design) */}
+            {/* Custom Controls */}
             <div className="flex items-center gap-4 bg-black/60 p-3 rounded-lg pointer-events-auto">
-              {/* ▶️ / ❚❚ */}
               <button
                 onClick={() => setPlaying((p) => !p)}
                 className="text-white hover:text-blue-400 transition-colors"
@@ -68,7 +71,6 @@ const VideoPlayer = () => {
                 {playing ? "❚❚" : "▶"}
               </button>
 
-              {/* Speed control (visual only) */}
               <button
                 onClick={() => setPlaybackRate((r) => (r === 1 ? 1.5 : 1))}
                 className="text-white hover:text-blue-400 transition-colors"
@@ -97,10 +99,10 @@ const VideoPlayer = () => {
             <Video className="w-5 h-5 text-blue-600" />
             <div className="flex-1">
               <div className="flex items-center justify-between">
-                <span className="font-medium">
-                  Emotions: The Hidden Message
+                <span className="font-medium">{t("video.lesson1.title")}</span>
+                <span className="text-sm text-gray-500">
+                  {t("video.lesson1.duration")}
                 </span>
-                <span className="text-sm text-gray-500">2:40</span>
               </div>
               <div className="mt-2 h-1 bg-gray-200 rounded-full overflow-hidden">
                 <div
@@ -117,8 +119,10 @@ const VideoPlayer = () => {
           <div className="flex items-center gap-4">
             <Video className="w-5 h-5 text-blue-600" />
             <div className="flex-1 flex items-center justify-between">
-              <span className="font-medium">Building Empathy</span>
-              <span className="text-sm text-gray-500">3:10</span>
+              <span className="font-medium">{t("video.lesson2.title")}</span>
+              <span className="text-sm text-gray-500">
+                {t("video.lesson2.duration")}
+              </span>
             </div>
           </div>
         </div>

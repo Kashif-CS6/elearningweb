@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import { Send } from "lucide-react";
 import Image from "next/image";
 import toast from "react-hot-toast";
+import { useTranslation } from "react-i18next";
 import vidoequestion from "./question";
 
 const Chat = () => {
@@ -12,6 +13,7 @@ const Chat = () => {
   const [userAnswer, setUserAnswer] = useState("");
   const [count, setCount] = useState<number>(0);
   const router = useRouter();
+  const { t } = useTranslation();
 
   const handleSend = () => {
     if (userAnswer.trim() === "") return;
@@ -21,13 +23,13 @@ const Chat = () => {
     setMessageHistory(updatedMessages);
 
     if (messageHistory.length - 1 === count) {
-      toast.success("Thank you for response!");
+      toast.success(t("chat.thankYou"));
       setTimeout(() => {
         router.push("/learner/modcheck/livesession");
       }, 2000);
-
       return;
     }
+
     setUserAnswer("");
     setCount((prev) => prev + 1);
 
@@ -44,28 +46,27 @@ const Chat = () => {
   };
 
   return (
-    <div className="my-20 md:my-0  md:h-screen flex items-center  justify-center">
-      <div className=" md:w-[747.18px] h-[400px] md:h-[500px] xl:h-[800px] border border-gray-200 mx-auto bg-white rounded-[6px] md:p-4 md:px-2 shadow-lg">
-        <div className="p-4 md:p-6 flex flex-col h-full  justify-between gap-10">
+    <div className="my-20 md:my-0 md:h-screen flex items-center justify-center">
+      <div className="md:w-[747.18px] h-[400px] md:h-[500px] xl:h-[800px] border border-gray-200 mx-auto bg-white rounded-[6px] md:p-4 md:px-2 shadow-lg">
+        <div className="p-4 md:p-6 flex flex-col h-full justify-between gap-10">
           {/* Chat History */}
-          <div className="flex flex-col justify-between gap-4 overflow-y-auto overflow-x-hidden  ">
+          <div className="flex flex-col justify-between gap-4 overflow-y-auto overflow-x-hidden">
             {messageHistory.map((msg, index) => (
               <div key={msg.id}>
                 {index <= currentIndex && (
                   <>
                     <div className="flex items-center gap-3">
-                      <div>
-                        <Image
-                          src="/ai-icon.svg"
-                          width={30}
-                          height={39.55}
-                          alt="ai-icon"
-                        />
-                      </div>
+                      <Image
+                        src="/ai-icon.svg"
+                        width={30}
+                        height={39.55}
+                        alt="ai-icon"
+                      />
                       <span className="text-black text-[12px] md:text-lg font-[400]">
-                        {msg.question}
+                        {t(`videoQuestions.${msg.id}.question`)}
                       </span>
                     </div>
+
                     {msg.answer && (
                       <div className="flex items-end gap-2 justify-end mt-2">
                         <div className="w-fit md:w-[500px] xl:w-fit bg-gray-100 rounded-[6px] py-2 pl-4 pr-10 rounded-tr-full">
@@ -86,7 +87,7 @@ const Chat = () => {
             ))}
           </div>
 
-          {/* Current Question Input */}
+          {/* Input Field */}
           {currentIndex < vidoequestion.length && (
             <div className="mt-auto">
               <div className="relative flex flex-1 items-center gap-3 bg-white rounded-xl shadow-lg border border-gray-200 px-6 py-3 hover:shadow-xl transition-shadow duration-200">
@@ -95,7 +96,7 @@ const Chat = () => {
                   onChange={(e) => setUserAnswer(e.target.value)}
                   onKeyPress={handleKeyPress}
                   className="flex-1 bg-transparent outline-none text-gray-700 placeholder-gray-400 text-sm"
-                  placeholder="Type your answer..."
+                  placeholder={t("chat.placeholder")}
                 />
                 <button
                   onClick={handleSend}

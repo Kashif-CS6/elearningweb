@@ -84,5 +84,323 @@
     "continueBtn": "Fortfahren",
     "connected": "Verbunden",
     "linked": "Du bist jetzt mit deinem Elternteil verknüpft!"
+  },
+  "onboarding": {
+    "title": "Das ist Ihr magischer Rucksack.",
+    "description": "Lassen Sie uns ihn mit Ihren Träumen und Geheimnissen füllen, damit ich Sie besser kennenlernen kann!",
+    "button": "Lassen Sie uns beginnen"
+  },
+  "chatPage": {
+    "goodAnswers": "Gute Antworten!",
+    "placeholder": "Schreibe deine Antwort...",
+    "send": "Senden"
+  },
+  "messages": {
+    "1": "Wer bist du?",
+    "2": "Was wünschst du dir?",
+    "3": "Was ist dein Problem?",
+    "4": "Was sind deine Träume?"
+  },
+  "learnerMain": {
+    "level": "Stufe 1",
+    "completed": "Abgeschlossen",
+    "aiLiveSession": "KI-Live-Sitzung",
+    "growth": "Wachstum",
+    "assignment": "Aufgabe",
+    "activities": "Aktivitäten",
+    "yourJourney": "Deine persönliche Wachstumsreise",
+    "completedCount": "2/10 Abgeschlossen"
+  },
+  "rightSidebar": {
+    "profile": "Dein Profil",
+    "homeworkHero": "Hausaufgabenheld",
+    "friendlyStar": "Freundlicher Stern",
+    "sessions": "Sitzungen",
+    "magicBall": "Zauberkugel"
+  },
+  "moodCheck": {
+    "title": "KI-Live-Sitzung",
+    "greeting": "Hallo Max! Ich freue mich, dich wiederzusehen. Bevor wir beginnen, sag mir, wie fühlst du dich heute?",
+    "happy": "Glücklich",
+    "sad": "Traurig",
+    "okay": "Okay",
+    "angry": "Wütend"
+  },
+  "moodNext": {
+    "title": "Session IA en direct",
+    "description": "D'accord, tu te sens juste moyen aujourd'hui. Ne t'inquiète pas, j'ai prévu quelque chose de sympa pour te remonter le moral.",
+    "nextButton": "Suivant"
+  },
+  "game": {
+    "title": "Session IA en direct",
+    "description": "Commençons par un jeu de respiration. Imagine que ce ballon est ton souffle. Lorsqu'il grossit, inspire. Lorsqu'il rétrécit, expire. Prêt ?",
+    "nextButton": "Suivant",
+    "reward": {
+      "heading": "Super travail",
+      "description": "Max ! Tu viens d’entraîner ta concentration, comme un joueur de football avant un grand match.",
+      "nextButton": "Suivant"
+    }
+  },
+  "playVideo": {
+    "title": "Session IA en direct",
+    "unsupportedBrowser": "Votre navigateur ne prend pas en charge la balise vidéo."
+  },
+  "chat": {
+    "placeholder": "Gib deine Antwort ein...",
+    "thankYou": "Danke für deine Antwort!"
+  },
+  "videoQuestions": {
+    "1": { "question": "Worum ging es in dem Video?" },
+    "2": { "question": "Was hat dir an diesem Video am besten gefallen?" },
+    "3": { "question": "Hast du etwas Neues aus dem Video gelernt?" },
+    "4": { "question": "Gab es etwas, das du nicht verstanden hast?" },
+    "5": { "question": "Wie hat dich das Video fühlen lassen?" },
+    "6": { "question": "Möchtest du mehr Videos wie dieses sehen?" },
+    "7": {
+      "question": "Welcher Teil des Videos war für dich am interessantesten?"
+    },
+    "8": { "question": "Stimmst du der Botschaft im Video zu oder nicht?" },
+    "9": { "question": "Wie würdest du dieses Video einem Freund erklären?" },
+    "10": { "question": "Was hast du aus diesem Video mitgenommen?" }
+  },
+  "aiSession": {
+    "title": "KI-Live-Sitzung",
+    "pickOption": "Wähle eine Option aus?",
+    "magicBall": "Magischer Ball",
+    "breathingGame": "Atemübung",
+    "doneButton": "Fertig",
+    "rewardTitle": "Perfekt!",
+    "rewardButton": "Fertig",
+    "rewardDescription": "Ich werde es mir merken. Wir werden den magischen Ball häufiger in deinem Training verwenden.",
+    "Done": "Sitzung abgeschlossen",
+    "MCQ": "Mehrfachauswahlfrage"
+  },
+  "liveSession": {
+    "heading": "Max, was ist dir in Samis Geschichte aufgefallen? Warum war der magische Ball hilfreich?"
+  },
+  "mathChallenge": {
+    "title": "KI Live-Sitzung",
+    "instructions": "Ali, lass uns das gemeinsam versuchen. Schau dir diese Matheaufgabe an. Stell dir vor, dein eigener magischer Ball hält alle Ablenkungen fest. Konzentriere dich nur auf die Zahlen. Kannst du sie lösen?",
+    "rewardCorrect": {
+      "heading": "Max verdient: ⭐ x10 + 💎 x1",
+      "description": "Großartige Arbeit, Ali! Du bist einen Schritt näher daran, ein Fokus-Held zu werden. Sammle weiter Sterne, um dein nächstes Abenteuer freizuschalten."
+    },
+    "rewardWrong": {
+      "heading": "Falsche Antwort 😩",
+      "description": "Versuche es noch einmal"
+    },
+    "nextButton": "Weiter"
+  },
+  "learnerDashboard": {
+    "meeting": "Besprechung",
+    "assignment": "Aufgabe",
+    "activities": "Aktivitäten",
+    "startLiveSession": "Live-Sitzung starten",
+    "progressTitle": "Sie können den aktuellen Fortschritt überprüfen",
+    "activitiesCard": "Aktivitäten",
+    "chatKid": "Chat mit Kind",
+    "assignmentCard": "Aufgabe",
+    "chatParent": "Chat mit Elternteil"
+  },
+  "coachNext": {
+    "illustrationAlt": "Illustration",
+    "uploadedPreview": "Hochgeladenes Vorschaubild",
+    "change": "Ändern",
+    "uploadImage": "Bild hochladen",
+    "accountSetup": "Konto einrichten",
+    "personalInfo": "Persönliche Informationen",
+    "name": "Name",
+    "namePlaceholder": "Geben Sie den Namen ein",
+    "dob": "Geburtsdatum",
+    "contact": "Kontakt",
+    "contactPlaceholder": "Geben Sie Kontaktdaten ein",
+    "next": "Weiter"
+  },
+  "backpackQuestion": {
+    "title": "Rucksack-Fragebogen",
+    "education": {
+      "title": "Ausbildung",
+      "qualificationDate": "Datum des höchsten Abschlusses",
+      "uploadDegree": "Abschluss hochladen"
+    },
+    "license": {
+      "title": "Berufslizenz",
+      "licenseDate": "Lizenzdatum",
+      "uploadLicense": "Lizenz hochladen"
+    },
+    "experience": {
+      "title": "Erfahrung",
+      "shortCV": "Kurzlebenslauf",
+      "placeholderCV": "Kurzen Lebenslauf schreiben",
+      "motivation": "Motivation",
+      "selectMotivation": "Motivation auswählen",
+      "growth": "Persönliches Wachstum",
+      "career": "Beruflicher Aufstieg",
+      "education": "Bildung"
+    },
+    "documents": {
+      "title": "Dokumenten-Upload",
+      "uploadID": "Ausweis hochladen",
+      "uploadCertificate": "Zertifikat hochladen",
+      "uploadReference": "Referenz hochladen"
+    },
+    "agreements": {
+      "safeguard": "Ich stimme den Schutzrichtlinien zu",
+      "policy": "Ich stimme der Datenschutzrichtlinie zu"
+    },
+    "button": {
+      "submit": "Senden",
+      "processing": "Wird verarbeitet..."
+    },
+    "toast": {
+      "processing": "Bitte warten Sie, während wir Ihr Formular bearbeiten.",
+      "success": "Ihr Formular wurde erfolgreich eingereicht!",
+      "error": "Bitte füllen Sie alle Felder aus und laden Sie alle erforderlichen Dokumente hoch."
+    }
+  },
+  "digitalContract": {
+    "title": "Digitaler Vertrag",
+    "contractText": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of",
+    "agreeText": "Ich stimme den Schutzrichtlinien zu",
+    "eSignature": "Elektronische Unterschrift",
+    "clickToSign": "Zum Unterschreiben klicken",
+    "codeOfConduct": "Verhaltenskodex",
+    "followGuidelines": "Ich werde die Schutzrichtlinien befolgen",
+    "dataProtection": "Ich verstehe die Verantwortlichkeiten des Datenschutzes",
+    "professionalConduct": "Ich verpflichte mich zu professionellem Verhalten",
+    "save": "Speichern",
+    "approvalNote": "Sie müssen warten, bis der Vertrag genehmigt wurde.",
+    "toastError": "Bitte stimmen Sie den Schutzrichtlinien zu, bevor Sie fortfahren.",
+    "toastSuccess": "Vertrag erfolgreich gespeichert!"
+  },
+  "payout": {
+    "title": "Auszahlungs-Einrichtung",
+    "accountHolder": "Name des Kontoinhabers",
+    "bankName": "Name der Bank",
+    "accountNumber": "Kontonummer / IBAN",
+    "sortCode": "Bankleitzahl / SWIFT-Code",
+    "currency": "Währung",
+    "selectCurrency": "Währung auswählen",
+    "placeholder": "Hier schreiben",
+    "save": "Speichern",
+    "saving": "Speichern...",
+    "toastError": "Bitte füllen Sie alle erforderlichen Felder aus.",
+    "toastSuccess": "Auszahlung eingerichtet! Weiterleitung..."
+  },
+  "training": {
+    "pageTitle": "Schulung",
+    "modules": "Module",
+    "mainModuleTitle": "Lernen und Freundschaftsarbeit",
+    "mainModuleSubTitle": "KVT | Diagnose | Krisenintervention",
+    "mainModuleDescription": "lic. phil. & Dipl. Psych, approbierter Psychotherapeut Tiefenpsychologie, kognitive Verhaltenstherapie",
+    "views": "745.123 Aufrufe",
+    "duration": "6 Std.",
+    "lastUpdated": "Zuletzt aktualisiert am 23. Mai 2023",
+    "startNow": "Jetzt starten",
+    "popularTitle": "Unser beliebter Kurs im Jahr 2025",
+    "courseTitle": "Lernen und Freundschaftsarbeit",
+    "courseSubtitle": "KVT | Diagnose | Krisenintervention",
+    "courseDescription": "lic. phil. & Dipl. Psych, approbierter Psychotherapeut Tiefenpsychologie, kognitive Verhaltenstherapie",
+    "courseViews": "66.255 Aufrufe",
+    "startNowLocked": "Jetzt starten 🔒"
+  },
+  "video": {
+    "titleFull": "Wie man eine großartige Freundschaft aufbaut",
+    "titleLine1": "Wie man aufbaut",
+    "titleLine2": "Eine großartige Freundschaft",
+    "channel": "DIE SCHLECHTE KINDHEITSFEE",
+    "lesson1": {
+      "title": "Emotionen: Die verborgene Botschaft",
+      "duration": "2:40"
+    },
+    "lesson2": {
+      "title": "Empathie entwickeln",
+      "duration": "3:10"
+    }
+  },
+  "quizMode": {
+    "title": "Quiz",
+    "ready": "Bereit zum Üben?",
+    "prompt": "Okay, zeig uns, was du kannst!",
+    "startButton": "Quiz starten",
+    "module": "Modul 1",
+    "topic": "Kinderschutz",
+    "question": "1. Emotionen werden als versteckte Botschaften bezeichnet, weil sie:",
+    "options": [
+      { "id": "a", "text": "Keine Bedeutung haben" },
+      { "id": "b", "text": "Zufällig sind" },
+      { "id": "c", "text": "Ignoriert werden sollten" },
+      { "id": "d", "text": "Signale über Bedürfnisse sind" }
+    ],
+    "related": "Verwandte Inhalte",
+    "videoTitle": "Emotionen: die versteckte Botschaft",
+    "videoDuration": "2:40",
+    "skip": "Überspringen",
+    "submit": "Absenden",
+    "submitting": "Wird gesendet...",
+    "report": "Ein Problem melden",
+    "toast": "Erfolgreich eingereicht! Weiterleitung..."
+  },
+  "assignmentMode": {
+    "title": "Aufgabe",
+    "writeExam": "Schriftliche Prüfung",
+    "placeholder": "Hier schreiben...",
+    "practicalExam": "Praktische Prüfung",
+    "scheduleSession": "Live-Beobachtungssitzung planen",
+    "portfolioSubmission": "Portfolio-Einreichung",
+    "upload": "Fallberichte hochladen",
+    "status": "Ihre eingereichte Aufgabe wird überprüft",
+    "save": "Speichern",
+    "saving": "Wird gespeichert...",
+    "toast": "Aufgabe erfolgreich eingereicht 🎉"
+  },
+  "certificate": {
+    "title": "Quiz",
+    "name": "DC alex",
+    "email": "dcalex@mail.com",
+    "certified": "Zertifiziert",
+    "level": "Stufe 1",
+    "download": "Zertifikat herunterladen",
+    "badgeTitle": "Abzeichenfreigabeoptionen",
+    "linkedin": "auf LinkedIn",
+    "emailShare": "per E-Mail"
+  },
+  "teacherRequest": {
+    "newRequestTitle": "Neue Anfrage",
+    "newRequestSubtitle": "Bis zu 15 Schüleranfragen",
+    "studentsTitle": "Schüler",
+    "studentsSubtitle": "30 Schüler in deiner Klasse",
+    "scheduleTitle": "Zeitplan",
+    "scheduleSubtitle": "5 bevorstehende Treffen",
+    "recentMeetingTitle": "Letzte Schülerbesprechungen",
+    "classesDone": "15 abgeschlossene Klassen"
+  },
+  "recentStudents": {
+    "title": "Kürzliche Schülerbesprechung",
+    "classesDone": "15 Unterrichtsstunden abgeschlossen",
+    "viewReport": "Bericht anzeigen"
+  },
+  "requestDetails": {
+    "back": "Zurück",
+    "title": "Anfrage",
+    "location": "Rawalpindi, Pakistan",
+    "language": "Englisch",
+    "sections": {
+      "history": "Kindheitsgeschichte",
+      "struggles": "Aktuelle Schwierigkeiten",
+      "family": "Familiärer Kontext"
+    },
+    "accept": "Akzeptieren",
+    "modal": {
+      "heading": "Akzeptiert",
+      "description": "Sie haben Ali erfolgreich als Ihren Schüler akzeptiert!",
+      "btnText": "Zum Schülerprofil gehen"
+    }
+  },
+  "studentList": {
+    "back": "Zurück",
+    "title": "Schüler",
+    "subtitle": "Liste deiner Schüler",
+    "level": "Stufe"
   }
 }

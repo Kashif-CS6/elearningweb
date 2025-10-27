@@ -28,7 +28,7 @@ const Hero = () => {
         </p>
         <h1 className="text-white text-[24px] font-[600]">{t("hero.title")}</h1>
         <p className="text-white max-w-lg text-justify">{t("hero.desc")}</p>
-        <button className="flex items-center justify-center w-[110px] h-[36px] rounded-[40px] mt-2 gap-2 bg-gray-900 text-white font-medium text-[12px] hover:bg-gray-800 transition-all">
+        <button className="flex items-center justify-center px-4 w-fit h-[36px] rounded-[40px] mt-2 gap-2 bg-gray-900 text-white font-medium text-[12px] hover:bg-gray-800 transition-all">
           {t("hero.button")}
           <ArrowRight className="w-5 h-5" />
         </button>

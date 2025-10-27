@@ -2,9 +2,11 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { useTranslation } from "react-i18next";
 
 const PlayVideo: React.FC = () => {
   const router = useRouter();
+  const { t } = useTranslation();
   const [progress, setProgress] = useState<number>(0);
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -29,27 +31,25 @@ const PlayVideo: React.FC = () => {
 
   // Handle video end navigation
   const handleVideoEnd = () => {
-    if (videoRef.current) {
-      router.push("/learner/modcheck/game/play/question");
-    }
+    router.push("/learner/modcheck/game/play/question");
   };
 
-  // Initialize video state when component mounts
+  // Attach and detach event listener
   useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.addEventListener("ended", handleVideoEnd);
-      return () => {
-        videoRef.current?.removeEventListener("ended", handleVideoEnd);
-      };
-    }
-  }, [handleVideoEnd]);
+    const video = videoRef.current;
+    video?.addEventListener("ended", handleVideoEnd);
+    return () => {
+      video?.removeEventListener("ended", handleVideoEnd);
+    };
+  }, []);
 
   return (
     <div className="h-screen flex items-center justify-center">
       <div className="md:w-[1113px] py-10 md:py-0 md:h-[593px] rounded-[6px] flex flex-col items-center justify-center gap-5 md:gap-10 shadow-md border border-gray-100 mx-auto">
         <h2 className="text-center font-[600] text-sm md:text-[22px] leading-[24px] text-[#4B465C] md:mb-8">
-          AI Live Session
+          {t("playVideo.title")}
         </h2>
+
         <video
           ref={videoRef}
           width={501}
@@ -62,8 +62,9 @@ const PlayVideo: React.FC = () => {
             src="https://www.w3schools.com/html/mov_bbb.mp4"
             type="video/mp4"
           />
-          Your browser does not support the video tag.
+          {t("playVideo.unsupportedBrowser")}
         </video>
+
         <div className="flex items-center gap-2 w-full max-w-[501px]">
           <input
             type="range"
