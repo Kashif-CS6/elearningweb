@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { Users, Video, FileText } from "lucide-react";
 import { toast } from "react-hot-toast";
 import { useRouter } from "next/navigation";
-import { useTranslation } from "react-i18next"; // ✅ For translations
+import { useTranslation } from "react-i18next";
 
 const QuizMode = () => {
   const { t } = useTranslation();
@@ -21,6 +21,12 @@ const QuizMode = () => {
     }, 2000);
   };
 
+  // ✅ Safely parse options from translation
+  const options =
+    (t("quizMode.options", { returnObjects: true }) as
+      | { id: string; text: string }[]
+      | undefined) ?? [];
+
   return (
     <div className="py-20 min-h-screen">
       <div className="lg:w-[747px] mx-auto p-2 lg:p-6">
@@ -29,8 +35,8 @@ const QuizMode = () => {
             {t("quizMode.title")}
           </h2>
 
-          {/* Step 1: Ready to Start Screen */}
           {!quizAnswer ? (
+            // Step 1: Ready Screen
             <div className="text-center space-y-6">
               <div className="w-20 h-20 mx-auto bg-blue-100 rounded-full flex items-center justify-center">
                 <FileText className="w-10 h-10 text-blue-600" />
@@ -51,9 +57,8 @@ const QuizMode = () => {
               </button>
             </div>
           ) : (
-            /* Step 2: Quiz Screen */
+            // Step 2: Quiz Screen
             <div className="space-y-6">
-              {/* Header */}
               <div className="flex items-center gap-4">
                 <div className="w-[68px] h-[68px] bg-blue-100 rounded-full flex items-center justify-center">
                   <Users className="w-6 h-6 text-blue-600" />
@@ -68,34 +73,30 @@ const QuizMode = () => {
                 </div>
               </div>
 
-              {/* Question */}
               <div className="space-y-4">
                 <p className="font-medium">{t("quizMode.question")}</p>
 
                 <div className="space-x-14 flex items-center gap-3 lg:pl-24 flex-wrap">
-                  {t("quizMode.options", { returnObjects: true }).map(
-                    (option: any) => (
-                      <label
-                        key={option.id}
-                        className="flex items-center gap-3 cursor-pointer"
-                      >
-                        <span className="text-gray-700">
-                          {option.id.toUpperCase()}) {option.text}
-                        </span>
-                        <input
-                          type="radio"
-                          name="answer"
-                          className="w-5 h-5 text-blue-600"
-                          checked={option.id === "d"}
-                          readOnly
-                        />
-                      </label>
-                    )
-                  )}
+                  {options.map((option) => (
+                    <label
+                      key={option.id}
+                      className="flex items-center gap-3 cursor-pointer"
+                    >
+                      <span className="text-gray-700">
+                        {option.id.toUpperCase()}) {option.text}
+                      </span>
+                      <input
+                        type="radio"
+                        name="answer"
+                        className="w-5 h-5 text-blue-600"
+                        checked={option.id === "d"}
+                        readOnly
+                      />
+                    </label>
+                  ))}
                 </div>
               </div>
 
-              {/* Related Content */}
               <div className="border-t border-gray-300 pt-4">
                 <p className="text-[16px] font-[400] text-gray-700 mb-3">
                   {t("quizMode.related")}
@@ -118,7 +119,6 @@ const QuizMode = () => {
                 </div>
               </div>
 
-              {/* Buttons */}
               <div className="flex gap-4 pt-4">
                 <button className="flex-1 border-2 border-blue-600 text-blue-600 py-3 rounded-lg font-medium hover:bg-blue-50 transition-colors">
                   {t("quizMode.skip")}

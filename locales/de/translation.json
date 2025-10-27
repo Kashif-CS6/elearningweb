@@ -364,5 +364,43 @@
     "badgeTitle": "Abzeichenfreigabeoptionen",
     "linkedin": "auf LinkedIn",
     "emailShare": "per E-Mail"
+  },
+  "teacherRequest": {
+    "newRequestTitle": "Neue Anfrage",
+    "newRequestSubtitle": "Bis zu 15 Schüleranfragen",
+    "studentsTitle": "Schüler",
+    "studentsSubtitle": "30 Schüler in deiner Klasse",
+    "scheduleTitle": "Zeitplan",
+    "scheduleSubtitle": "5 bevorstehende Treffen",
+    "recentMeetingTitle": "Letzte Schülerbesprechungen",
+    "classesDone": "15 abgeschlossene Klassen"
+  },
+  "recentStudents": {
+    "title": "Kürzliche Schülerbesprechung",
+    "classesDone": "15 Unterrichtsstunden abgeschlossen",
+    "viewReport": "Bericht anzeigen"
+  },
+  "requestDetails": {
+    "back": "Zurück",
+    "title": "Anfrage",
+    "location": "Rawalpindi, Pakistan",
+    "language": "Englisch",
+    "sections": {
+      "history": "Kindheitsgeschichte",
+      "struggles": "Aktuelle Schwierigkeiten",
+      "family": "Familiärer Kontext"
+    },
+    "accept": "Akzeptieren",
+    "modal": {
+      "heading": "Akzeptiert",
+      "description": "Sie haben Ali erfolgreich als Ihren Schüler akzeptiert!",
+      "btnText": "Zum Schülerprofil gehen"
+    }
+  },
+  "studentList": {
+    "back": "Zurück",
+    "title": "Schüler",
+    "subtitle": "Liste deiner Schüler",
+    "level": "Stufe"
   }
 }

@@ -364,5 +364,43 @@
     "badgeTitle": "Badge share options",
     "linkedin": "on LinkedIn",
     "emailShare": "on Email"
+  },
+  "teacherRequest": {
+    "newRequestTitle": "New Request",
+    "newRequestSubtitle": "Up to 15 students request",
+    "studentsTitle": "Students",
+    "studentsSubtitle": "30 students in your class",
+    "scheduleTitle": "Schedule",
+    "scheduleSubtitle": "5 meetings are upcoming",
+    "recentMeetingTitle": "Recent students meeting",
+    "classesDone": "15 Classes Done"
+  },
+  "recentStudents": {
+    "title": "Recent students meeting",
+    "classesDone": "15 Classes Done",
+    "viewReport": "View report"
+  },
+  "requestDetails": {
+    "back": "Back",
+    "title": "Request",
+    "location": "Rawalpindi, Pakistan",
+    "language": "English",
+    "sections": {
+      "history": "Child History",
+      "struggles": "Current Struggles",
+      "family": "Family Context"
+    },
+    "accept": "Accept",
+    "modal": {
+      "heading": "Accepted",
+      "description": "You have successfully accepted Ali as your learner!",
+      "btnText": "Go to Learner Profile"
+    }
+  },
+  "studentList": {
+    "back": "Back",
+    "title": "Students",
+    "subtitle": "List of your students",
+    "level": "Level"
   }
 }
