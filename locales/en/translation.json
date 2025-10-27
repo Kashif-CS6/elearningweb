@@ -84,5 +84,65 @@
     "continueBtn": "Continue",
     "connected": "Connected",
     "linked": " Youre now linked with your parent!"
+  },
+  "onboarding": {
+    "title": "This is your magic backpack.",
+    "description": "Let's pack it with your dreams and secrets so I can know you better!",
+    "button": "Let's Get Started"
+  },
+  "chatPage": {
+    "goodAnswers": "Good answers!",
+    "placeholder": "Type your answer...",
+    "send": "Send"
+  },
+  "messages": {
+    "1": "Who are you?",
+    "2": "What do you wish for?",
+    "3": "What's your problem?",
+    "4": "What are your dreams?"
+  },
+  "learnerMain": {
+    "level": "Level 1",
+    "completed": "Completed",
+    "aiLiveSession": "AI Live Session",
+    "growth": "Growth",
+    "assignment": "Assignment",
+    "activities": "Activities",
+    "yourJourney": "Your Personal Growth Journey",
+    "completedCount": "2/10 Completed"
+  },
+  "rightSidebar": {
+    "profile": "Your Profile",
+    "homeworkHero": "Homework Hero",
+    "friendlyStar": "Friendly Star",
+    "sessions": "Sessions",
+    "magicBall": "Magic Ball"
+  },
+  "moodCheck": {
+    "title": "AI Live Session",
+    "greeting": "Hi Max! I'm happy to see you again. Before we start, tell me, how do you feel today?",
+    "happy": "Happy",
+    "sad": "Sad",
+    "okay": "Okay",
+    "angry": "Angry"
+  },
+  "moodNext": {
+    "title": "AI Live Session",
+    "description": "Got it, you’re feeling just okay today. Don’t worry, I’ve got something fun planned that might cheer you up.",
+    "nextButton": "Next"
+  },
+  "game": {
+    "title": "AI Live Session",
+    "description": "Let’s start with a breathing game. Imagine this ball is your breath. When it gets big, you breathe in. When it gets small, you breathe out. Ready?",
+    "nextButton": "Next",
+    "reward": {
+      "heading": "Great job",
+      "description": "Max! You just trained your focus, just like a football player before a big match.",
+      "nextButton": "Next"
+    }
+  },
+  "playVideo": {
+    "title": "AI Live Session",
+    "unsupportedBrowser": "Your browser does not support the video tag."
   }
 }

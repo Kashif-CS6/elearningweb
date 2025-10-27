@@ -84,5 +84,65 @@
     "continueBtn": "Fortfahren",
     "connected": "Verbunden",
     "linked": "Du bist jetzt mit deinem Elternteil verknüpft!"
+  },
+  "onboarding": {
+    "title": "Das ist Ihr magischer Rucksack.",
+    "description": "Lassen Sie uns ihn mit Ihren Träumen und Geheimnissen füllen, damit ich Sie besser kennenlernen kann!",
+    "button": "Lassen Sie uns beginnen"
+  },
+  "chatPage": {
+    "goodAnswers": "Gute Antworten!",
+    "placeholder": "Schreibe deine Antwort...",
+    "send": "Senden"
+  },
+  "messages": {
+    "1": "Wer bist du?",
+    "2": "Was wünschst du dir?",
+    "3": "Was ist dein Problem?",
+    "4": "Was sind deine Träume?"
+  },
+  "learnerMain": {
+    "level": "Stufe 1",
+    "completed": "Abgeschlossen",
+    "aiLiveSession": "KI-Live-Sitzung",
+    "growth": "Wachstum",
+    "assignment": "Aufgabe",
+    "activities": "Aktivitäten",
+    "yourJourney": "Deine persönliche Wachstumsreise",
+    "completedCount": "2/10 Abgeschlossen"
+  },
+  "rightSidebar": {
+    "profile": "Dein Profil",
+    "homeworkHero": "Hausaufgabenheld",
+    "friendlyStar": "Freundlicher Stern",
+    "sessions": "Sitzungen",
+    "magicBall": "Zauberkugel"
+  },
+  "moodCheck": {
+    "title": "KI-Live-Sitzung",
+    "greeting": "Hallo Max! Ich freue mich, dich wiederzusehen. Bevor wir beginnen, sag mir, wie fühlst du dich heute?",
+    "happy": "Glücklich",
+    "sad": "Traurig",
+    "okay": "Okay",
+    "angry": "Wütend"
+  },
+  "moodNext": {
+    "title": "Session IA en direct",
+    "description": "D'accord, tu te sens juste moyen aujourd'hui. Ne t'inquiète pas, j'ai prévu quelque chose de sympa pour te remonter le moral.",
+    "nextButton": "Suivant"
+  },
+  "game": {
+    "title": "Session IA en direct",
+    "description": "Commençons par un jeu de respiration. Imagine que ce ballon est ton souffle. Lorsqu'il grossit, inspire. Lorsqu'il rétrécit, expire. Prêt ?",
+    "nextButton": "Suivant",
+    "reward": {
+      "heading": "Super travail",
+      "description": "Max ! Tu viens d’entraîner ta concentration, comme un joueur de football avant un grand match.",
+      "nextButton": "Suivant"
+    }
+  },
+  "playVideo": {
+    "title": "Session IA en direct",
+    "unsupportedBrowser": "Votre navigateur ne prend pas en charge la balise vidéo."
   }
 }

@@ -1,21 +1,27 @@
-import React from "react";
+"use client";
 
+import React from "react";
 import { BookOpen, Lightbulb, Globe } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { useTranslation } from "react-i18next";
 
 const LearnerMain = () => {
   const router = useRouter();
+  const { t } = useTranslation();
+
   return (
-    <main className=" py-6 ">
-      <div className=" mx-auto">
-        <div className="">
+    <main className="py-6">
+      <div className="mx-auto">
+        <div>
           {/* Left Column */}
-          <div className="">
+          <div>
             {/* Progress Section */}
             <div className="flex items-center flex-wrap justify-between gap-6">
               <div className="flex items-end gap-2 shadow-md border border-gray-200 w-80 md:min-w-[382px] flex-1 h-[86px] rounded-[12px] px-4 py-3">
-                <div className="w-14  flex flex-col gap-2">
-                  <p className="text-xs md:text-sm text-gray-500 w-full">Level 1</p>
+                <div className="w-14 flex flex-col gap-2">
+                  <p className="text-xs md:text-sm text-gray-500 w-full">
+                    {t("learnerMain.level")}
+                  </p>
                   <div>
                     <div className="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center">
                       <svg
@@ -36,9 +42,9 @@ const LearnerMain = () => {
                 </div>
                 <div className="flex flex-col w-full gap-2">
                   <div className="flex items-center gap-1">
-                    <p className="font-bold text-gray-900">60% </p>
+                    <p className="font-bold text-gray-900">60%</p>
                     <span className="text-sm font-normal text-gray-500">
-                      Completed
+                      {t("learnerMain.completed")}
                     </span>
                   </div>
                   <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
@@ -51,16 +57,16 @@ const LearnerMain = () => {
                 onClick={() => router.push("/learner/modcheck")}
                 className="bg-blue-600 md:min-w-[397px] flex-1 h-[86px] md:text-[24px] text-white px-8 py-3 rounded-xl md:rounded-full font-semibold hover:bg-blue-700 transition-all shadow-lg"
               >
-                AI Live Session
+                {t("learnerMain.aiLiveSession")}
               </button>
             </div>
 
             {/* Growth Section */}
             <div className="my-10">
               <h2 className="text-[16px] font-[600] text-gray-900 mb-4">
-                Growth
+                {t("learnerMain.growth")}
               </h2>
-              <div className="flex gap-4  items-center flex-wrap md:flex-nowrap">
+              <div className="flex gap-4 items-center flex-wrap md:flex-nowrap">
                 <div className="bg-white rounded-xl p-6 border border-gray-200 hover:shadow-lg transition-shadow flex-1">
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
@@ -68,10 +74,10 @@ const LearnerMain = () => {
                     </div>
                     <div>
                       <p className="text-[12px] text-gray-400 font-[400]">
-                        2/10 Completed
+                        {t("learnerMain.completedCount")}
                       </p>
                       <p className="text-[16px] font-[500] text-gray-900">
-                        Assignment
+                        {t("learnerMain.assignment")}
                       </p>
                     </div>
                   </div>
@@ -84,10 +90,10 @@ const LearnerMain = () => {
                     </div>
                     <div>
                       <p className="text-[12px] text-gray-400 font-[400]">
-                        2/10 Completed
+                        {t("learnerMain.completedCount")}
                       </p>
                       <p className="text-[16px] font-[500] text-gray-900">
-                        Activities
+                        {t("learnerMain.activities")}
                       </p>
                     </div>
                   </div>
@@ -98,7 +104,7 @@ const LearnerMain = () => {
             {/* Personal Growth Journey */}
             <div>
               <h2 className="text-[16px] font-[600] text-gray-900 mb-4">
-                Your Personal Growth Journey
+                {t("learnerMain.yourJourney")}
               </h2>
               <div className="w-full flex justify-center md:items-start flex-wrap gap-4 flex-1">
                 {[1, 2, 3, 4, 5].map((item) => (

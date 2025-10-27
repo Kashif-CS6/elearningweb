@@ -30,7 +30,7 @@ export default function RootLayout({
       <body className={` ${jost.variable} antialiased`}>
         <TranslationProvider>
           <div className="absolute right-4 top-2 z-10">
-            {/* <LanguageSwitcher /> */}
+            <LanguageSwitcher />
           </div>
           {children}
         </TranslationProvider>

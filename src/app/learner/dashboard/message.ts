@@ -1,24 +1,28 @@
- const messages = [
-  {
-    id: "1",
-    question: "Who are you?",
-    answer: "",
-  },
-  {
-    id: "2",
-    question: "What do you wish for?",
-    answer: "",
-  },
-  {
-    id: "3",
-    question: "What's your problem?",
-    answer: "",
-  },
-  {
-    id: "4",
-    question: "What are your dreams?",
-    answer: "",
-  },
-];
+import { useTranslation } from "react-i18next";
 
-export default messages
+export const useChatMessages = () => {
+  const { t } = useTranslation();
+
+  return [
+    {
+      id: "1",
+      question: t("messages.1"),
+      answer: "",
+    },
+    {
+      id: "2",
+      question: t("messages.2"),
+      answer: "",
+    },
+    {
+      id: "3",
+      question: t("messages.3"),
+      answer: "",
+    },
+    {
+      id: "4",
+      question: t("messages.4"),
+      answer: "",
+    },
+  ];
+};
